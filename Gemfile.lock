@@ -2,14 +2,14 @@ GEM
   remote: https://rubygems.org/
   specs:
     dotenv (2.7.6)
-    influxdb-client (1.11.0)
+    influxdb-client (2.1.0)
 
 PLATFORMS
-  x86_64-darwin-19
+  x86_64-darwin-20
 
 DEPENDENCIES
   dotenv
   influxdb-client
 
 BUNDLED WITH
-   2.2.7
+   2.3.4
