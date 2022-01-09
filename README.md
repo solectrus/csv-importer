@@ -10,4 +10,4 @@ Prepare an `.env` file and place CSV files. Then do:
 bundle exec ruby import.rb
 ```
 
-Copyright (c) 2020-2021 Georg Ledermann, released under the MIT License
+Copyright (c) 2020-2022 Georg Ledermann, released under the MIT License
