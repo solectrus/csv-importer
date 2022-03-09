@@ -28,16 +28,40 @@ def parse_time(row, string)
   Time.parse("#{row[string]} CET").to_i
 end
 
-def import_file(filename)
-  influx_host   = ENV.fetch('INFLUX_HOST')
-  influx_token  = ENV.fetch('INFLUX_TOKEN')
-  influx_org    = ENV.fetch('INFLUX_ORG')
-  influx_bucket = ENV.fetch('INFLUX_BUCKET')
+def influx_host
+  ENV.fetch('INFLUX_HOST')
+end
 
+def influx_schema
+  ENV.fetch('INFLUX_SCHEMA', 'http')
+end
+
+def influx_port
+  ENV.fetch('INFLUX_PORT', '8086')
+end
+
+def influx_url
+  "#{influx_schema}://#{influx_host}:#{influx_port}"
+end
+
+def influx_org
+  ENV.fetch('INFLUX_ORG')
+end
+
+def influx_bucket
+  ENV.fetch('INFLUX_BUCKET')
+end
+
+def influx_token
+  ENV.fetch('INFLUX_TOKEN')
+end
+
+def import_file(filename)
   # Setup InfluxDB
   client = InfluxDB2::Client.new(
-    influx_host,
+    influx_url,
     influx_token,
+    use_ssl: influx_schema == 'https',
     precision: InfluxDB2::WritePrecision::SECOND
   )
   write_api = client.create_write_api
