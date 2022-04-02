@@ -1,0 +1,121 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://<INFLUX_HOST>/api/v2/write?bucket=<INFLUX_BUCKET>&org=<INFLUX_ORG>&precision=s
+    body:
+      encoding: UTF-8
+      string: |-
+        <INFLUX_BUCKET> bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=0i,grid_power_plus=198i,house_power=199i,inverter_power=0i 1647213193
+        <INFLUX_BUCKET> bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=0i,grid_power_plus=212i,house_power=211i,inverter_power=0i 1647213493
+        <INFLUX_BUCKET> bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=0i,grid_power_plus=270i,house_power=270i,inverter_power=0i 1647213793
+        <INFLUX_BUCKET> bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=0i,grid_power_plus=259i,house_power=258i,inverter_power=0i 1647214093
+        <INFLUX_BUCKET> bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=0i,grid_power_plus=290i,house_power=293i,inverter_power=0i 1647214393
+        <INFLUX_BUCKET> bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=0i,grid_power_plus=279i,house_power=279i,inverter_power=0i 1647214695
+        <INFLUX_BUCKET> bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=0i,grid_power_plus=266i,house_power=262i,inverter_power=0i 1647214997
+        <INFLUX_BUCKET> bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=0i,grid_power_plus=260i,house_power=268i,inverter_power=0i 1647215299
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - influxdb-client-ruby/2.3.0
+      Authorization:
+      - Token <INFLUX_TOKEN>
+      Content-Type:
+      - text/plain
+  response:
+    status:
+      code: 204
+      message: No Content
+    headers:
+      Date:
+      - Fri, 01 Apr 2022 15:48:26 GMT
+      Connection:
+      - keep-alive
+      Trace-Id:
+      - 861024df28c13af4
+      Trace-Sampled:
+      - 'false'
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      X-Influxdb-Request-Id:
+      - af95c02f6386fc587a4e781ac561e2ed
+      X-Influxdb-Build:
+      - Cloud
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Fri, 01 Apr 2022 15:48:26 GMT
+- request:
+    method: post
+    uri: https://<INFLUX_HOST>/api/v2/write?bucket=<INFLUX_BUCKET>&org=<INFLUX_ORG>&precision=s
+    body:
+      encoding: UTF-8
+      string: |-
+        <INFLUX_BUCKET> bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=0i,grid_power_plus=210i,house_power=215i,inverter_power=0i 1647817550
+        <INFLUX_BUCKET> bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=0i,grid_power_plus=222i,house_power=222i,inverter_power=0i 1647817851
+        <INFLUX_BUCKET> bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=0i,grid_power_plus=216i,house_power=209i,inverter_power=0i 1647818154
+        <INFLUX_BUCKET> bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=0i,grid_power_plus=202i,house_power=210i,inverter_power=0i 1647818456
+        <INFLUX_BUCKET> bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=0i,grid_power_plus=266i,house_power=274i,inverter_power=0i 1647821476
+        <INFLUX_BUCKET> bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=0i,grid_power_plus=268i,house_power=268i,inverter_power=0i 1647821778
+        <INFLUX_BUCKET> bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=0i,grid_power_plus=285i,house_power=279i,inverter_power=0i 1647822080
+        <INFLUX_BUCKET> bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=419i,grid_power_plus=0i,house_power=180i,inverter_power=7159i 1647861026
+        <INFLUX_BUCKET> bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=435i,grid_power_plus=1i,house_power=180i,inverter_power=7147i 1647861329
+        <INFLUX_BUCKET> bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=450i,grid_power_plus=1i,house_power=187i,inverter_power=7230i 1647861630
+        <INFLUX_BUCKET> bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=227i,grid_power_plus=965i,house_power=1606i,inverter_power=7264i 1647861932
+        <INFLUX_BUCKET> bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=81i,grid_power_plus=936i,house_power=1362i,inverter_power=7392i 1647862234
+        <INFLUX_BUCKET> bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=2183i,grid_power_plus=0i,house_power=0i,inverter_power=7334i 1647862536
+        <INFLUX_BUCKET> bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=1554i,grid_power_plus=0i,house_power=477i,inverter_power=7334i 1647862838
+        <INFLUX_BUCKET> bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=0i,grid_power_plus=2149i,house_power=2264i,inverter_power=7322i 1647863140
+        <INFLUX_BUCKET> bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=1222i,grid_power_plus=99i,house_power=582i,inverter_power=7066i 1647863442
+        <INFLUX_BUCKET> bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=1955i,grid_power_plus=0i,house_power=0i,inverter_power=7147i 1647863745
+        <INFLUX_BUCKET> bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=841i,grid_power_plus=1i,house_power=228i,inverter_power=7312i 1647864046
+        <INFLUX_BUCKET> bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=76i,grid_power_plus=1179i,house_power=1560i,inverter_power=7322i 1647864348
+        <INFLUX_BUCKET> bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=0i,grid_power_plus=1987i,house_power=2315i,inverter_power=7182i 1647864651
+        <INFLUX_BUCKET> bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=280i,grid_power_plus=1667i,house_power=2973i,inverter_power=7171i 1647864952
+        <INFLUX_BUCKET> bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=743i,grid_power_plus=618i,house_power=1764i,inverter_power=7403i 1647865255
+        <INFLUX_BUCKET> bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=1063i,grid_power_plus=175i,house_power=1069i,inverter_power=7417i 1647865556
+        <INFLUX_BUCKET> bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=1513i,grid_power_plus=60i,house_power=471i,inverter_power=7287i 1647865858
+        <INFLUX_BUCKET> bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=801i,grid_power_plus=695i,house_power=423i,inverter_power=5743i 1647866161
+        <INFLUX_BUCKET> bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=47i,grid_power_plus=2372i,house_power=58i,inverter_power=4144i 1647866463
+        <INFLUX_BUCKET> bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=1051i,grid_power_plus=437i,house_power=0i,inverter_power=5501i 1647866764
+        <INFLUX_BUCKET> bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=2625i,grid_power_plus=0i,house_power=0i,inverter_power=7602i 1647867066
+        <INFLUX_BUCKET> bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=2338i,grid_power_plus=0i,house_power=0i,inverter_power=7321i 1647867369
+        <INFLUX_BUCKET> bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=58i,grid_power_plus=1682i,house_power=1676i,inverter_power=7370i 1647867670
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - influxdb-client-ruby/2.3.0
+      Authorization:
+      - Token <INFLUX_TOKEN>
+      Content-Type:
+      - text/plain
+  response:
+    status:
+      code: 204
+      message: No Content
+    headers:
+      Date:
+      - Fri, 01 Apr 2022 15:48:26 GMT
+      Connection:
+      - keep-alive
+      Trace-Id:
+      - 659077ff8dcd305d
+      Trace-Sampled:
+      - 'false'
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      X-Influxdb-Request-Id:
+      - a7f4ef005a42e582609ee063dc9b5112
+      X-Influxdb-Build:
+      - Cloud
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Fri, 01 Apr 2022 15:48:26 GMT
+recorded_with: VCR 6.1.0
