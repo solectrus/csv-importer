@@ -15,7 +15,7 @@ Import CSV data downloaded from mein-senec.de and push it to InfluxDB.
 Prepare an `.env` file (like `.env.example`) and place CSV files into a folder of your choice. Then do:
 
 ```bash
-docker run -it \
+docker run -it --rm \
            --env-file .env \
            -v /folder/with/csv-files:/data \
            ghcr.io/solectrus/senec-importer
