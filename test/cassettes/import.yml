@@ -35,11 +35,11 @@ http_interactions:
       X-Influxdb-Version:
       - v2.4.0
       Date:
-      - Wed, 05 Oct 2022 08:53:56 GMT
+      - Wed, 05 Oct 2022 09:05:47 GMT
     body:
       encoding: UTF-8
       string: ''
-  recorded_at: Wed, 05 Oct 2022 08:53:56 GMT
+  recorded_at: Wed, 05 Oct 2022 09:05:47 GMT
 - request:
     method: post
     uri: http://<INFLUX_HOST>:8086/api/v2/write?bucket=<INFLUX_BUCKET>&org=<INFLUX_ORG>&precision=s
@@ -97,9 +97,62 @@ http_interactions:
       X-Influxdb-Version:
       - v2.4.0
       Date:
-      - Wed, 05 Oct 2022 08:53:56 GMT
+      - Wed, 05 Oct 2022 09:05:47 GMT
     body:
       encoding: UTF-8
       string: ''
-  recorded_at: Wed, 05 Oct 2022 08:53:56 GMT
+  recorded_at: Wed, 05 Oct 2022 09:05:47 GMT
+- request:
+    method: post
+    uri: http://<INFLUX_HOST>:8086/api/v2/write?bucket=<INFLUX_BUCKET>&org=<INFLUX_ORG>&precision=s
+    body:
+      encoding: UTF-8
+      string: |-
+        SENEC bat_charge_current=15.26,bat_power_minus=0i,bat_power_plus=908i,bat_voltage=56.040001,grid_power_minus=12i,grid_power_plus=6i,house_power=434i,inverter_power=1359i 1664194389
+        SENEC bat_charge_current=16.870001,bat_power_minus=290i,bat_power_plus=516i,bat_voltage=56.032001,grid_power_minus=35i,grid_power_plus=164i,house_power=1225i,inverter_power=1289i 1664194689
+        SENEC bat_charge_current=19.290001,bat_power_minus=0i,bat_power_plus=1004i,bat_voltage=56.227001,grid_power_minus=23i,grid_power_plus=3i,house_power=448i,inverter_power=1490i 1664194991
+        SENEC bat_charge_current=22.67,bat_power_minus=0i,bat_power_plus=1160i,bat_voltage=56.418999,grid_power_minus=12i,grid_power_plus=0i,house_power=418i,inverter_power=1601i 1664195294
+        SENEC bat_charge_current=2.45,bat_power_minus=0i,bat_power_plus=957i,bat_voltage=56.362999,grid_power_minus=93i,grid_power_plus=81i,house_power=827i,inverter_power=1769i 1664195596
+        SENEC bat_charge_current=22.08,bat_power_minus=0i,bat_power_plus=920i,bat_voltage=56.645,grid_power_minus=106i,grid_power_plus=79i,house_power=800i,inverter_power=1764i 1664195895
+        SENEC bat_charge_current=8.92,bat_power_minus=15i,bat_power_plus=893i,bat_voltage=56.636002,grid_power_minus=58i,grid_power_plus=105i,house_power=664i,inverter_power=1467i 1664196197
+        SENEC bat_charge_current=14.16,bat_power_minus=67i,bat_power_plus=570i,bat_voltage=56.726002,grid_power_minus=70i,grid_power_plus=137i,house_power=797i,inverter_power=1257i 1664196499
+        SENEC bat_charge_current=15.49,bat_power_minus=99i,bat_power_plus=559i,bat_voltage=56.778999,grid_power_minus=70i,grid_power_plus=64i,house_power=669i,inverter_power=1141i 1664196801
+        SENEC bat_charge_current=10.43,bat_power_minus=0i,bat_power_plus=812i,bat_voltage=56.856998,grid_power_minus=23i,grid_power_plus=9i,house_power=314i,inverter_power=1118i 1664197103
+        SENEC bat_charge_current=10.48,bat_power_minus=131i,bat_power_plus=437i,bat_voltage=56.861,grid_power_minus=58i,grid_power_plus=55i,house_power=623i,inverter_power=955i 1664197405
+        SENEC bat_charge_current=7.92,bat_power_minus=0i,bat_power_plus=530i,bat_voltage=56.896999,grid_power_minus=12i,grid_power_plus=3i,house_power=316i,inverter_power=844i 1664197705
+        SENEC bat_charge_current=2.76,bat_power_minus=0i,bat_power_plus=299i,bat_voltage=56.868999,grid_power_minus=12i,grid_power_plus=6i,house_power=348i,inverter_power=673i 1664198008
+        SENEC bat_charge_current=0.86,bat_power_minus=0i,bat_power_plus=73i,bat_voltage=56.847,grid_power_minus=23i,grid_power_plus=6i,house_power=362i,inverter_power=444i 1664198309
+        SENEC bat_charge_current=2.24,bat_power_minus=0i,bat_power_plus=78i,bat_voltage=56.859001,grid_power_minus=12i,grid_power_plus=6i,house_power=382i,inverter_power=439i 1664198613
+        SENEC bat_charge_current=4.05,bat_power_minus=0i,bat_power_plus=172i,bat_voltage=56.894001,grid_power_minus=12i,grid_power_plus=3i,house_power=385i,inverter_power=584i 1664198914
+        SENEC bat_charge_current=8.68,bat_power_minus=1404i,bat_power_plus=93i,bat_voltage=56.735001,grid_power_minus=47i,grid_power_plus=47i,house_power=2126i,inverter_power=818i 1664199215
+        SENEC bat_charge_current=11.48,bat_power_minus=0i,bat_power_plus=588i,bat_voltage=56.874001,grid_power_minus=23i,grid_power_plus=3i,house_power=460i,inverter_power=1071i 1664199517
+        SENEC bat_charge_current=9.76,bat_power_minus=0i,bat_power_plus=632i,bat_voltage=56.943001,grid_power_minus=12i,grid_power_plus=6i,house_power=448i,inverter_power=1094i 1664199819
+        SENEC bat_charge_current=-30.379999,bat_power_minus=960i,bat_power_plus=215i,bat_voltage=56.473999,grid_power_minus=12i,grid_power_plus=41i,house_power=1746i,inverter_power=975i 1664200122
+        SENEC bat_charge_current=-27.870001,bat_power_minus=1612i,bat_power_plus=0i,bat_voltage=56.278,grid_power_minus=12i,grid_power_plus=3i,house_power=2605i,inverter_power=981i 1664200423
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - influxdb-client-ruby/2.7.0
+      Authorization:
+      - Token <INFLUX_TOKEN>
+      Content-Type:
+      - text/plain
+  response:
+    status:
+      code: 204
+      message: No Content
+    headers:
+      X-Influxdb-Build:
+      - OSS
+      X-Influxdb-Version:
+      - v2.4.0
+      Date:
+      - Wed, 05 Oct 2022 09:05:47 GMT
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Wed, 05 Oct 2022 09:05:47 GMT
 recorded_with: VCR 6.1.0
