@@ -25,6 +25,14 @@ docker run -it --rm \
 This imports all CSV files from the folder `/folder/with/csv-files` and pushes them to your InfluxDB.
 The process is idempotent, so you can run it multiple times without any harm.
 
+Note: If the import is performed after SOLECTRUS has already been used, caching issues may occur, meaning that older periods will not be displayed. In this case, the Redis cache must be flushed once after the import:
+
+```bash
+docker exec -it solectrus-redis-1 redis-cli FLUSHALL
+```
+
+(Name of the Redis container may vary, see `docker ps`)
+
 ## License
 
 Copyright (c) 2020-2023 Georg Ledermann, released under the MIT License
