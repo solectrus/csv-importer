@@ -7,22 +7,27 @@ Import CSV data downloaded from mein-senec.de and push it to InfluxDB.
 
 ## Requirements
 
+- SOLECTRUS installed and running
 - CSV files downloaded from mein-senec.de
-- Connection to your InfluxDB
-- Docker
 
 ## Usage
 
-Prepare an `.env` file (like `.env.example`) and place CSV files into a folder of your choice. Then do:
+- Login to your host machine where SOLECTRUS is running
+- CD into the folder where the .env of SOLECTRUS file is located
+- Create a folder `csv` and put the CSV files into it (no subfolders inside!)
+- Run the following command:
 
 ```bash
 docker run -it --rm \
            --env-file .env \
-           -v /folder/with/csv-files:/data \
+           --volume=./csv:/data \
+           --network=solectrus_default \
            ghcr.io/solectrus/senec-importer
 ```
 
-This imports all CSV files from the folder `/folder/with/csv-files` and pushes them to your InfluxDB.
+(Name of the network may vary, see `docker network ls`)
+
+This imports all CSV files from the folder `./csv` and pushes them to your InfluxDB.
 The process is idempotent, so you can run it multiple times without any harm.
 
 Note: If the import is performed after SOLECTRUS has already been used, caching issues may occur, meaning that older periods will not be displayed. In this case, the Redis cache must be flushed once after the import:
