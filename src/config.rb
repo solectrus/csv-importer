@@ -43,7 +43,8 @@ Config =
           influx_host: ENV.fetch('INFLUX_HOST'),
           influx_schema: ENV.fetch('INFLUX_SCHEMA', 'http'),
           influx_port: ENV.fetch('INFLUX_PORT', '8086'),
-          influx_token: ENV.fetch('INFLUX_TOKEN'),
+          influx_token:
+            ENV.fetch('INFLUX_TOKEN_WRITE', nil) || ENV.fetch('INFLUX_TOKEN'),
           influx_org: ENV.fetch('INFLUX_ORG'),
           influx_bucket: ENV.fetch('INFLUX_BUCKET'),
           folder: ENV.fetch('FOLDER', '/data'),

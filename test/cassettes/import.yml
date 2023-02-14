@@ -20,9 +20,9 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - influxdb-client-ruby/2.7.0
+      - influxdb-client-ruby/2.9.0
       Authorization:
-      - Token <INFLUX_TOKEN>
+      - Token <INFLUX_TOKEN_WRITE>
       Content-Type:
       - text/plain
   response:
@@ -33,13 +33,13 @@ http_interactions:
       X-Influxdb-Build:
       - OSS
       X-Influxdb-Version:
-      - v2.4.0
+      - v2.6.1
       Date:
-      - Wed, 05 Oct 2022 09:05:47 GMT
+      - Tue, 14 Feb 2023 15:27:49 GMT
     body:
       encoding: UTF-8
       string: ''
-  recorded_at: Wed, 05 Oct 2022 09:05:47 GMT
+  recorded_at: Tue, 14 Feb 2023 15:27:49 GMT
 - request:
     method: post
     uri: http://<INFLUX_HOST>:8086/api/v2/write?bucket=<INFLUX_BUCKET>&org=<INFLUX_ORG>&precision=s
@@ -82,9 +82,9 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - influxdb-client-ruby/2.7.0
+      - influxdb-client-ruby/2.9.0
       Authorization:
-      - Token <INFLUX_TOKEN>
+      - Token <INFLUX_TOKEN_WRITE>
       Content-Type:
       - text/plain
   response:
@@ -95,13 +95,13 @@ http_interactions:
       X-Influxdb-Build:
       - OSS
       X-Influxdb-Version:
-      - v2.4.0
+      - v2.6.1
       Date:
-      - Wed, 05 Oct 2022 09:05:47 GMT
+      - Tue, 14 Feb 2023 15:27:49 GMT
     body:
       encoding: UTF-8
       string: ''
-  recorded_at: Wed, 05 Oct 2022 09:05:47 GMT
+  recorded_at: Tue, 14 Feb 2023 15:27:49 GMT
 - request:
     method: post
     uri: http://<INFLUX_HOST>:8086/api/v2/write?bucket=<INFLUX_BUCKET>&org=<INFLUX_ORG>&precision=s
@@ -135,9 +135,9 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - influxdb-client-ruby/2.7.0
+      - influxdb-client-ruby/2.9.0
       Authorization:
-      - Token <INFLUX_TOKEN>
+      - Token <INFLUX_TOKEN_WRITE>
       Content-Type:
       - text/plain
   response:
@@ -148,11 +148,11 @@ http_interactions:
       X-Influxdb-Build:
       - OSS
       X-Influxdb-Version:
-      - v2.4.0
+      - v2.6.1
       Date:
-      - Wed, 05 Oct 2022 09:05:47 GMT
+      - Tue, 14 Feb 2023 15:27:49 GMT
     body:
       encoding: UTF-8
       string: ''
-  recorded_at: Wed, 05 Oct 2022 09:05:47 GMT
+  recorded_at: Tue, 14 Feb 2023 15:27:49 GMT
 recorded_with: VCR 6.1.0
