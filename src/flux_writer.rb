@@ -42,6 +42,9 @@ class FluxWriter
         config.influx_token,
         use_ssl: config.influx_schema == 'https',
         precision: InfluxDB2::WritePrecision::SECOND,
+        open_timeout: config.influx_open_timeout,
+        read_timeout: config.influx_read_timeout,
+        write_timeout: config.influx_write_timeout,
       )
   end
 

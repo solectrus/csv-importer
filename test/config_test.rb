@@ -29,4 +29,13 @@ class ConfigTest < Minitest::Test
     assert_equal 'solectrus', config.influx_org
     assert_equal 'SENEC', config.influx_bucket
   end
+
+  def test_config_from_env_with_defaults
+    config = Config.from_env
+
+    assert_equal 30, config.influx_open_timeout
+    assert_equal 30, config.influx_read_timeout
+    assert_equal 30, config.influx_write_timeout
+    assert_equal '8086', config.influx_port
+  end
 end

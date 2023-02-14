@@ -9,6 +9,9 @@ Config =
     :influx_token,
     :influx_org,
     :influx_bucket,
+    :influx_open_timeout,
+    :influx_read_timeout,
+    :influx_write_timeout,
     :folder,
     keyword_init: true,
   ) do
@@ -47,6 +50,9 @@ Config =
             ENV.fetch('INFLUX_TOKEN_WRITE', nil) || ENV.fetch('INFLUX_TOKEN'),
           influx_org: ENV.fetch('INFLUX_ORG'),
           influx_bucket: ENV.fetch('INFLUX_BUCKET'),
+          influx_open_timeout: ENV.fetch('INFLUX_OPEN_TIMEOUT', 30).to_i,
+          influx_read_timeout: ENV.fetch('INFLUX_READ_TIMEOUT', 30).to_i,
+          influx_write_timeout: ENV.fetch('INFLUX_WRITE_TIMEOUT', 30).to_i,
           folder: ENV.fetch('FOLDER', '/data'),
         }.merge(options),
       )
