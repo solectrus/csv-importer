@@ -38,6 +38,21 @@ docker exec -it solectrus-redis-1 redis-cli FLUSHALL
 
 (Name of the Redis container may vary, see `docker ps`)
 
+## ENV variables
+
+| Variable                               | Description                                     | Default |
+| -------------------------------------- | ----------------------------------------------- | ------- |
+| `INFLUX_HOST`                          | Hostname of InfluxDB                            |         |
+| `INFLUX_SCHEMA`                        | Schema (http/https) of InfluxDB                 | `http`  |
+| `INFLUX_PORT`                          | Port of InfluxDB                                | `8086`  |
+| `INFLUX_TOKEN_WRITE` or `INFLUX_TOKEN` | Token for InfluxDB (requires write permissions) |         |
+| `INFLUX_ORG`                           | Organization for InfluxDB                       |         |
+| `INFLUX_BUCKET`                        | Bucket for InfluxDB                             |         |
+| `INFLUX_OPEN_TIMEOUT`                  | Timeout for InfluxDB connection (in seconds)    | `30`    |
+| `INFLUX_READ_TIMEOUT`                  | Timeout for InfluxDB read (in seconds)          | `30`    |
+| `INFLUX_WRITE_TIMEOUT`                 | Timeout for InfluxDB write (in seconds)         | `30`    |
+| `FOLDER`                               | Folder where CSV files are located              | `/data` |
+
 ## License
 
 Copyright (c) 2020-2023 Georg Ledermann, released under the MIT License
