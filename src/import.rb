@@ -40,6 +40,10 @@ class Import
 
     FluxWriter.push(config:, records:)
     puts "#{count} points imported"
+    return unless config.import_pause.positive?
+
+    puts "Pausing for #{config.import_pause} seconds..."
+    sleep(config.import_pause)
   end
 
   private

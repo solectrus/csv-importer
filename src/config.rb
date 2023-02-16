@@ -13,6 +13,7 @@ Config =
     :influx_read_timeout,
     :influx_write_timeout,
     :folder,
+    :import_pause,
     keyword_init: true,
   ) do
     def initialize(*options)
@@ -54,6 +55,7 @@ Config =
           influx_read_timeout: ENV.fetch('INFLUX_READ_TIMEOUT', 30).to_i,
           influx_write_timeout: ENV.fetch('INFLUX_WRITE_TIMEOUT', 30).to_i,
           folder: ENV.fetch('FOLDER', '/data'),
+          import_pause: ENV.fetch('IMPORT_PAUSE', 0).to_i,
         }.merge(options),
       )
     end

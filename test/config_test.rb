@@ -37,5 +37,6 @@ class ConfigTest < Minitest::Test
     assert_equal 30, config.influx_read_timeout
     assert_equal 30, config.influx_write_timeout
     assert_equal '8086', config.influx_port
+    assert_equal 0, config.import_pause
   end
 end

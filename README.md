@@ -52,6 +52,7 @@ docker exec -it solectrus-redis-1 redis-cli FLUSHALL
 | `INFLUX_READ_TIMEOUT`                  | Timeout for InfluxDB read (in seconds)          | `30`    |
 | `INFLUX_WRITE_TIMEOUT`                 | Timeout for InfluxDB write (in seconds)         | `30`    |
 | `FOLDER`                               | Folder where CSV files are located              | `/data` |
+| `IMPORT_PAUSE`                         | Pause after each imported file (in seconds)     | `0`     |
 
 ## License
 
