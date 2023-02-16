@@ -4,11 +4,11 @@ class Import
   def self.run(config:)
     import = new(config:)
 
-    puts "Importing data from #{config.folder} ..."
+    puts "Importing data from #{config.import_folder} ..."
 
     count = 0
     Dir
-      .glob("#{config.folder}/*.csv")
+      .glob("#{config.import_folder}/*.csv")
       .each do |filename|
         import.process(filename)
         count += 1
