@@ -1,4 +1,5 @@
 require_relative 'flux_writer'
+require_relative 'solectrus_record'
 
 class Import
   def self.run(config:)
@@ -33,7 +34,7 @@ class Import
         .map do |row|
           count += 1
 
-          record(row)
+          SolectrusRecord.new(row).to_h
         end
 
     return unless count.positive?
@@ -44,53 +45,5 @@ class Import
 
     puts "Pausing for #{config.import_pause} seconds..."
     sleep(config.import_pause)
-  end
-
-  private
-
-  # KiloWatt
-  def parse_kw(row, *columns)
-    (cell(row, *columns).sub(',', '.').to_f * 1_000).round
-  end
-
-  # Ampere
-  def parse_a(row, *columns)
-    cell(row, *columns).sub(',', '.').to_f
-  end
-
-  # Volt
-  def parse_v(row, *columns)
-    cell(row, *columns).sub(',', '.').to_f
-  end
-
-  def cell(row, *columns)
-    # Find column with values (can have different names)
-    column = columns.find { |col| row[col] }
-
-    row[column]
-  end
-
-  def parse_time(row, string)
-    Time.parse("#{row[string]} CET").to_i
-  end
-
-  def record(row)
-    {
-      name: 'SENEC',
-      time: parse_time(row, 'Uhrzeit'),
-      fields: {
-        inverter_power: parse_kw(row, 'Stromerzeugung [kW]'),
-        house_power: parse_kw(row, 'Stromverbrauch [kW]'),
-        bat_power_plus:
-          parse_kw(row, 'Akkubeladung [kW]', 'Akku-Beladung [kW]'),
-        bat_power_minus:
-          parse_kw(row, 'Akkuentnahme [kW]', 'Akku-Entnahme [kW]'),
-        bat_fuel_charge: nil,
-        bat_charge_current: parse_a(row, 'Akku Stromstärke [A]'),
-        bat_voltage: parse_v(row, 'Akku Spannung [V]'),
-        grid_power_plus: parse_kw(row, 'Netzbezug [kW]'),
-        grid_power_minus: parse_kw(row, 'Netzeinspeisung [kW]'),
-      },
-    }
   end
 end
