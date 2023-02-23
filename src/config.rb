@@ -26,21 +26,6 @@ Config =
       "#{influx_schema}://#{influx_host}:#{influx_port}"
     end
 
-    private
-
-    def validate_interval!(interval)
-      return if interval.is_a?(Integer) && interval.positive?
-
-      throw "Interval is invalid: #{interval}"
-    end
-
-    def validate_url!(url)
-      uri = URI.parse(url)
-      return if uri.is_a?(URI::HTTP) && !uri.host.nil?
-
-      throw "URL is invalid: #{url}"
-    end
-
     def self.from_env(options = {})
       new(
         {
@@ -58,5 +43,20 @@ Config =
           import_folder: ENV.fetch('IMPORT_FOLDER', '/data'),
         }.merge(options),
       )
+    end
+
+    private
+
+    def validate_interval!(interval)
+      return if interval.is_a?(Integer) && interval.positive?
+
+      throw "Interval is invalid: #{interval}"
+    end
+
+    def validate_url!(url)
+      uri = URI.parse(url)
+      return if uri.is_a?(URI::HTTP) && !uri.host.nil?
+
+      throw "URL is invalid: #{url}"
     end
   end

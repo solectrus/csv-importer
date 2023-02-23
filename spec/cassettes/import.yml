@@ -35,11 +35,11 @@ http_interactions:
       X-Influxdb-Version:
       - v2.6.1
       Date:
-      - Tue, 14 Feb 2023 15:27:49 GMT
+      - Thu, 23 Feb 2023 06:39:39 GMT
     body:
       encoding: UTF-8
       string: ''
-  recorded_at: Tue, 14 Feb 2023 15:27:49 GMT
+  recorded_at: Thu, 23 Feb 2023 06:39:39 GMT
 - request:
     method: post
     uri: http://<INFLUX_HOST>:8086/api/v2/write?bucket=<INFLUX_BUCKET>&org=<INFLUX_ORG>&precision=s
@@ -97,11 +97,11 @@ http_interactions:
       X-Influxdb-Version:
       - v2.6.1
       Date:
-      - Tue, 14 Feb 2023 15:27:49 GMT
+      - Thu, 23 Feb 2023 06:39:39 GMT
     body:
       encoding: UTF-8
       string: ''
-  recorded_at: Tue, 14 Feb 2023 15:27:49 GMT
+  recorded_at: Thu, 23 Feb 2023 06:39:39 GMT
 - request:
     method: post
     uri: http://<INFLUX_HOST>:8086/api/v2/write?bucket=<INFLUX_BUCKET>&org=<INFLUX_ORG>&precision=s
@@ -150,9 +150,9 @@ http_interactions:
       X-Influxdb-Version:
       - v2.6.1
       Date:
-      - Tue, 14 Feb 2023 15:27:49 GMT
+      - Thu, 23 Feb 2023 06:39:39 GMT
     body:
       encoding: UTF-8
       string: ''
-  recorded_at: Tue, 14 Feb 2023 15:27:49 GMT
+  recorded_at: Thu, 23 Feb 2023 06:39:39 GMT
 recorded_with: VCR 6.1.0

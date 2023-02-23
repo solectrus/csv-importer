@@ -27,7 +27,7 @@ jobs:
         run: bundle exec rubocop
 
       - name: Run tests
-        run: bundle exec rake test
+        run: bundle exec rake spec
 
   build:
     runs-on: ubuntu-latest

@@ -16,6 +16,8 @@ class Import
       end
 
     puts "Imported #{count} files\n\n"
+
+    count
   end
 
   def initialize(config:)
