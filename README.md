@@ -14,7 +14,7 @@ Import CSV data downloaded from mein-senec.de and push it to InfluxDB.
 
 - Login to your host machine where SOLECTRUS is running
 - CD into the folder where the .env of SOLECTRUS file is located
-- Create a folder `csv` and put the CSV files into it (no subfolders inside!)
+- Create a folder `csv` and put the CSV files into it (subfolders allowed)
 - Run the following command:
 
 ```bash

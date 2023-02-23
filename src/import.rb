@@ -9,7 +9,7 @@ class Import
 
     count = 0
     Dir
-      .glob("#{config.import_folder}/*.csv")
+      .glob("#{config.import_folder}/**/*.csv")
       .each do |filename|
         import.process(filename)
         count += 1
