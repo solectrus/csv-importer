@@ -1,11 +1,12 @@
 require:
-  - rubocop-minitest
+  - rubocop-rspec
   - rubocop-rake
 
 AllCops:
   TargetRubyVersion: 3.2
   Exclude:
     - Gemfile
+    - spec/spec_helper.rb
     - 'vendor/**/*'
   NewCops: enable
 
@@ -21,6 +22,12 @@ Style/TrailingCommaInArguments:
 Style/TrailingCommaInHashLiteral:
   EnforcedStyleForMultiline: consistent_comma
 
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: consistent_comma
+
+Layout/LineEndStringConcatenationIndentation:
+  Enabled: false
+
 Layout/MultilineMethodCallIndentation:
   EnforcedStyle: indented
 
@@ -29,6 +36,3 @@ Metrics/MethodLength:
 
 Metrics/AbcSize:
   Max: 20
-
-Minitest/MultipleAssertions:
-  Max: 10

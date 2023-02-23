@@ -7,11 +7,8 @@ gem 'dotenv'
 gem 'influxdb-client'
 
 group :development, :test do
-  # minitest provides a complete suite of testing facilities supporting TDD, BDD, mocking, and benchmarking (https://github.com/seattlerb/minitest)
-  gem 'minitest'
-
-  # Minitest plugin to suppress output from tests. (https://github.com/Shopify/minitest-silence)
-  gem 'minitest-silence', require: false
+  # rspec-3.12.0 (http://github.com/rspec)
+  gem 'rspec'
 
   # Rake is a Make-like program implemented in Ruby (https://github.com/ruby/rake)
   gem 'rake'
@@ -19,8 +16,8 @@ group :development, :test do
   # Automatic Ruby code style checking tool. (https://github.com/rubocop/rubocop)
   gem 'rubocop'
 
-  # Automatic Minitest code style checking tool.
-  gem 'rubocop-minitest'
+  # Code style checking for RSpec files (https://github.com/rubocop/rubocop-rspec)
+  gem 'rubocop-rspec'
 
   # A RuboCop plugin for Rake (https://github.com/rubocop/rubocop-rake)
   gem 'rubocop-rake'
