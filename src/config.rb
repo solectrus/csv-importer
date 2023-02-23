@@ -1,5 +1,4 @@
 require 'uri'
-require 'dotenv/load'
 
 Config =
   Struct.new(
