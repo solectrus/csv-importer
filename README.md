@@ -54,6 +54,23 @@ docker exec -it solectrus-redis-1 redis-cli FLUSHALL
 | `IMPORT_FOLDER`                        | Folder where CSV files are located              | `/data` |
 | `IMPORT_PAUSE`                         | Pause after each imported file (in seconds)     | `0`     |
 
+## Dealing with missing wallbox measurements
+
+The CSV data from mein-senec.de is not complete, there are no measurements for the wallbox. To get around this, wallbox charges are **estimated** using the following formula:
+
+```
+wallbox_charge_power =   inverter_power (Stromerzeugung)
+                       + grid_power_plus (Netzbezug)
+                       + bat_power_minus (Akkuentnahme)
+                       - grid_power_minus (Netzeinspeisung)
+                       - house_power (Stromverbrauch)
+                       - bat_power_plus (Akkubeladung)
+```
+
+Please note that this method appears to be ineffective for processing CSV files that were created from July 2022 onwards. This is because wallbox charges are now being included in the overall house consumption since that time. Therefore, it seems that there is currently no way to import wallbox measurements.
+
+The [senec-collector](https://github.com/solectrus/senec-collector) does not have this problem, as it obtains the wallbox measurements directly.
+
 ## License
 
 Copyright (c) 2020-2023 Georg Ledermann, released under the MIT License

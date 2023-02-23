@@ -6,14 +6,14 @@ http_interactions:
     body:
       encoding: UTF-8
       string: |-
-        SENEC bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=0i,grid_power_plus=198i,house_power=199i,inverter_power=0i 1647213193
-        SENEC bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=0i,grid_power_plus=212i,house_power=211i,inverter_power=0i 1647213493
-        SENEC bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=0i,grid_power_plus=270i,house_power=270i,inverter_power=0i 1647213793
-        SENEC bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=0i,grid_power_plus=259i,house_power=258i,inverter_power=0i 1647214093
-        SENEC bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=0i,grid_power_plus=290i,house_power=293i,inverter_power=0i 1647214393
-        SENEC bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=0i,grid_power_plus=279i,house_power=279i,inverter_power=0i 1647214695
-        SENEC bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=0i,grid_power_plus=266i,house_power=262i,inverter_power=0i 1647214997
-        SENEC bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=0i,grid_power_plus=260i,house_power=268i,inverter_power=0i 1647215299
+        SENEC bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=0i,grid_power_plus=198i,house_power=199i,inverter_power=0i,wallbox_charge_power=0i 1647213193
+        SENEC bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=0i,grid_power_plus=212i,house_power=211i,inverter_power=0i,wallbox_charge_power=0i 1647213493
+        SENEC bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=0i,grid_power_plus=270i,house_power=270i,inverter_power=0i,wallbox_charge_power=0i 1647213793
+        SENEC bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=0i,grid_power_plus=259i,house_power=258i,inverter_power=0i,wallbox_charge_power=0i 1647214093
+        SENEC bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=0i,grid_power_plus=290i,house_power=293i,inverter_power=0i,wallbox_charge_power=0i 1647214393
+        SENEC bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=0i,grid_power_plus=279i,house_power=279i,inverter_power=0i,wallbox_charge_power=0i 1647214695
+        SENEC bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=0i,grid_power_plus=266i,house_power=262i,inverter_power=0i,wallbox_charge_power=0i 1647214997
+        SENEC bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=0i,grid_power_plus=260i,house_power=268i,inverter_power=0i,wallbox_charge_power=0i 1647215299
     headers:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -35,47 +35,47 @@ http_interactions:
       X-Influxdb-Version:
       - v2.6.1
       Date:
-      - Thu, 23 Feb 2023 06:39:39 GMT
+      - Thu, 23 Feb 2023 06:40:41 GMT
     body:
       encoding: UTF-8
       string: ''
-  recorded_at: Thu, 23 Feb 2023 06:39:39 GMT
+  recorded_at: Thu, 23 Feb 2023 06:40:41 GMT
 - request:
     method: post
     uri: http://<INFLUX_HOST>:8086/api/v2/write?bucket=<INFLUX_BUCKET>&org=<INFLUX_ORG>&precision=s
     body:
       encoding: UTF-8
       string: |-
-        SENEC bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=0i,grid_power_plus=210i,house_power=215i,inverter_power=0i 1647817550
-        SENEC bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=0i,grid_power_plus=222i,house_power=222i,inverter_power=0i 1647817851
-        SENEC bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=0i,grid_power_plus=216i,house_power=209i,inverter_power=0i 1647818154
-        SENEC bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=0i,grid_power_plus=202i,house_power=210i,inverter_power=0i 1647818456
-        SENEC bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=0i,grid_power_plus=266i,house_power=274i,inverter_power=0i 1647821476
-        SENEC bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=0i,grid_power_plus=268i,house_power=268i,inverter_power=0i 1647821778
-        SENEC bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=0i,grid_power_plus=285i,house_power=279i,inverter_power=0i 1647822080
-        SENEC bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=419i,grid_power_plus=0i,house_power=180i,inverter_power=7159i 1647861026
-        SENEC bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=435i,grid_power_plus=1i,house_power=180i,inverter_power=7147i 1647861329
-        SENEC bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=450i,grid_power_plus=1i,house_power=187i,inverter_power=7230i 1647861630
-        SENEC bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=227i,grid_power_plus=965i,house_power=1606i,inverter_power=7264i 1647861932
-        SENEC bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=81i,grid_power_plus=936i,house_power=1362i,inverter_power=7392i 1647862234
-        SENEC bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=2183i,grid_power_plus=0i,house_power=0i,inverter_power=7334i 1647862536
-        SENEC bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=1554i,grid_power_plus=0i,house_power=477i,inverter_power=7334i 1647862838
-        SENEC bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=0i,grid_power_plus=2149i,house_power=2264i,inverter_power=7322i 1647863140
-        SENEC bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=1222i,grid_power_plus=99i,house_power=582i,inverter_power=7066i 1647863442
-        SENEC bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=1955i,grid_power_plus=0i,house_power=0i,inverter_power=7147i 1647863745
-        SENEC bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=841i,grid_power_plus=1i,house_power=228i,inverter_power=7312i 1647864046
-        SENEC bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=76i,grid_power_plus=1179i,house_power=1560i,inverter_power=7322i 1647864348
-        SENEC bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=0i,grid_power_plus=1987i,house_power=2315i,inverter_power=7182i 1647864651
-        SENEC bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=280i,grid_power_plus=1667i,house_power=2973i,inverter_power=7171i 1647864952
-        SENEC bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=743i,grid_power_plus=618i,house_power=1764i,inverter_power=7403i 1647865255
-        SENEC bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=1063i,grid_power_plus=175i,house_power=1069i,inverter_power=7417i 1647865556
-        SENEC bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=1513i,grid_power_plus=60i,house_power=471i,inverter_power=7287i 1647865858
-        SENEC bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=801i,grid_power_plus=695i,house_power=423i,inverter_power=5743i 1647866161
-        SENEC bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=47i,grid_power_plus=2372i,house_power=58i,inverter_power=4144i 1647866463
-        SENEC bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=1051i,grid_power_plus=437i,house_power=0i,inverter_power=5501i 1647866764
-        SENEC bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=2625i,grid_power_plus=0i,house_power=0i,inverter_power=7602i 1647867066
-        SENEC bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=2338i,grid_power_plus=0i,house_power=0i,inverter_power=7321i 1647867369
-        SENEC bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=58i,grid_power_plus=1682i,house_power=1676i,inverter_power=7370i 1647867670
+        SENEC bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=0i,grid_power_plus=210i,house_power=215i,inverter_power=0i,wallbox_charge_power=0i 1647817550
+        SENEC bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=0i,grid_power_plus=222i,house_power=222i,inverter_power=0i,wallbox_charge_power=0i 1647817851
+        SENEC bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=0i,grid_power_plus=216i,house_power=209i,inverter_power=0i,wallbox_charge_power=0i 1647818154
+        SENEC bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=0i,grid_power_plus=202i,house_power=210i,inverter_power=0i,wallbox_charge_power=0i 1647818456
+        SENEC bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=0i,grid_power_plus=266i,house_power=274i,inverter_power=0i,wallbox_charge_power=0i 1647821476
+        SENEC bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=0i,grid_power_plus=268i,house_power=268i,inverter_power=0i,wallbox_charge_power=0i 1647821778
+        SENEC bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=0i,grid_power_plus=285i,house_power=279i,inverter_power=0i,wallbox_charge_power=0i 1647822080
+        SENEC bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=419i,grid_power_plus=0i,house_power=180i,inverter_power=7159i,wallbox_charge_power=6560i 1647861026
+        SENEC bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=435i,grid_power_plus=1i,house_power=180i,inverter_power=7147i,wallbox_charge_power=6533i 1647861329
+        SENEC bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=450i,grid_power_plus=1i,house_power=187i,inverter_power=7230i,wallbox_charge_power=6594i 1647861630
+        SENEC bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=227i,grid_power_plus=965i,house_power=1606i,inverter_power=7264i,wallbox_charge_power=6396i 1647861932
+        SENEC bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=81i,grid_power_plus=936i,house_power=1362i,inverter_power=7392i,wallbox_charge_power=6885i 1647862234
+        SENEC bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=2183i,grid_power_plus=0i,house_power=0i,inverter_power=7334i,wallbox_charge_power=5151i 1647862536
+        SENEC bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=1554i,grid_power_plus=0i,house_power=477i,inverter_power=7334i,wallbox_charge_power=5303i 1647862838
+        SENEC bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=0i,grid_power_plus=2149i,house_power=2264i,inverter_power=7322i,wallbox_charge_power=7207i 1647863140
+        SENEC bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=1222i,grid_power_plus=99i,house_power=582i,inverter_power=7066i,wallbox_charge_power=5361i 1647863442
+        SENEC bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=1955i,grid_power_plus=0i,house_power=0i,inverter_power=7147i,wallbox_charge_power=5192i 1647863745
+        SENEC bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=841i,grid_power_plus=1i,house_power=228i,inverter_power=7312i,wallbox_charge_power=6244i 1647864046
+        SENEC bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=76i,grid_power_plus=1179i,house_power=1560i,inverter_power=7322i,wallbox_charge_power=6865i 1647864348
+        SENEC bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=0i,grid_power_plus=1987i,house_power=2315i,inverter_power=7182i,wallbox_charge_power=6854i 1647864651
+        SENEC bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=280i,grid_power_plus=1667i,house_power=2973i,inverter_power=7171i,wallbox_charge_power=5585i 1647864952
+        SENEC bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=743i,grid_power_plus=618i,house_power=1764i,inverter_power=7403i,wallbox_charge_power=5514i 1647865255
+        SENEC bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=1063i,grid_power_plus=175i,house_power=1069i,inverter_power=7417i,wallbox_charge_power=5460i 1647865556
+        SENEC bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=1513i,grid_power_plus=60i,house_power=471i,inverter_power=7287i,wallbox_charge_power=5363i 1647865858
+        SENEC bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=801i,grid_power_plus=695i,house_power=423i,inverter_power=5743i,wallbox_charge_power=5214i 1647866161
+        SENEC bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=47i,grid_power_plus=2372i,house_power=58i,inverter_power=4144i,wallbox_charge_power=6411i 1647866463
+        SENEC bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=1051i,grid_power_plus=437i,house_power=0i,inverter_power=5501i,wallbox_charge_power=4887i 1647866764
+        SENEC bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=2625i,grid_power_plus=0i,house_power=0i,inverter_power=7602i,wallbox_charge_power=4977i 1647867066
+        SENEC bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=2338i,grid_power_plus=0i,house_power=0i,inverter_power=7321i,wallbox_charge_power=4983i 1647867369
+        SENEC bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=58i,grid_power_plus=1682i,house_power=1676i,inverter_power=7370i,wallbox_charge_power=7318i 1647867670
     headers:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -97,38 +97,38 @@ http_interactions:
       X-Influxdb-Version:
       - v2.6.1
       Date:
-      - Thu, 23 Feb 2023 06:39:39 GMT
+      - Thu, 23 Feb 2023 06:40:41 GMT
     body:
       encoding: UTF-8
       string: ''
-  recorded_at: Thu, 23 Feb 2023 06:39:39 GMT
+  recorded_at: Thu, 23 Feb 2023 06:40:41 GMT
 - request:
     method: post
     uri: http://<INFLUX_HOST>:8086/api/v2/write?bucket=<INFLUX_BUCKET>&org=<INFLUX_ORG>&precision=s
     body:
       encoding: UTF-8
       string: |-
-        SENEC bat_charge_current=15.26,bat_power_minus=0i,bat_power_plus=908i,bat_voltage=56.040001,grid_power_minus=12i,grid_power_plus=6i,house_power=434i,inverter_power=1359i 1664194389
-        SENEC bat_charge_current=16.870001,bat_power_minus=290i,bat_power_plus=516i,bat_voltage=56.032001,grid_power_minus=35i,grid_power_plus=164i,house_power=1225i,inverter_power=1289i 1664194689
-        SENEC bat_charge_current=19.290001,bat_power_minus=0i,bat_power_plus=1004i,bat_voltage=56.227001,grid_power_minus=23i,grid_power_plus=3i,house_power=448i,inverter_power=1490i 1664194991
-        SENEC bat_charge_current=22.67,bat_power_minus=0i,bat_power_plus=1160i,bat_voltage=56.418999,grid_power_minus=12i,grid_power_plus=0i,house_power=418i,inverter_power=1601i 1664195294
-        SENEC bat_charge_current=2.45,bat_power_minus=0i,bat_power_plus=957i,bat_voltage=56.362999,grid_power_minus=93i,grid_power_plus=81i,house_power=827i,inverter_power=1769i 1664195596
-        SENEC bat_charge_current=22.08,bat_power_minus=0i,bat_power_plus=920i,bat_voltage=56.645,grid_power_minus=106i,grid_power_plus=79i,house_power=800i,inverter_power=1764i 1664195895
-        SENEC bat_charge_current=8.92,bat_power_minus=15i,bat_power_plus=893i,bat_voltage=56.636002,grid_power_minus=58i,grid_power_plus=105i,house_power=664i,inverter_power=1467i 1664196197
-        SENEC bat_charge_current=14.16,bat_power_minus=67i,bat_power_plus=570i,bat_voltage=56.726002,grid_power_minus=70i,grid_power_plus=137i,house_power=797i,inverter_power=1257i 1664196499
-        SENEC bat_charge_current=15.49,bat_power_minus=99i,bat_power_plus=559i,bat_voltage=56.778999,grid_power_minus=70i,grid_power_plus=64i,house_power=669i,inverter_power=1141i 1664196801
-        SENEC bat_charge_current=10.43,bat_power_minus=0i,bat_power_plus=812i,bat_voltage=56.856998,grid_power_minus=23i,grid_power_plus=9i,house_power=314i,inverter_power=1118i 1664197103
-        SENEC bat_charge_current=10.48,bat_power_minus=131i,bat_power_plus=437i,bat_voltage=56.861,grid_power_minus=58i,grid_power_plus=55i,house_power=623i,inverter_power=955i 1664197405
-        SENEC bat_charge_current=7.92,bat_power_minus=0i,bat_power_plus=530i,bat_voltage=56.896999,grid_power_minus=12i,grid_power_plus=3i,house_power=316i,inverter_power=844i 1664197705
-        SENEC bat_charge_current=2.76,bat_power_minus=0i,bat_power_plus=299i,bat_voltage=56.868999,grid_power_minus=12i,grid_power_plus=6i,house_power=348i,inverter_power=673i 1664198008
-        SENEC bat_charge_current=0.86,bat_power_minus=0i,bat_power_plus=73i,bat_voltage=56.847,grid_power_minus=23i,grid_power_plus=6i,house_power=362i,inverter_power=444i 1664198309
-        SENEC bat_charge_current=2.24,bat_power_minus=0i,bat_power_plus=78i,bat_voltage=56.859001,grid_power_minus=12i,grid_power_plus=6i,house_power=382i,inverter_power=439i 1664198613
-        SENEC bat_charge_current=4.05,bat_power_minus=0i,bat_power_plus=172i,bat_voltage=56.894001,grid_power_minus=12i,grid_power_plus=3i,house_power=385i,inverter_power=584i 1664198914
-        SENEC bat_charge_current=8.68,bat_power_minus=1404i,bat_power_plus=93i,bat_voltage=56.735001,grid_power_minus=47i,grid_power_plus=47i,house_power=2126i,inverter_power=818i 1664199215
-        SENEC bat_charge_current=11.48,bat_power_minus=0i,bat_power_plus=588i,bat_voltage=56.874001,grid_power_minus=23i,grid_power_plus=3i,house_power=460i,inverter_power=1071i 1664199517
-        SENEC bat_charge_current=9.76,bat_power_minus=0i,bat_power_plus=632i,bat_voltage=56.943001,grid_power_minus=12i,grid_power_plus=6i,house_power=448i,inverter_power=1094i 1664199819
-        SENEC bat_charge_current=-30.379999,bat_power_minus=960i,bat_power_plus=215i,bat_voltage=56.473999,grid_power_minus=12i,grid_power_plus=41i,house_power=1746i,inverter_power=975i 1664200122
-        SENEC bat_charge_current=-27.870001,bat_power_minus=1612i,bat_power_plus=0i,bat_voltage=56.278,grid_power_minus=12i,grid_power_plus=3i,house_power=2605i,inverter_power=981i 1664200423
+        SENEC bat_charge_current=15.26,bat_power_minus=0i,bat_power_plus=908i,bat_voltage=56.040001,grid_power_minus=12i,grid_power_plus=6i,house_power=434i,inverter_power=1359i,wallbox_charge_power=0i 1664194389
+        SENEC bat_charge_current=16.870001,bat_power_minus=290i,bat_power_plus=516i,bat_voltage=56.032001,grid_power_minus=35i,grid_power_plus=164i,house_power=1225i,inverter_power=1289i,wallbox_charge_power=0i 1664194689
+        SENEC bat_charge_current=19.290001,bat_power_minus=0i,bat_power_plus=1004i,bat_voltage=56.227001,grid_power_minus=23i,grid_power_plus=3i,house_power=448i,inverter_power=1490i,wallbox_charge_power=0i 1664194991
+        SENEC bat_charge_current=22.67,bat_power_minus=0i,bat_power_plus=1160i,bat_voltage=56.418999,grid_power_minus=12i,grid_power_plus=0i,house_power=418i,inverter_power=1601i,wallbox_charge_power=0i 1664195294
+        SENEC bat_charge_current=2.45,bat_power_minus=0i,bat_power_plus=957i,bat_voltage=56.362999,grid_power_minus=93i,grid_power_plus=81i,house_power=827i,inverter_power=1769i,wallbox_charge_power=0i 1664195596
+        SENEC bat_charge_current=22.08,bat_power_minus=0i,bat_power_plus=920i,bat_voltage=56.645,grid_power_minus=106i,grid_power_plus=79i,house_power=800i,inverter_power=1764i,wallbox_charge_power=0i 1664195895
+        SENEC bat_charge_current=8.92,bat_power_minus=15i,bat_power_plus=893i,bat_voltage=56.636002,grid_power_minus=58i,grid_power_plus=105i,house_power=664i,inverter_power=1467i,wallbox_charge_power=0i 1664196197
+        SENEC bat_charge_current=14.16,bat_power_minus=67i,bat_power_plus=570i,bat_voltage=56.726002,grid_power_minus=70i,grid_power_plus=137i,house_power=797i,inverter_power=1257i,wallbox_charge_power=0i 1664196499
+        SENEC bat_charge_current=15.49,bat_power_minus=99i,bat_power_plus=559i,bat_voltage=56.778999,grid_power_minus=70i,grid_power_plus=64i,house_power=669i,inverter_power=1141i,wallbox_charge_power=0i 1664196801
+        SENEC bat_charge_current=10.43,bat_power_minus=0i,bat_power_plus=812i,bat_voltage=56.856998,grid_power_minus=23i,grid_power_plus=9i,house_power=314i,inverter_power=1118i,wallbox_charge_power=0i 1664197103
+        SENEC bat_charge_current=10.48,bat_power_minus=131i,bat_power_plus=437i,bat_voltage=56.861,grid_power_minus=58i,grid_power_plus=55i,house_power=623i,inverter_power=955i,wallbox_charge_power=0i 1664197405
+        SENEC bat_charge_current=7.92,bat_power_minus=0i,bat_power_plus=530i,bat_voltage=56.896999,grid_power_minus=12i,grid_power_plus=3i,house_power=316i,inverter_power=844i,wallbox_charge_power=0i 1664197705
+        SENEC bat_charge_current=2.76,bat_power_minus=0i,bat_power_plus=299i,bat_voltage=56.868999,grid_power_minus=12i,grid_power_plus=6i,house_power=348i,inverter_power=673i,wallbox_charge_power=0i 1664198008
+        SENEC bat_charge_current=0.86,bat_power_minus=0i,bat_power_plus=73i,bat_voltage=56.847,grid_power_minus=23i,grid_power_plus=6i,house_power=362i,inverter_power=444i,wallbox_charge_power=0i 1664198309
+        SENEC bat_charge_current=2.24,bat_power_minus=0i,bat_power_plus=78i,bat_voltage=56.859001,grid_power_minus=12i,grid_power_plus=6i,house_power=382i,inverter_power=439i,wallbox_charge_power=0i 1664198613
+        SENEC bat_charge_current=4.05,bat_power_minus=0i,bat_power_plus=172i,bat_voltage=56.894001,grid_power_minus=12i,grid_power_plus=3i,house_power=385i,inverter_power=584i,wallbox_charge_power=0i 1664198914
+        SENEC bat_charge_current=8.68,bat_power_minus=1404i,bat_power_plus=93i,bat_voltage=56.735001,grid_power_minus=47i,grid_power_plus=47i,house_power=2126i,inverter_power=818i,wallbox_charge_power=0i 1664199215
+        SENEC bat_charge_current=11.48,bat_power_minus=0i,bat_power_plus=588i,bat_voltage=56.874001,grid_power_minus=23i,grid_power_plus=3i,house_power=460i,inverter_power=1071i,wallbox_charge_power=0i 1664199517
+        SENEC bat_charge_current=9.76,bat_power_minus=0i,bat_power_plus=632i,bat_voltage=56.943001,grid_power_minus=12i,grid_power_plus=6i,house_power=448i,inverter_power=1094i,wallbox_charge_power=0i 1664199819
+        SENEC bat_charge_current=-30.379999,bat_power_minus=960i,bat_power_plus=215i,bat_voltage=56.473999,grid_power_minus=12i,grid_power_plus=41i,house_power=1746i,inverter_power=975i,wallbox_charge_power=0i 1664200122
+        SENEC bat_charge_current=-27.870001,bat_power_minus=1612i,bat_power_plus=0i,bat_voltage=56.278,grid_power_minus=12i,grid_power_plus=3i,house_power=2605i,inverter_power=981i,wallbox_charge_power=0i 1664200423
     headers:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -150,9 +150,9 @@ http_interactions:
       X-Influxdb-Version:
       - v2.6.1
       Date:
-      - Thu, 23 Feb 2023 06:39:39 GMT
+      - Thu, 23 Feb 2023 06:40:41 GMT
     body:
       encoding: UTF-8
       string: ''
-  recorded_at: Thu, 23 Feb 2023 06:39:39 GMT
+  recorded_at: Thu, 23 Feb 2023 06:40:41 GMT
 recorded_with: VCR 6.1.0

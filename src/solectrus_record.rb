@@ -28,6 +28,8 @@ class SolectrusRecord
       bat_voltage:,
       grid_power_plus:,
       grid_power_minus:,
+      # There is no data for the wallbox, but we can estimate it
+      wallbox_charge_power: estimated_wallbox_charge_power,
     }
   end
 
@@ -64,6 +66,14 @@ class SolectrusRecord
 
   def grid_power_minus
     @grid_power_minus ||= parse_kw(row, 'Netzeinspeisung [kW]')
+  end
+
+  def estimated_wallbox_charge_power
+    incoming = inverter_power + grid_power_plus + bat_power_minus
+    outgoing = grid_power_minus + house_power + bat_power_plus
+    diff = incoming - outgoing
+
+    diff < 50 ? 0 : diff
   end
 
   # KiloWatt
