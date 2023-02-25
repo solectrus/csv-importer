@@ -35,11 +35,11 @@ http_interactions:
       X-Influxdb-Version:
       - v2.6.1
       Date:
-      - Thu, 23 Feb 2023 06:40:41 GMT
+      - Sat, 25 Feb 2023 07:58:30 GMT
     body:
       encoding: UTF-8
       string: ''
-  recorded_at: Thu, 23 Feb 2023 06:40:41 GMT
+  recorded_at: Sat, 25 Feb 2023 07:58:30 GMT
 - request:
     method: post
     uri: http://<INFLUX_HOST>:8086/api/v2/write?bucket=<INFLUX_BUCKET>&org=<INFLUX_ORG>&precision=s
@@ -97,11 +97,46 @@ http_interactions:
       X-Influxdb-Version:
       - v2.6.1
       Date:
-      - Thu, 23 Feb 2023 06:40:41 GMT
+      - Sat, 25 Feb 2023 07:58:30 GMT
     body:
       encoding: UTF-8
       string: ''
-  recorded_at: Thu, 23 Feb 2023 06:40:41 GMT
+  recorded_at: Sat, 25 Feb 2023 07:58:30 GMT
+- request:
+    method: post
+    uri: http://<INFLUX_HOST>:8086/api/v2/write?bucket=<INFLUX_BUCKET>&org=<INFLUX_ORG>&precision=s
+    body:
+      encoding: UTF-8
+      string: |-
+        SENEC bat_charge_current=-7.68,bat_power_minus=414i,bat_power_plus=0i,bat_voltage=53.692001,grid_power_minus=12i,grid_power_plus=1i,house_power=406i,inverter_power=0i,wallbox_charge_power=0i 1659913507
+        SENEC bat_charge_current=-8.35,bat_power_minus=437i,bat_power_plus=0i,bat_voltage=53.646999,grid_power_minus=12i,grid_power_plus=4i,house_power=426i,inverter_power=0i,wallbox_charge_power=0i 1659913810
+        SENEC bat_charge_current=-8.24,bat_power_minus=445i,bat_power_plus=0i,bat_voltage=53.608002,grid_power_minus=12i,grid_power_plus=1i,house_power=437i,inverter_power=0i,wallbox_charge_power=0i 1659914110
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - influxdb-client-ruby/2.9.0
+      Authorization:
+      - Token <INFLUX_TOKEN_WRITE>
+      Content-Type:
+      - text/plain
+  response:
+    status:
+      code: 204
+      message: No Content
+    headers:
+      X-Influxdb-Build:
+      - OSS
+      X-Influxdb-Version:
+      - v2.6.1
+      Date:
+      - Sat, 25 Feb 2023 07:58:30 GMT
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Sat, 25 Feb 2023 07:58:30 GMT
 - request:
     method: post
     uri: http://<INFLUX_HOST>:8086/api/v2/write?bucket=<INFLUX_BUCKET>&org=<INFLUX_ORG>&precision=s
@@ -150,9 +185,9 @@ http_interactions:
       X-Influxdb-Version:
       - v2.6.1
       Date:
-      - Thu, 23 Feb 2023 06:40:41 GMT
+      - Sat, 25 Feb 2023 07:58:30 GMT
     body:
       encoding: UTF-8
       string: ''
-  recorded_at: Thu, 23 Feb 2023 06:40:41 GMT
+  recorded_at: Sat, 25 Feb 2023 07:58:30 GMT
 recorded_with: VCR 6.1.0

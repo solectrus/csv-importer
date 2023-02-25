@@ -34,22 +34,34 @@ class SolectrusRecord
   end
 
   def inverter_power
-    @inverter_power ||= parse_kw(row, 'Stromerzeugung [kW]')
+    @inverter_power ||=
+      parse_kw(row, 'Stromerzeugung [kW]', 'Stromerzeugung [kWh]')
   end
 
   def house_power
-    @house_power ||= parse_kw(row, 'Stromverbrauch [kW]')
+    @house_power ||=
+      parse_kw(row, 'Stromverbrauch [kW]', 'Stromverbrauch [kWh]')
   end
 
   def bat_power_plus
-    # The CSV file format has changed over time, so two different column names are possible
-    @bat_power_plus ||= parse_kw(row, 'Akkubeladung [kW]', 'Akku-Beladung [kW]')
+    @bat_power_plus ||=
+      parse_kw(
+        row,
+        'Akkubeladung [kW]',
+        'Akku-Beladung [kW]',
+        'Akku-Beladung [kWh]',
+      )
   end
 
   def bat_power_minus
     # The CSV file format has changed over time, so two different column names are possible
     @bat_power_minus ||=
-      parse_kw(row, 'Akkuentnahme [kW]', 'Akku-Entnahme [kW]')
+      parse_kw(
+        row,
+        'Akkuentnahme [kW]',
+        'Akku-Entnahme [kW]',
+        'Akku-Entnahme [kWh]',
+      )
   end
 
   def bat_charge_current
@@ -61,11 +73,12 @@ class SolectrusRecord
   end
 
   def grid_power_plus
-    @grid_power_plus ||= parse_kw(row, 'Netzbezug [kW]')
+    @grid_power_plus ||= parse_kw(row, 'Netzbezug [kW]', 'Netzbezug [kWh]')
   end
 
   def grid_power_minus
-    @grid_power_minus ||= parse_kw(row, 'Netzeinspeisung [kW]')
+    @grid_power_minus ||=
+      parse_kw(row, 'Netzeinspeisung [kW]', 'Netzeinspeisung [kWh]')
   end
 
   def estimated_wallbox_charge_power

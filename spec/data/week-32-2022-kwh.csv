@@ -1,0 +1,4 @@
+Uhrzeit;Netzbezug [kWh];Netzeinspeisung [kWh];Stromverbrauch [kWh];Akku-Beladung [kWh];Akku-Entnahme [kWh];Stromerzeugung [kWh];Akku Spannung [V];Akku Stromstärke [A]
+08.08.2022 00:05:07;0,00145;0,011603;0,406095;0;0,414072;0;53,692001;-7,68
+08.08.2022 00:10:10;0,004351;0,011603;0,4264;0;0,436552;0;53,646999;-8,35
+08.08.2022 00:15:10;0,001465;0,011719;0,436523;0;0,445313;0;53,608002;-8,24
