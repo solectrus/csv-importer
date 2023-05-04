@@ -30,13 +30,15 @@ docker run -it --rm \
 This imports all CSV files from the folder `./csv` (it uses $PWD because Docker requires an absolute path here) and pushes them to your InfluxDB.
 The process is idempotent, so you can run it multiple times without any harm.
 
-Note: If the import is performed after SOLECTRUS has already been used, caching issues may occur, meaning that older periods will not be displayed. In this case, the Redis cache must be flushed once after the import:
+First Note: If the import is performed after SOLECTRUS has already been used, caching issues may occur, meaning that older periods will not be displayed. In this case, the Redis cache must be flushed once after the import:
 
 ```bash
 docker exec -it solectrus-redis-1 redis-cli FLUSHALL
 ```
 
 (Name of the Redis container may vary, see `docker ps`)
+
+Second note: Check the `.env` variable `INSTALLATION_DATE`. This must be set to the day your PV system was installed.
 
 ## ENV variables
 

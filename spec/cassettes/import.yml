@@ -33,13 +33,13 @@ http_interactions:
       X-Influxdb-Build:
       - OSS
       X-Influxdb-Version:
-      - v2.6.1
+      - v2.7.1
       Date:
-      - Sat, 25 Feb 2023 07:58:30 GMT
+      - Thu, 04 May 2023 10:23:05 GMT
     body:
       encoding: UTF-8
       string: ''
-  recorded_at: Sat, 25 Feb 2023 07:58:30 GMT
+  recorded_at: Thu, 04 May 2023 10:23:05 GMT
 - request:
     method: post
     uri: http://<INFLUX_HOST>:8086/api/v2/write?bucket=<INFLUX_BUCKET>&org=<INFLUX_ORG>&precision=s
@@ -95,13 +95,13 @@ http_interactions:
       X-Influxdb-Build:
       - OSS
       X-Influxdb-Version:
-      - v2.6.1
+      - v2.7.1
       Date:
-      - Sat, 25 Feb 2023 07:58:30 GMT
+      - Thu, 04 May 2023 10:23:05 GMT
     body:
       encoding: UTF-8
       string: ''
-  recorded_at: Sat, 25 Feb 2023 07:58:30 GMT
+  recorded_at: Thu, 04 May 2023 10:23:05 GMT
 - request:
     method: post
     uri: http://<INFLUX_HOST>:8086/api/v2/write?bucket=<INFLUX_BUCKET>&org=<INFLUX_ORG>&precision=s
@@ -130,13 +130,13 @@ http_interactions:
       X-Influxdb-Build:
       - OSS
       X-Influxdb-Version:
-      - v2.6.1
+      - v2.7.1
       Date:
-      - Sat, 25 Feb 2023 07:58:30 GMT
+      - Thu, 04 May 2023 10:23:06 GMT
     body:
       encoding: UTF-8
       string: ''
-  recorded_at: Sat, 25 Feb 2023 07:58:30 GMT
+  recorded_at: Thu, 04 May 2023 10:23:06 GMT
 - request:
     method: post
     uri: http://<INFLUX_HOST>:8086/api/v2/write?bucket=<INFLUX_BUCKET>&org=<INFLUX_ORG>&precision=s
@@ -183,11 +183,11 @@ http_interactions:
       X-Influxdb-Build:
       - OSS
       X-Influxdb-Version:
-      - v2.6.1
+      - v2.7.1
       Date:
-      - Sat, 25 Feb 2023 07:58:30 GMT
+      - Thu, 04 May 2023 10:23:06 GMT
     body:
       encoding: UTF-8
       string: ''
-  recorded_at: Sat, 25 Feb 2023 07:58:30 GMT
+  recorded_at: Thu, 04 May 2023 10:23:06 GMT
 recorded_with: VCR 6.1.0
