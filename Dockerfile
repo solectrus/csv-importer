@@ -30,4 +30,4 @@ WORKDIR /senec-importer
 COPY --from=Builder /usr/local/bundle/ /usr/local/bundle/
 COPY . /senec-importer/
 
-ENTRYPOINT bundle exec src/main.rb
+ENTRYPOINT bundle exec app/main.rb

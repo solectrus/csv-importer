@@ -1,8 +1,8 @@
 require 'dotenv'
 Dotenv.load('.env.test')
 
-require_relative '../src/import'
-require_relative '../src/config'
+require_relative '../app/import'
+require_relative '../app/config'
 
 require 'support/vcr_setup'
 

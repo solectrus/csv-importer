@@ -1,4 +1,4 @@
-require_relative '../src/config'
+require_relative '../app/config'
 
 describe Config do
   let(:valid_options) do
