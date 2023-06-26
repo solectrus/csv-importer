@@ -3,17 +3,14 @@
 
 # CSV importer
 
-Import CSV data and push it to InfluxDB.
+Import CSV with photovoltaic data and push it to InfluxDB for use with SOLECTRUS.
 
 ## Requirements
 
 - SOLECTRUS installed and running
-- CSV files in a supported format
-
-Support CSV formats:
-
-- SENEC (downloaded from mein-senec.de)
-- Sungrow (downloaded from portaleu.isolarcloud.com)
+- CSV files in one of the following supported formats:
+  - SENEC (downloaded from mein-senec.de)
+  - Sungrow (downloaded from portaleu.isolarcloud.com)
 
 ## Usage
 
@@ -35,7 +32,9 @@ docker run -it --rm \
 This imports all CSV files from the folder `./csv` (it uses $PWD because Docker requires an absolute path here) and pushes them to your InfluxDB.
 The process is idempotent, so you can run it multiple times without any harm.
 
-First Note: If the import is performed after SOLECTRUS has already been used, caching issues may occur, meaning that older periods will not be displayed. In this case, the Redis cache must be flushed once after the import:
+### Beware of caching issues
+
+If the import is performed after SOLECTRUS has already been used, caching issues may occur, meaning that older periods will not be displayed. In this case, the Redis cache must be flushed once after the import:
 
 ```bash
 docker exec -it solectrus-redis-1 redis-cli FLUSHALL
@@ -43,9 +42,28 @@ docker exec -it solectrus-redis-1 redis-cli FLUSHALL
 
 (Name of the Redis container may vary, see `docker ps`)
 
-Second note: Check the `.env` variable `INSTALLATION_DATE`. This must be set to the day your PV system was installed.
+Check the `.env` variable `INSTALLATION_DATE`. This must be set to the day your PV system was installed.
 
-## ENV variables
+### SENEC: Dealing with missing wallbox measurements
+
+The CSV data from mein-senec.de is not complete, there are no measurements for the wallbox. To get around this, wallbox charges are **estimated** using the following formula:
+
+```
+wallbox_charge_power =   inverter_power (Stromerzeugung)
+                       + grid_power_plus (Netzbezug)
+                       + bat_power_minus (Akkuentnahme)
+                       - grid_power_minus (Netzeinspeisung)
+                       - house_power (Stromverbrauch)
+                       - bat_power_plus (Akkubeladung)
+```
+
+Please note that this method appears to be ineffective for processing CSV files that were created from July 2022 onwards. This is because wallbox charges are now being included in the overall house consumption since that time. Therefore, it seems that there is currently no way to import wallbox measurements.
+
+The [senec-collector](https://github.com/solectrus/senec-collector) does not have this problem, as it obtains the wallbox measurements directly.
+
+### Configuration
+
+The following environment variables can be used to configure the importer:
 
 | Variable                               | Description                                     | Default |
 | -------------------------------------- | ----------------------------------------------- | ------- |
@@ -63,23 +81,10 @@ Second note: Check the `.env` variable `INSTALLATION_DATE`. This must be set to 
 | `IMPORT_PAUSE`                         | Pause after each imported file (in seconds)     | `0`     |
 | `TZ`                                   | Time zone to use when parsing times             | `CET`   |
 
-## SENEC: Dealing with missing wallbox measurements
-
-The CSV data from mein-senec.de is not complete, there are no measurements for the wallbox. To get around this, wallbox charges are **estimated** using the following formula:
-
-```
-wallbox_charge_power =   inverter_power (Stromerzeugung)
-                       + grid_power_plus (Netzbezug)
-                       + bat_power_minus (Akkuentnahme)
-                       - grid_power_minus (Netzeinspeisung)
-                       - house_power (Stromverbrauch)
-                       - bat_power_plus (Akkubeladung)
-```
-
-Please note that this method appears to be ineffective for processing CSV files that were created from July 2022 onwards. This is because wallbox charges are now being included in the overall house consumption since that time. Therefore, it seems that there is currently no way to import wallbox measurements.
-
-The [senec-collector](https://github.com/solectrus/senec-collector) does not have this problem, as it obtains the wallbox measurements directly.
-
 ## License
 
 Copyright (c) 2020-2023 Georg Ledermann, released under the MIT License
+
+Many thanks to these incredible people for improving this project:
+
+- Rainer Drexler (https://github.com/holiday-sunrise)
