@@ -510,4 +510,46 @@ http_interactions:
       encoding: UTF-8
       string: ''
   recorded_at: Mon, 26 Jun 2023 07:34:35 GMT
+- request:
+    method: post
+    uri: http://<INFLUX_HOST>:8086/api/v2/write?bucket=<INFLUX_BUCKET>&org=<INFLUX_ORG>&precision=s
+    body:
+      encoding: UTF-8
+      string: |-
+        my-measurement bat_power_minus=402.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=402.0,inverter_power=0.0 1687298400
+        my-measurement bat_power_minus=402.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=402.0,inverter_power=0.0 1687298700
+        my-measurement bat_power_minus=403.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=403.0,inverter_power=0.0 1687299000
+        my-measurement bat_power_minus=396.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=2.0,house_power=398.0,inverter_power=0.0 1687299300
+        my-measurement bat_power_minus=399.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=399.0,inverter_power=0.0 1687299600
+        my-measurement bat_power_minus=389.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=389.0,inverter_power=0.0 1687299900
+        my-measurement bat_power_minus=306.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=306.0,inverter_power=0.0 1687300200
+        my-measurement bat_power_minus=326.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=326.0,inverter_power=0.0 1687300500
+        my-measurement bat_power_minus=334.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=1.0,house_power=335.0,inverter_power=0.0 1687300800
+        my-measurement bat_power_minus=297.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=2.0,house_power=299.0,inverter_power=0.0 1687301100
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - influxdb-client-ruby/2.9.0
+      Authorization:
+      - Token <INFLUX_TOKEN_WRITE>
+      Content-Type:
+      - text/plain
+  response:
+    status:
+      code: 204
+      message: No Content
+    headers:
+      X-Influxdb-Build:
+      - OSS
+      X-Influxdb-Version:
+      - v2.7.1
+      Date:
+      - Mon, 26 Jun 2023 08:32:22 GMT
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Mon, 26 Jun 2023 08:32:22 GMT
 recorded_with: VCR 6.1.0
