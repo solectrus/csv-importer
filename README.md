@@ -1,14 +1,18 @@
-[![Continuous integration](https://github.com/solectrus/senec-importer/actions/workflows/push.yml/badge.svg)](https://github.com/solectrus/senec-importer/actions/workflows/push.yml)
+[![Continuous integration](https://github.com/solectrus/csv-importer/actions/workflows/push.yml/badge.svg)](https://github.com/solectrus/csv-importer/actions/workflows/push.yml)
 [![wakatime](https://wakatime.com/badge/user/697af4f5-617a-446d-ba58-407e7f3e0243/project/0fd4e23c-13b0-43a6-bfe0-2f235cbe9785.svg)](https://wakatime.com/badge/user/697af4f5-617a-446d-ba58-407e7f3e0243/project/0fd4e23c-13b0-43a6-bfe0-2f235cbe9785)
 
-# SENEC importer
+# CSV importer
 
-Import CSV data downloaded from mein-senec.de and push it to InfluxDB.
+Import CSV data and push it to InfluxDB.
 
 ## Requirements
 
 - SOLECTRUS installed and running
-- CSV files downloaded from mein-senec.de
+- CSV files in a supported format
+
+Support CSV formats:
+
+- SENEC (downloaded from mein-senec.de)
 
 ## Usage
 
@@ -22,7 +26,7 @@ docker run -it --rm \
            --env-file .env \
            --mount type=bind,source="$PWD/csv",target=/data,readonly \
            --network=solectrus_default \
-           ghcr.io/solectrus/senec-importer
+           ghcr.io/solectrus/csv-importer
 ```
 
 (Name of the network may vary, see `docker network ls`)
@@ -50,13 +54,14 @@ Second note: Check the `.env` variable `INSTALLATION_DATE`. This must be set to 
 | `INFLUX_TOKEN_WRITE` or `INFLUX_TOKEN` | Token for InfluxDB (requires write permissions) |         |
 | `INFLUX_ORG`                           | Organization for InfluxDB                       |         |
 | `INFLUX_BUCKET`                        | Bucket for InfluxDB                             |         |
+| `INFLUX_MEASUREMENT`                   | Measurement for InfluxDB                        |         |
 | `INFLUX_OPEN_TIMEOUT`                  | Timeout for InfluxDB connection (in seconds)    | `30`    |
 | `INFLUX_READ_TIMEOUT`                  | Timeout for InfluxDB read (in seconds)          | `30`    |
 | `INFLUX_WRITE_TIMEOUT`                 | Timeout for InfluxDB write (in seconds)         | `30`    |
 | `IMPORT_FOLDER`                        | Folder where CSV files are located              | `/data` |
 | `IMPORT_PAUSE`                         | Pause after each imported file (in seconds)     | `0`     |
 
-## Dealing with missing wallbox measurements
+## SENEC: Dealing with missing wallbox measurements
 
 The CSV data from mein-senec.de is not complete, there are no measurements for the wallbox. To get around this, wallbox charges are **estimated** using the following formula:
 

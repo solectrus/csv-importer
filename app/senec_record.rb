@@ -1,14 +1,8 @@
-ENV['TZ'] = 'CET'
+require_relative 'base_record'
 
-class SolectrusRecord
-  def initialize(row)
-    @row = row
-  end
-
-  attr_reader :row
-
-  def to_h
-    { name: 'SENEC', time:, fields: }
+class SenecRecord < BaseRecord
+  def self.csv_options
+    { headers: true, col_sep: ';' }
   end
 
   private
@@ -102,17 +96,5 @@ class SolectrusRecord
   # Volt
   def parse_v(row, *columns)
     cell(row, *columns).sub(',', '.').to_f
-  end
-
-  # Time
-  def parse_time(row, string)
-    Time.parse("#{row[string]} CET").to_i
-  end
-
-  def cell(row, *columns)
-    # Find column by name (can have different names due to CSV format changes)
-    column = columns.find { |col| row[col] }
-
-    row[column] || throw("Column #{columns.join(' or ')} not found")
   end
 end

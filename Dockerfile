@@ -1,9 +1,9 @@
 FROM ruby:3.2.2-alpine AS Builder
 RUN apk add --no-cache build-base
 
-WORKDIR /senec-importer
+WORKDIR /csv-importer
 
-COPY Gemfile* /senec-importer/
+COPY Gemfile* /csv-importer/
 RUN bundle config --local frozen 1 && \
     bundle config --local without 'development test' && \
     bundle install -j4 --retry 3 && \
@@ -25,9 +25,9 @@ ENV VERSION ${VERSION}
 ARG REVISION
 ENV REVISION ${REVISION}
 
-WORKDIR /senec-importer
+WORKDIR /csv-importer
 
 COPY --from=Builder /usr/local/bundle/ /usr/local/bundle/
-COPY . /senec-importer/
+COPY . /csv-importer/
 
 ENTRYPOINT bundle exec app/main.rb
