@@ -13,6 +13,7 @@ Import CSV data and push it to InfluxDB.
 Support CSV formats:
 
 - SENEC (downloaded from mein-senec.de)
+- Sungrow (downloaded from portaleu.isolarcloud.com)
 
 ## Usage
 
