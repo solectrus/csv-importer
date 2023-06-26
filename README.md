@@ -60,6 +60,7 @@ Second note: Check the `.env` variable `INSTALLATION_DATE`. This must be set to 
 | `INFLUX_WRITE_TIMEOUT`                 | Timeout for InfluxDB write (in seconds)         | `30`    |
 | `IMPORT_FOLDER`                        | Folder where CSV files are located              | `/data` |
 | `IMPORT_PAUSE`                         | Pause after each imported file (in seconds)     | `0`     |
+| `TZ`                                   | Time zone to use when parsing times             | `CET`   |
 
 ## SENEC: Dealing with missing wallbox measurements
 

@@ -1,4 +1,4 @@
-ENV['TZ'] = 'CET'
+ENV['TZ'] ||= 'CET'
 
 class BaseRecord
   def initialize(row, measurement:)
@@ -14,7 +14,7 @@ class BaseRecord
 
   # Time
   def parse_time(row, string)
-    Time.parse("#{row[string]} CET").to_i
+    Time.parse(row[string]).to_i
   end
 
   def cell(row, *columns)
