@@ -1,5 +1,8 @@
+require 'csv'
 require_relative 'flux_writer'
-require_relative 'solectrus_record'
+require_relative 'csv_probe'
+require_relative 'senec_record'
+require_relative 'sungrow_record'
 
 class Import
   def self.run(config:)
@@ -10,9 +13,11 @@ class Import
     count = 0
     Dir
       .glob("#{config.import_folder}/**/*.csv")
-      .each do |filename|
-        import.process(filename)
+      .each do |file_path|
+        import.process(file_path)
         count += 1
+
+        import.pause
       end
 
     puts "Imported #{count} files\n\n"
@@ -26,26 +31,34 @@ class Import
 
   attr_reader :config
 
-  def process(filename)
-    print "Importing #{filename}... "
+  def process(file_path)
+    print "Importing #{file_path}... "
 
+    record_class = CsvProbe.new(file_path).record_class
     count = 0
     records =
       CSV
-        .parse(File.read(filename), headers: true, col_sep: ';')
+        .parse(file_content(file_path), **record_class.csv_options)
         .map do |row|
           count += 1
 
-          SolectrusRecord.new(row).to_h
+          record_class.new(row, measurement: config.influx_measurement).to_h
         end
 
     return unless count.positive?
 
     FluxWriter.push(config:, records:)
     puts "#{count} points imported"
+  end
+
+  def pause
     return unless config.import_pause.positive?
 
     puts "Pausing for #{config.import_pause} seconds..."
     sleep(config.import_pause)
+  end
+
+  def file_content(file_path)
+    File.read(file_path, encoding: 'bom|utf-8')
   end
 end
