@@ -1,5 +1,5 @@
-describe SolectrusRecord do
-  subject(:record) { described_class.new(row) }
+describe SenecRecord do
+  subject(:record) { described_class.new(row, measurement: 'SENEC') }
 
   let(:row) { CSV::Row.new headers, fields }
 

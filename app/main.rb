@@ -7,10 +7,10 @@ require_relative 'import'
 # Flush output immediately
 $stdout.sync = true
 
-puts 'SENEC CSV importer for SOLECTRUS, ' \
+puts 'CSV importer for SOLECTRUS, ' \
        "Version #{ENV.fetch('VERSION', '<unknown>')}, " \
        "built at #{ENV.fetch('BUILDTIME', '<unknown>')}"
-puts 'https://github.com/solectrus/senec-importer'
+puts 'https://github.com/solectrus/csv-importer'
 puts 'Copyright (c) 2020-2023 Georg Ledermann, released under the MIT License'
 puts "\n"
 
