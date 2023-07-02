@@ -22,7 +22,7 @@ group :development, :test do
   # A RuboCop plugin for Rake (https://github.com/rubocop/rubocop-rake)
   gem 'rubocop-rake'
 
-  # Record your test suite's HTTP interactions and replay them during future test runs for fast, deterministic, accurate tests. (https://relishapp.com/vcr/vcr/docs)
+  # Record your test suite's HTTP interactions and replay them during future test runs for fast, deterministic, accurate tests. (https://benoittgt.github.io/vcr)
   gem 'vcr'
 
   # Library for stubbing HTTP requests in Ruby. (https://github.com/bblimke/webmock)
