@@ -32,11 +32,11 @@ class SungrowRecord < BaseRecord
   end
 
   def bat_power_plus
-    @bat_power_plus ||= bat_power.negative? ? -bat_power : 0.0
+    @bat_power_plus ||= bat_power.negative? ? -bat_power : 0
   end
 
   def bat_power_minus
-    @bat_power_minus ||= bat_power.positive? ? bat_power : 0.0
+    @bat_power_minus ||= bat_power.positive? ? bat_power : 0
   end
 
   def bat_power
@@ -44,11 +44,11 @@ class SungrowRecord < BaseRecord
   end
 
   def grid_power_plus
-    @grid_power_plus ||= grid_power.positive? ? grid_power : 0.0
+    @grid_power_plus ||= grid_power.positive? ? grid_power : 0
   end
 
   def grid_power_minus
-    @grid_power_minus ||= grid_power.negative? ? -grid_power : 0.0
+    @grid_power_minus ||= grid_power.negative? ? -grid_power : 0
   end
 
   def grid_power
@@ -57,6 +57,6 @@ class SungrowRecord < BaseRecord
 
   # KiloWatt
   def parse_kw(row, *columns)
-    cell(row, *columns).to_f
+    cell(row, *columns).to_f.round
   end
 end
