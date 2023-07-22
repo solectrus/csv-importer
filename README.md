@@ -1,5 +1,5 @@
 [![Continuous integration](https://github.com/solectrus/csv-importer/actions/workflows/push.yml/badge.svg)](https://github.com/solectrus/csv-importer/actions/workflows/push.yml)
-[![wakatime](https://wakatime.com/badge/user/697af4f5-617a-446d-ba58-407e7f3e0243/project/0fd4e23c-13b0-43a6-bfe0-2f235cbe9785.svg)](https://wakatime.com/badge/user/697af4f5-617a-446d-ba58-407e7f3e0243/project/0fd4e23c-13b0-43a6-bfe0-2f235cbe9785)
+[![wakatime](https://wakatime.com/badge/user/697af4f5-617a-446d-ba58-407e7f3e0243/project/ccfef5d1-6717-4411-9895-69dc32ad5c91.svg)](https://wakatime.com/badge/user/697af4f5-617a-446d-ba58-407e7f3e0243/project/ccfef5d1-6717-4411-9895-69dc32ad5c91)
 
 # CSV importer
 
@@ -73,7 +73,7 @@ The following environment variables can be used to configure the importer:
 | `INFLUX_TOKEN_WRITE` or `INFLUX_TOKEN` | Token for InfluxDB (requires write permissions) |         |
 | `INFLUX_ORG`                           | Organization for InfluxDB                       |         |
 | `INFLUX_BUCKET`                        | Bucket for InfluxDB                             |         |
-| `INFLUX_MEASUREMENT`                   | Measurement for InfluxDB                        |         |
+| `INFLUX_MEASUREMENT_PV`                | Measurement for InfluxDB                        |         |
 | `INFLUX_OPEN_TIMEOUT`                  | Timeout for InfluxDB connection (in seconds)    | `30`    |
 | `INFLUX_READ_TIMEOUT`                  | Timeout for InfluxDB read (in seconds)          | `30`    |
 | `INFLUX_WRITE_TIMEOUT`                 | Timeout for InfluxDB write (in seconds)         | `30`    |
