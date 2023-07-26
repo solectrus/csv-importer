@@ -56,7 +56,7 @@ class SungrowRecord < BaseRecord
   end
 
   # KiloWatt
-  def parse_kw(row, *columns)
-    cell(row, *columns).to_f.round
+  def parse_kw(row, *)
+    cell(row, *).to_f.round
   end
 end

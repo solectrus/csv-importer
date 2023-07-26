@@ -84,17 +84,17 @@ class SenecRecord < BaseRecord
   end
 
   # KiloWatt
-  def parse_kw(row, *columns)
-    (cell(row, *columns).sub(',', '.').to_f * 1_000).round
+  def parse_kw(row, *)
+    (cell(row, *).sub(',', '.').to_f * 1_000).round
   end
 
   # Ampere
-  def parse_a(row, *columns)
-    cell(row, *columns).sub(',', '.').to_f
+  def parse_a(row, *)
+    cell(row, *).sub(',', '.').to_f
   end
 
   # Volt
-  def parse_v(row, *columns)
-    cell(row, *columns).sub(',', '.').to_f
+  def parse_v(row, *)
+    cell(row, *).sub(',', '.').to_f
   end
 end
