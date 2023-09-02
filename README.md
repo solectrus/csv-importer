@@ -73,7 +73,7 @@ The following environment variables can be used to configure the importer:
 | `INFLUX_TOKEN_WRITE` or `INFLUX_TOKEN` | Token for InfluxDB (requires write permissions) |         |
 | `INFLUX_ORG`                           | Organization for InfluxDB                       |         |
 | `INFLUX_BUCKET`                        | Bucket for InfluxDB                             |         |
-| `INFLUX_MEASUREMENT_PV`                | Measurement for InfluxDB                        |         |
+| `INFLUX_MEASUREMENT_PV`                | Measurement for InfluxDB                        | `SENEC` |
 | `INFLUX_OPEN_TIMEOUT`                  | Timeout for InfluxDB connection (in seconds)    | `30`    |
 | `INFLUX_READ_TIMEOUT`                  | Timeout for InfluxDB read (in seconds)          | `30`    |
 | `INFLUX_WRITE_TIMEOUT`                 | Timeout for InfluxDB write (in seconds)         | `30`    |

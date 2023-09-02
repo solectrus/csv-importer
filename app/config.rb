@@ -36,7 +36,7 @@ Config =
             ENV.fetch('INFLUX_TOKEN_WRITE', nil) || ENV.fetch('INFLUX_TOKEN'),
           influx_org: ENV.fetch('INFLUX_ORG'),
           influx_bucket: ENV.fetch('INFLUX_BUCKET'),
-          influx_measurement: ENV.fetch('INFLUX_MEASUREMENT_PV'),
+          influx_measurement: ENV.fetch('INFLUX_MEASUREMENT_PV', 'SENEC'),
           influx_open_timeout: ENV.fetch('INFLUX_OPEN_TIMEOUT', 30).to_i,
           influx_read_timeout: ENV.fetch('INFLUX_READ_TIMEOUT', 30).to_i,
           influx_write_timeout: ENV.fetch('INFLUX_WRITE_TIMEOUT', 30).to_i,
