@@ -9,6 +9,9 @@ gem 'influxdb-client'
 # A toolkit of support libraries and Ruby core extensions extracted from the Rails framework. (https://rubyonrails.org)
 gem 'activesupport'
 
+# Timezone Data for TZInfo (https://tzinfo.github.io)
+gem 'tzinfo-data'
+
 group :development, :test do
   # rspec-3.12.0 (http://github.com/rspec)
   gem 'rspec'
