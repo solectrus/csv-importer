@@ -72,6 +72,8 @@ GEM
     ruby-progressbar (1.13.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
+    tzinfo-data (1.2023.3)
+      tzinfo (>= 1.0.0)
     unicode-display_width (2.4.2)
     vcr (6.2.0)
     webmock (3.19.1)
@@ -91,6 +93,7 @@ DEPENDENCIES
   rubocop
   rubocop-rake
   rubocop-rspec
+  tzinfo-data
   vcr
   webmock
 
