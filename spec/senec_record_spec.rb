@@ -1,6 +1,13 @@
 describe SenecRecord do
   subject(:record) { described_class.new(row, measurement: 'SENEC') }
 
+  before do
+    ENV['TZ'] = time_zone
+    setup_time_zone
+  end
+
+  let(:time_zone) { 'Europe/Berlin' }
+
   let(:row) { CSV::Row.new headers, fields }
 
   let(:headers) do
@@ -15,6 +22,28 @@ describe SenecRecord do
       'Akku Spannung [V]',
       'Akku Stromstärke [A]',
     ]
+  end
+
+  describe 'Time parsing' do
+    subject(:time) { record.to_h[:time] }
+
+    let(:fields) { ['22.09.2023 16:00:00', '', '', '', '', '', '', '', ''] }
+
+    context 'when TZ is Berlin' do
+      let(:time_zone) { 'Europe/Berlin' }
+
+      it 'parses time in GMT+2 (DST)' do
+        expect(time).to eq(1_695_391_200)
+      end
+    end
+
+    context 'when TZ is New York' do
+      let(:time_zone) { 'America/New_York' }
+
+      it 'parses time in GMT-4 (DST)' do
+        expect(time).to eq(1_695_412_800)
+      end
+    end
   end
 
   describe '#to_h' do

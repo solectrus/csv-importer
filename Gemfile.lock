@@ -1,18 +1,27 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    activesupport (7.0.8)
+      concurrent-ruby (~> 1.0, >= 1.0.2)
+      i18n (>= 1.6, < 2)
+      minitest (>= 5.1)
+      tzinfo (~> 2.0)
     addressable (2.8.5)
       public_suffix (>= 2.0.2, < 6.0)
     ast (2.4.2)
     base64 (0.1.1)
+    concurrent-ruby (1.2.2)
     crack (0.4.5)
       rexml
     diff-lcs (1.5.0)
     dotenv (2.8.1)
     hashdiff (1.0.1)
+    i18n (1.14.1)
+      concurrent-ruby (~> 1.0)
     influxdb-client (2.9.0)
     json (2.6.3)
     language_server-protocol (3.17.0.3)
+    minitest (5.20.0)
     parallel (1.23.0)
     parser (3.2.2.3)
       ast (~> 2.4.1)
@@ -36,7 +45,7 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.12.0)
     rspec-support (3.12.1)
-    rubocop (1.56.2)
+    rubocop (1.56.3)
       base64 (~> 0.1.1)
       json (~> 2.3)
       language_server-protocol (>= 3.17.0)
@@ -50,17 +59,19 @@ GEM
       unicode-display_width (>= 2.4.0, < 3.0)
     rubocop-ast (1.29.0)
       parser (>= 3.2.1.0)
-    rubocop-capybara (2.18.0)
+    rubocop-capybara (2.19.0)
       rubocop (~> 1.41)
-    rubocop-factory_bot (2.23.1)
+    rubocop-factory_bot (2.24.0)
       rubocop (~> 1.33)
     rubocop-rake (0.6.0)
       rubocop (~> 1.0)
-    rubocop-rspec (2.23.2)
+    rubocop-rspec (2.24.0)
       rubocop (~> 1.33)
       rubocop-capybara (~> 2.17)
       rubocop-factory_bot (~> 2.22)
     ruby-progressbar (1.13.0)
+    tzinfo (2.0.6)
+      concurrent-ruby (~> 1.0)
     unicode-display_width (2.4.2)
     vcr (6.2.0)
     webmock (3.19.1)
@@ -72,6 +83,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activesupport
   dotenv
   influxdb-client
   rake

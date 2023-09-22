@@ -36,3 +36,6 @@ Metrics/MethodLength:
 
 Metrics/AbcSize:
   Max: 20
+
+RSpec/MultipleMemoizedHelpers:
+  Enabled: false

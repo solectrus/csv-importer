@@ -6,6 +6,9 @@ gem 'dotenv'
 # Ruby library for InfluxDB 2. (https://github.com/influxdata/influxdb-client-ruby)
 gem 'influxdb-client'
 
+# A toolkit of support libraries and Ruby core extensions extracted from the Rails framework. (https://rubyonrails.org)
+gem 'activesupport'
+
 group :development, :test do
   # rspec-3.12.0 (http://github.com/rspec)
   gem 'rspec'
