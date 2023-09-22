@@ -18,6 +18,7 @@ config = Config.from_env
 
 puts "Using Ruby #{RUBY_VERSION} on platform #{RUBY_PLATFORM}"
 puts "Pushing to InfluxDB at #{config.influx_url}, bucket #{config.influx_bucket}"
+puts "Using time zone #{Time.zone.name}"
 puts "\n"
 
 Import.run(config:)

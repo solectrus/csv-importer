@@ -65,21 +65,21 @@ The [senec-collector](https://github.com/solectrus/senec-collector) does not hav
 
 The following environment variables can be used to configure the importer:
 
-| Variable                               | Description                                     | Default |
-| -------------------------------------- | ----------------------------------------------- | ------- |
-| `INFLUX_HOST`                          | Hostname of InfluxDB                            |         |
-| `INFLUX_SCHEMA`                        | Schema (http/https) of InfluxDB                 | `http`  |
-| `INFLUX_PORT`                          | Port of InfluxDB                                | `8086`  |
-| `INFLUX_TOKEN_WRITE` or `INFLUX_TOKEN` | Token for InfluxDB (requires write permissions) |         |
-| `INFLUX_ORG`                           | Organization for InfluxDB                       |         |
-| `INFLUX_BUCKET`                        | Bucket for InfluxDB                             |         |
-| `INFLUX_MEASUREMENT_PV`                | Measurement for InfluxDB                        | `SENEC` |
-| `INFLUX_OPEN_TIMEOUT`                  | Timeout for InfluxDB connection (in seconds)    | `30`    |
-| `INFLUX_READ_TIMEOUT`                  | Timeout for InfluxDB read (in seconds)          | `30`    |
-| `INFLUX_WRITE_TIMEOUT`                 | Timeout for InfluxDB write (in seconds)         | `30`    |
-| `IMPORT_FOLDER`                        | Folder where CSV files are located              | `/data` |
-| `IMPORT_PAUSE`                         | Pause after each imported file (in seconds)     | `0`     |
-| `TZ`                                   | Time zone to use when parsing times             | `CET`   |
+| Variable                               | Description                                     | Default         |
+| -------------------------------------- | ----------------------------------------------- | --------------- |
+| `INFLUX_HOST`                          | Hostname of InfluxDB                            |                 |
+| `INFLUX_SCHEMA`                        | Schema (http/https) of InfluxDB                 | `http`          |
+| `INFLUX_PORT`                          | Port of InfluxDB                                | `8086`          |
+| `INFLUX_TOKEN_WRITE` or `INFLUX_TOKEN` | Token for InfluxDB (requires write permissions) |                 |
+| `INFLUX_ORG`                           | Organization for InfluxDB                       |                 |
+| `INFLUX_BUCKET`                        | Bucket for InfluxDB                             |                 |
+| `INFLUX_MEASUREMENT_PV`                | Measurement for InfluxDB                        | `SENEC`         |
+| `INFLUX_OPEN_TIMEOUT`                  | Timeout for InfluxDB connection (in seconds)    | `30`            |
+| `INFLUX_READ_TIMEOUT`                  | Timeout for InfluxDB read (in seconds)          | `30`            |
+| `INFLUX_WRITE_TIMEOUT`                 | Timeout for InfluxDB write (in seconds)         | `30`            |
+| `IMPORT_FOLDER`                        | Folder where CSV files are located              | `/data`         |
+| `IMPORT_PAUSE`                         | Pause after each imported file (in seconds)     | `0`             |
+| `TZ`                                   | Time zone to use when parsing times             | `Europe/Berlin` |
 
 ## License
 
