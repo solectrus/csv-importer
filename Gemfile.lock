@@ -23,7 +23,7 @@ GEM
     language_server-protocol (3.17.0.3)
     minitest (5.20.0)
     parallel (1.23.0)
-    parser (3.2.2.3)
+    parser (3.2.2.4)
       ast (~> 2.4.1)
       racc
     public_suffix (5.0.3)
