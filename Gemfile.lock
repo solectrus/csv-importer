@@ -22,7 +22,7 @@ GEM
       rexml
     diff-lcs (1.5.0)
     dotenv (2.8.1)
-    drb (2.1.1)
+    drb (2.2.0)
       ruby2_keywords
     hashdiff (1.0.1)
     i18n (1.14.1)
