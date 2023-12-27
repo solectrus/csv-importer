@@ -20,6 +20,7 @@ GEM
     connection_pool (2.4.1)
     crack (0.4.5)
       rexml
+    csv (3.2.8)
     diff-lcs (1.5.0)
     dotenv (2.8.1)
     drb (2.2.0)
@@ -96,6 +97,7 @@ PLATFORMS
 
 DEPENDENCIES
   activesupport
+  csv
   dotenv
   influxdb-client
   rake
@@ -108,4 +110,4 @@ DEPENDENCIES
   webmock
 
 BUNDLED WITH
-   2.4.22
+   2.5.3
