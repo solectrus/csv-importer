@@ -59,6 +59,10 @@ class Import
   end
 
   def file_content(file_path)
-    File.read(file_path, encoding: 'bom|utf-8')
+    # Read file content, remove UTF-8 BOM
+    content = File.read(file_path, encoding: 'bom|utf-8')
+
+    # Remove Windows line endings (CR+CR+LF -> LF)
+    content.gsub("\r\r\n", "\n")
   end
 end

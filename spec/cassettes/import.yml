@@ -6,6 +6,57 @@ http_interactions:
     body:
       encoding: UTF-8
       string: |-
+        my-measurement bat_charge_current=0.03,bat_power_minus=0i,bat_power_plus=61i,bat_voltage=197.0,grid_power_minus=0i,grid_power_plus=299i,house_power=238i,inverter_power=0i,wallbox_charge_power=0i 1701039694
+        my-measurement bat_charge_current=0.03,bat_power_minus=0i,bat_power_plus=60i,bat_voltage=197.0,grid_power_minus=0i,grid_power_plus=299i,house_power=239i,inverter_power=0i,wallbox_charge_power=0i 1701039755
+        my-measurement bat_charge_current=0.04,bat_power_minus=0i,bat_power_plus=63i,bat_voltage=197.0,grid_power_minus=0i,grid_power_plus=306i,house_power=244i,inverter_power=0i,wallbox_charge_power=0i 1701039815
+        my-measurement bat_charge_current=0.04,bat_power_minus=0i,bat_power_plus=63i,bat_voltage=197.0,grid_power_minus=0i,grid_power_plus=306i,house_power=243i,inverter_power=0i,wallbox_charge_power=0i 1701039875
+        my-measurement bat_charge_current=0.04,bat_power_minus=0i,bat_power_plus=63i,bat_voltage=197.0,grid_power_minus=0i,grid_power_plus=309i,house_power=247i,inverter_power=0i,wallbox_charge_power=0i 1701039935
+        my-measurement bat_charge_current=0.04,bat_power_minus=0i,bat_power_plus=61i,bat_voltage=197.0,grid_power_minus=0i,grid_power_plus=303i,house_power=242i,inverter_power=0i,wallbox_charge_power=0i 1701039996
+        my-measurement bat_charge_current=0.04,bat_power_minus=0i,bat_power_plus=63i,bat_voltage=197.0,grid_power_minus=0i,grid_power_plus=306i,house_power=244i,inverter_power=0i,wallbox_charge_power=0i 1701040056
+        my-measurement bat_charge_current=0.06,bat_power_minus=0i,bat_power_plus=62i,bat_voltage=197.0,grid_power_minus=0i,grid_power_plus=298i,house_power=236i,inverter_power=0i,wallbox_charge_power=0i 1701040116
+        my-measurement bat_charge_current=0.049,bat_power_minus=0i,bat_power_plus=63i,bat_voltage=197.0,grid_power_minus=0i,grid_power_plus=301i,house_power=239i,inverter_power=0i,wallbox_charge_power=0i 1701040176
+        my-measurement bat_charge_current=0.059,bat_power_minus=0i,bat_power_plus=63i,bat_voltage=197.0,grid_power_minus=0i,grid_power_plus=303i,house_power=240i,inverter_power=0i,wallbox_charge_power=0i 1701040236
+        my-measurement bat_charge_current=0.049,bat_power_minus=0i,bat_power_plus=62i,bat_voltage=197.0,grid_power_minus=0i,grid_power_plus=300i,house_power=237i,inverter_power=0i,wallbox_charge_power=0i 1701040296
+        my-measurement bat_charge_current=0.069,bat_power_minus=0i,bat_power_plus=62i,bat_voltage=197.0,grid_power_minus=0i,grid_power_plus=308i,house_power=247i,inverter_power=0i,wallbox_charge_power=0i 1701040356
+        my-measurement bat_charge_current=0.059,bat_power_minus=0i,bat_power_plus=63i,bat_voltage=197.0,grid_power_minus=0i,grid_power_plus=325i,house_power=262i,inverter_power=0i,wallbox_charge_power=0i 1701040416
+        my-measurement bat_charge_current=0.049,bat_power_minus=0i,bat_power_plus=61i,bat_voltage=197.0,grid_power_minus=0i,grid_power_plus=332i,house_power=271i,inverter_power=0i,wallbox_charge_power=0i 1701040477
+        my-measurement bat_charge_current=0.03,bat_power_minus=0i,bat_power_plus=63i,bat_voltage=197.0,grid_power_minus=0i,grid_power_plus=335i,house_power=273i,inverter_power=0i,wallbox_charge_power=0i 1701040537
+        my-measurement bat_charge_current=0.049,bat_power_minus=0i,bat_power_plus=63i,bat_voltage=197.0,grid_power_minus=0i,grid_power_plus=328i,house_power=265i,inverter_power=0i,wallbox_charge_power=0i 1701040597
+        my-measurement bat_charge_current=0.06,bat_power_minus=0i,bat_power_plus=61i,bat_voltage=197.0,grid_power_minus=0i,grid_power_plus=327i,house_power=266i,inverter_power=0i,wallbox_charge_power=0i 1701040658
+        my-measurement bat_charge_current=0.04,bat_power_minus=0i,bat_power_plus=63i,bat_voltage=197.0,grid_power_minus=0i,grid_power_plus=331i,house_power=268i,inverter_power=0i,wallbox_charge_power=0i 1701040718
+        my-measurement bat_charge_current=0.04,bat_power_minus=0i,bat_power_plus=63i,bat_voltage=197.0,grid_power_minus=0i,grid_power_plus=335i,house_power=272i,inverter_power=0i,wallbox_charge_power=0i 1701040778
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - influxdb-client-ruby/3.0.0
+      Authorization:
+      - Token <INFLUX_TOKEN_WRITE>
+      Content-Type:
+      - text/plain
+  response:
+    status:
+      code: 204
+      message: No Content
+    headers:
+      X-Influxdb-Build:
+      - OSS
+      X-Influxdb-Version:
+      - v2.7.5
+      Date:
+      - Thu, 25 Jan 2024 07:47:36 GMT
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Thu, 25 Jan 2024 07:47:36 GMT
+- request:
+    method: post
+    uri: http://<INFLUX_HOST>:8086/api/v2/write?bucket=<INFLUX_BUCKET>&org=<INFLUX_ORG>&precision=s
+    body:
+      encoding: UTF-8
+      string: |-
         my-measurement bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=0i,grid_power_plus=198i,house_power=199i,inverter_power=0i,wallbox_charge_power=0i 1647213193
         my-measurement bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=0i,grid_power_plus=212i,house_power=211i,inverter_power=0i,wallbox_charge_power=0i 1647213493
         my-measurement bat_charge_current=0.0,bat_power_minus=0i,bat_power_plus=0i,bat_voltage=0.0,grid_power_minus=0i,grid_power_plus=270i,house_power=270i,inverter_power=0i,wallbox_charge_power=0i 1647213793
@@ -35,11 +86,11 @@ http_interactions:
       X-Influxdb-Version:
       - v2.7.5
       Date:
-      - Thu, 25 Jan 2024 07:45:53 GMT
+      - Thu, 25 Jan 2024 07:47:36 GMT
     body:
       encoding: UTF-8
       string: ''
-  recorded_at: Thu, 25 Jan 2024 07:45:53 GMT
+  recorded_at: Thu, 25 Jan 2024 07:47:36 GMT
 - request:
     method: post
     uri: http://<INFLUX_HOST>:8086/api/v2/write?bucket=<INFLUX_BUCKET>&org=<INFLUX_ORG>&precision=s
@@ -97,11 +148,11 @@ http_interactions:
       X-Influxdb-Version:
       - v2.7.5
       Date:
-      - Thu, 25 Jan 2024 07:45:53 GMT
+      - Thu, 25 Jan 2024 07:47:36 GMT
     body:
       encoding: UTF-8
       string: ''
-  recorded_at: Thu, 25 Jan 2024 07:45:53 GMT
+  recorded_at: Thu, 25 Jan 2024 07:47:36 GMT
 - request:
     method: post
     uri: http://<INFLUX_HOST>:8086/api/v2/write?bucket=<INFLUX_BUCKET>&org=<INFLUX_ORG>&precision=s
@@ -132,11 +183,11 @@ http_interactions:
       X-Influxdb-Version:
       - v2.7.5
       Date:
-      - Thu, 25 Jan 2024 07:45:54 GMT
+      - Thu, 25 Jan 2024 07:47:36 GMT
     body:
       encoding: UTF-8
       string: ''
-  recorded_at: Thu, 25 Jan 2024 07:45:54 GMT
+  recorded_at: Thu, 25 Jan 2024 07:47:36 GMT
 - request:
     method: post
     uri: http://<INFLUX_HOST>:8086/api/v2/write?bucket=<INFLUX_BUCKET>&org=<INFLUX_ORG>&precision=s
@@ -185,11 +236,11 @@ http_interactions:
       X-Influxdb-Version:
       - v2.7.5
       Date:
-      - Thu, 25 Jan 2024 07:45:54 GMT
+      - Thu, 25 Jan 2024 07:47:36 GMT
     body:
       encoding: UTF-8
       string: ''
-  recorded_at: Thu, 25 Jan 2024 07:45:54 GMT
+  recorded_at: Thu, 25 Jan 2024 07:47:36 GMT
 - request:
     method: post
     uri: http://<INFLUX_HOST>:8086/api/v2/write?bucket=<INFLUX_BUCKET>&org=<INFLUX_ORG>&precision=s
@@ -505,11 +556,11 @@ http_interactions:
       X-Influxdb-Version:
       - v2.7.5
       Date:
-      - Thu, 25 Jan 2024 07:45:54 GMT
+      - Thu, 25 Jan 2024 07:47:36 GMT
     body:
       encoding: UTF-8
       string: ''
-  recorded_at: Thu, 25 Jan 2024 07:45:54 GMT
+  recorded_at: Thu, 25 Jan 2024 07:47:36 GMT
 - request:
     method: post
     uri: http://<INFLUX_HOST>:8086/api/v2/write?bucket=<INFLUX_BUCKET>&org=<INFLUX_ORG>&precision=s
@@ -547,9 +598,9 @@ http_interactions:
       X-Influxdb-Version:
       - v2.7.5
       Date:
-      - Thu, 25 Jan 2024 07:45:54 GMT
+      - Thu, 25 Jan 2024 07:47:36 GMT
     body:
       encoding: UTF-8
       string: ''
-  recorded_at: Thu, 25 Jan 2024 07:45:54 GMT
+  recorded_at: Thu, 25 Jan 2024 07:47:36 GMT
 recorded_with: VCR 6.2.0
