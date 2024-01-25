@@ -20,7 +20,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - influxdb-client-ruby/2.9.0
+      - influxdb-client-ruby/3.0.0
       Authorization:
       - Token <INFLUX_TOKEN_WRITE>
       Content-Type:
@@ -33,13 +33,13 @@ http_interactions:
       X-Influxdb-Build:
       - OSS
       X-Influxdb-Version:
-      - v2.7.1
+      - v2.7.5
       Date:
-      - Mon, 26 Jun 2023 07:34:34 GMT
+      - Thu, 25 Jan 2024 07:45:53 GMT
     body:
       encoding: UTF-8
       string: ''
-  recorded_at: Mon, 26 Jun 2023 07:34:34 GMT
+  recorded_at: Thu, 25 Jan 2024 07:45:53 GMT
 - request:
     method: post
     uri: http://<INFLUX_HOST>:8086/api/v2/write?bucket=<INFLUX_BUCKET>&org=<INFLUX_ORG>&precision=s
@@ -82,7 +82,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - influxdb-client-ruby/2.9.0
+      - influxdb-client-ruby/3.0.0
       Authorization:
       - Token <INFLUX_TOKEN_WRITE>
       Content-Type:
@@ -95,29 +95,29 @@ http_interactions:
       X-Influxdb-Build:
       - OSS
       X-Influxdb-Version:
-      - v2.7.1
+      - v2.7.5
       Date:
-      - Mon, 26 Jun 2023 07:34:35 GMT
+      - Thu, 25 Jan 2024 07:45:53 GMT
     body:
       encoding: UTF-8
       string: ''
-  recorded_at: Mon, 26 Jun 2023 07:34:35 GMT
+  recorded_at: Thu, 25 Jan 2024 07:45:53 GMT
 - request:
     method: post
     uri: http://<INFLUX_HOST>:8086/api/v2/write?bucket=<INFLUX_BUCKET>&org=<INFLUX_ORG>&precision=s
     body:
       encoding: UTF-8
       string: |-
-        my-measurement bat_charge_current=-7.68,bat_power_minus=414i,bat_power_plus=0i,bat_voltage=53.692001,grid_power_minus=12i,grid_power_plus=1i,house_power=406i,inverter_power=0i,wallbox_charge_power=0i 1659913507
-        my-measurement bat_charge_current=-8.35,bat_power_minus=437i,bat_power_plus=0i,bat_voltage=53.646999,grid_power_minus=12i,grid_power_plus=4i,house_power=426i,inverter_power=0i,wallbox_charge_power=0i 1659913810
-        my-measurement bat_charge_current=-8.24,bat_power_minus=445i,bat_power_plus=0i,bat_voltage=53.608002,grid_power_minus=12i,grid_power_plus=1i,house_power=437i,inverter_power=0i,wallbox_charge_power=0i 1659914110
+        my-measurement bat_charge_current=-7.68,bat_power_minus=414i,bat_power_plus=0i,bat_voltage=53.692001,grid_power_minus=12i,grid_power_plus=1i,house_power=406i,inverter_power=0i,wallbox_charge_power=0i 1659909907
+        my-measurement bat_charge_current=-8.35,bat_power_minus=437i,bat_power_plus=0i,bat_voltage=53.646999,grid_power_minus=12i,grid_power_plus=4i,house_power=426i,inverter_power=0i,wallbox_charge_power=0i 1659910210
+        my-measurement bat_charge_current=-8.24,bat_power_minus=445i,bat_power_plus=0i,bat_voltage=53.608002,grid_power_minus=12i,grid_power_plus=1i,house_power=437i,inverter_power=0i,wallbox_charge_power=0i 1659910510
     headers:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - "*/*"
       User-Agent:
-      - influxdb-client-ruby/2.9.0
+      - influxdb-client-ruby/3.0.0
       Authorization:
       - Token <INFLUX_TOKEN_WRITE>
       Content-Type:
@@ -130,47 +130,47 @@ http_interactions:
       X-Influxdb-Build:
       - OSS
       X-Influxdb-Version:
-      - v2.7.1
+      - v2.7.5
       Date:
-      - Mon, 26 Jun 2023 07:34:35 GMT
+      - Thu, 25 Jan 2024 07:45:54 GMT
     body:
       encoding: UTF-8
       string: ''
-  recorded_at: Mon, 26 Jun 2023 07:34:35 GMT
+  recorded_at: Thu, 25 Jan 2024 07:45:54 GMT
 - request:
     method: post
     uri: http://<INFLUX_HOST>:8086/api/v2/write?bucket=<INFLUX_BUCKET>&org=<INFLUX_ORG>&precision=s
     body:
       encoding: UTF-8
       string: |-
-        my-measurement bat_charge_current=15.26,bat_power_minus=0i,bat_power_plus=908i,bat_voltage=56.040001,grid_power_minus=12i,grid_power_plus=6i,house_power=434i,inverter_power=1359i,wallbox_charge_power=0i 1664194389
-        my-measurement bat_charge_current=16.870001,bat_power_minus=290i,bat_power_plus=516i,bat_voltage=56.032001,grid_power_minus=35i,grid_power_plus=164i,house_power=1225i,inverter_power=1289i,wallbox_charge_power=0i 1664194689
-        my-measurement bat_charge_current=19.290001,bat_power_minus=0i,bat_power_plus=1004i,bat_voltage=56.227001,grid_power_minus=23i,grid_power_plus=3i,house_power=448i,inverter_power=1490i,wallbox_charge_power=0i 1664194991
-        my-measurement bat_charge_current=22.67,bat_power_minus=0i,bat_power_plus=1160i,bat_voltage=56.418999,grid_power_minus=12i,grid_power_plus=0i,house_power=418i,inverter_power=1601i,wallbox_charge_power=0i 1664195294
-        my-measurement bat_charge_current=2.45,bat_power_minus=0i,bat_power_plus=957i,bat_voltage=56.362999,grid_power_minus=93i,grid_power_plus=81i,house_power=827i,inverter_power=1769i,wallbox_charge_power=0i 1664195596
-        my-measurement bat_charge_current=22.08,bat_power_minus=0i,bat_power_plus=920i,bat_voltage=56.645,grid_power_minus=106i,grid_power_plus=79i,house_power=800i,inverter_power=1764i,wallbox_charge_power=0i 1664195895
-        my-measurement bat_charge_current=8.92,bat_power_minus=15i,bat_power_plus=893i,bat_voltage=56.636002,grid_power_minus=58i,grid_power_plus=105i,house_power=664i,inverter_power=1467i,wallbox_charge_power=0i 1664196197
-        my-measurement bat_charge_current=14.16,bat_power_minus=67i,bat_power_plus=570i,bat_voltage=56.726002,grid_power_minus=70i,grid_power_plus=137i,house_power=797i,inverter_power=1257i,wallbox_charge_power=0i 1664196499
-        my-measurement bat_charge_current=15.49,bat_power_minus=99i,bat_power_plus=559i,bat_voltage=56.778999,grid_power_minus=70i,grid_power_plus=64i,house_power=669i,inverter_power=1141i,wallbox_charge_power=0i 1664196801
-        my-measurement bat_charge_current=10.43,bat_power_minus=0i,bat_power_plus=812i,bat_voltage=56.856998,grid_power_minus=23i,grid_power_plus=9i,house_power=314i,inverter_power=1118i,wallbox_charge_power=0i 1664197103
-        my-measurement bat_charge_current=10.48,bat_power_minus=131i,bat_power_plus=437i,bat_voltage=56.861,grid_power_minus=58i,grid_power_plus=55i,house_power=623i,inverter_power=955i,wallbox_charge_power=0i 1664197405
-        my-measurement bat_charge_current=7.92,bat_power_minus=0i,bat_power_plus=530i,bat_voltage=56.896999,grid_power_minus=12i,grid_power_plus=3i,house_power=316i,inverter_power=844i,wallbox_charge_power=0i 1664197705
-        my-measurement bat_charge_current=2.76,bat_power_minus=0i,bat_power_plus=299i,bat_voltage=56.868999,grid_power_minus=12i,grid_power_plus=6i,house_power=348i,inverter_power=673i,wallbox_charge_power=0i 1664198008
-        my-measurement bat_charge_current=0.86,bat_power_minus=0i,bat_power_plus=73i,bat_voltage=56.847,grid_power_minus=23i,grid_power_plus=6i,house_power=362i,inverter_power=444i,wallbox_charge_power=0i 1664198309
-        my-measurement bat_charge_current=2.24,bat_power_minus=0i,bat_power_plus=78i,bat_voltage=56.859001,grid_power_minus=12i,grid_power_plus=6i,house_power=382i,inverter_power=439i,wallbox_charge_power=0i 1664198613
-        my-measurement bat_charge_current=4.05,bat_power_minus=0i,bat_power_plus=172i,bat_voltage=56.894001,grid_power_minus=12i,grid_power_plus=3i,house_power=385i,inverter_power=584i,wallbox_charge_power=0i 1664198914
-        my-measurement bat_charge_current=8.68,bat_power_minus=1404i,bat_power_plus=93i,bat_voltage=56.735001,grid_power_minus=47i,grid_power_plus=47i,house_power=2126i,inverter_power=818i,wallbox_charge_power=0i 1664199215
-        my-measurement bat_charge_current=11.48,bat_power_minus=0i,bat_power_plus=588i,bat_voltage=56.874001,grid_power_minus=23i,grid_power_plus=3i,house_power=460i,inverter_power=1071i,wallbox_charge_power=0i 1664199517
-        my-measurement bat_charge_current=9.76,bat_power_minus=0i,bat_power_plus=632i,bat_voltage=56.943001,grid_power_minus=12i,grid_power_plus=6i,house_power=448i,inverter_power=1094i,wallbox_charge_power=0i 1664199819
-        my-measurement bat_charge_current=-30.379999,bat_power_minus=960i,bat_power_plus=215i,bat_voltage=56.473999,grid_power_minus=12i,grid_power_plus=41i,house_power=1746i,inverter_power=975i,wallbox_charge_power=0i 1664200122
-        my-measurement bat_charge_current=-27.870001,bat_power_minus=1612i,bat_power_plus=0i,bat_voltage=56.278,grid_power_minus=12i,grid_power_plus=3i,house_power=2605i,inverter_power=981i,wallbox_charge_power=0i 1664200423
+        my-measurement bat_charge_current=15.26,bat_power_minus=0i,bat_power_plus=908i,bat_voltage=56.040001,grid_power_minus=12i,grid_power_plus=6i,house_power=434i,inverter_power=1359i,wallbox_charge_power=0i 1664190789
+        my-measurement bat_charge_current=16.870001,bat_power_minus=290i,bat_power_plus=516i,bat_voltage=56.032001,grid_power_minus=35i,grid_power_plus=164i,house_power=1225i,inverter_power=1289i,wallbox_charge_power=0i 1664191089
+        my-measurement bat_charge_current=19.290001,bat_power_minus=0i,bat_power_plus=1004i,bat_voltage=56.227001,grid_power_minus=23i,grid_power_plus=3i,house_power=448i,inverter_power=1490i,wallbox_charge_power=0i 1664191391
+        my-measurement bat_charge_current=22.67,bat_power_minus=0i,bat_power_plus=1160i,bat_voltage=56.418999,grid_power_minus=12i,grid_power_plus=0i,house_power=418i,inverter_power=1601i,wallbox_charge_power=0i 1664191694
+        my-measurement bat_charge_current=2.45,bat_power_minus=0i,bat_power_plus=957i,bat_voltage=56.362999,grid_power_minus=93i,grid_power_plus=81i,house_power=827i,inverter_power=1769i,wallbox_charge_power=0i 1664191996
+        my-measurement bat_charge_current=22.08,bat_power_minus=0i,bat_power_plus=920i,bat_voltage=56.645,grid_power_minus=106i,grid_power_plus=79i,house_power=800i,inverter_power=1764i,wallbox_charge_power=0i 1664192295
+        my-measurement bat_charge_current=8.92,bat_power_minus=15i,bat_power_plus=893i,bat_voltage=56.636002,grid_power_minus=58i,grid_power_plus=105i,house_power=664i,inverter_power=1467i,wallbox_charge_power=0i 1664192597
+        my-measurement bat_charge_current=14.16,bat_power_minus=67i,bat_power_plus=570i,bat_voltage=56.726002,grid_power_minus=70i,grid_power_plus=137i,house_power=797i,inverter_power=1257i,wallbox_charge_power=0i 1664192899
+        my-measurement bat_charge_current=15.49,bat_power_minus=99i,bat_power_plus=559i,bat_voltage=56.778999,grid_power_minus=70i,grid_power_plus=64i,house_power=669i,inverter_power=1141i,wallbox_charge_power=0i 1664193201
+        my-measurement bat_charge_current=10.43,bat_power_minus=0i,bat_power_plus=812i,bat_voltage=56.856998,grid_power_minus=23i,grid_power_plus=9i,house_power=314i,inverter_power=1118i,wallbox_charge_power=0i 1664193503
+        my-measurement bat_charge_current=10.48,bat_power_minus=131i,bat_power_plus=437i,bat_voltage=56.861,grid_power_minus=58i,grid_power_plus=55i,house_power=623i,inverter_power=955i,wallbox_charge_power=0i 1664193805
+        my-measurement bat_charge_current=7.92,bat_power_minus=0i,bat_power_plus=530i,bat_voltage=56.896999,grid_power_minus=12i,grid_power_plus=3i,house_power=316i,inverter_power=844i,wallbox_charge_power=0i 1664194105
+        my-measurement bat_charge_current=2.76,bat_power_minus=0i,bat_power_plus=299i,bat_voltage=56.868999,grid_power_minus=12i,grid_power_plus=6i,house_power=348i,inverter_power=673i,wallbox_charge_power=0i 1664194408
+        my-measurement bat_charge_current=0.86,bat_power_minus=0i,bat_power_plus=73i,bat_voltage=56.847,grid_power_minus=23i,grid_power_plus=6i,house_power=362i,inverter_power=444i,wallbox_charge_power=0i 1664194709
+        my-measurement bat_charge_current=2.24,bat_power_minus=0i,bat_power_plus=78i,bat_voltage=56.859001,grid_power_minus=12i,grid_power_plus=6i,house_power=382i,inverter_power=439i,wallbox_charge_power=0i 1664195013
+        my-measurement bat_charge_current=4.05,bat_power_minus=0i,bat_power_plus=172i,bat_voltage=56.894001,grid_power_minus=12i,grid_power_plus=3i,house_power=385i,inverter_power=584i,wallbox_charge_power=0i 1664195314
+        my-measurement bat_charge_current=8.68,bat_power_minus=1404i,bat_power_plus=93i,bat_voltage=56.735001,grid_power_minus=47i,grid_power_plus=47i,house_power=2126i,inverter_power=818i,wallbox_charge_power=0i 1664195615
+        my-measurement bat_charge_current=11.48,bat_power_minus=0i,bat_power_plus=588i,bat_voltage=56.874001,grid_power_minus=23i,grid_power_plus=3i,house_power=460i,inverter_power=1071i,wallbox_charge_power=0i 1664195917
+        my-measurement bat_charge_current=9.76,bat_power_minus=0i,bat_power_plus=632i,bat_voltage=56.943001,grid_power_minus=12i,grid_power_plus=6i,house_power=448i,inverter_power=1094i,wallbox_charge_power=0i 1664196219
+        my-measurement bat_charge_current=-30.379999,bat_power_minus=960i,bat_power_plus=215i,bat_voltage=56.473999,grid_power_minus=12i,grid_power_plus=41i,house_power=1746i,inverter_power=975i,wallbox_charge_power=0i 1664196522
+        my-measurement bat_charge_current=-27.870001,bat_power_minus=1612i,bat_power_plus=0i,bat_voltage=56.278,grid_power_minus=12i,grid_power_plus=3i,house_power=2605i,inverter_power=981i,wallbox_charge_power=0i 1664196823
     headers:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - "*/*"
       User-Agent:
-      - influxdb-client-ruby/2.9.0
+      - influxdb-client-ruby/3.0.0
       Authorization:
       - Token <INFLUX_TOKEN_WRITE>
       Content-Type:
@@ -183,314 +183,314 @@ http_interactions:
       X-Influxdb-Build:
       - OSS
       X-Influxdb-Version:
-      - v2.7.1
+      - v2.7.5
       Date:
-      - Mon, 26 Jun 2023 07:34:35 GMT
+      - Thu, 25 Jan 2024 07:45:54 GMT
     body:
       encoding: UTF-8
       string: ''
-  recorded_at: Mon, 26 Jun 2023 07:34:35 GMT
+  recorded_at: Thu, 25 Jan 2024 07:45:54 GMT
 - request:
     method: post
     uri: http://<INFLUX_HOST>:8086/api/v2/write?bucket=<INFLUX_BUCKET>&org=<INFLUX_ORG>&precision=s
     body:
       encoding: UTF-8
       string: |-
-        my-measurement bat_power_minus=402.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=402.0,inverter_power=0.0 1687302000
-        my-measurement bat_power_minus=402.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=402.0,inverter_power=0.0 1687302300
-        my-measurement bat_power_minus=403.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=403.0,inverter_power=0.0 1687302600
-        my-measurement bat_power_minus=396.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=2.0,house_power=398.0,inverter_power=0.0 1687302900
-        my-measurement bat_power_minus=399.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=399.0,inverter_power=0.0 1687303200
-        my-measurement bat_power_minus=389.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=389.0,inverter_power=0.0 1687303500
-        my-measurement bat_power_minus=306.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=306.0,inverter_power=0.0 1687303800
-        my-measurement bat_power_minus=326.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=326.0,inverter_power=0.0 1687304100
-        my-measurement bat_power_minus=334.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=1.0,house_power=335.0,inverter_power=0.0 1687304400
-        my-measurement bat_power_minus=297.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=2.0,house_power=299.0,inverter_power=0.0 1687304700
-        my-measurement bat_power_minus=445.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=445.0,inverter_power=0.0 1687305000
-        my-measurement bat_power_minus=344.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=1.0,house_power=345.0,inverter_power=0.0 1687305300
-        my-measurement bat_power_minus=368.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=1.0,house_power=369.0,inverter_power=0.0 1687305600
-        my-measurement bat_power_minus=404.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=404.0,inverter_power=0.0 1687305900
-        my-measurement bat_power_minus=383.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=3.0,house_power=386.0,inverter_power=0.0 1687306200
-        my-measurement bat_power_minus=403.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=1.0,house_power=404.0,inverter_power=0.0 1687306500
-        my-measurement bat_power_minus=390.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=390.0,inverter_power=0.0 1687306800
-        my-measurement bat_power_minus=412.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=412.0,inverter_power=0.0 1687307100
-        my-measurement bat_power_minus=334.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=1.0,house_power=335.0,inverter_power=0.0 1687307400
-        my-measurement bat_power_minus=365.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=365.0,inverter_power=0.0 1687307700
-        my-measurement bat_power_minus=396.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=396.0,inverter_power=0.0 1687308000
-        my-measurement bat_power_minus=361.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=361.0,inverter_power=0.0 1687308300
-        my-measurement bat_power_minus=368.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=368.0,inverter_power=0.0 1687308600
-        my-measurement bat_power_minus=267.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=1.0,house_power=268.0,inverter_power=0.0 1687308900
-        my-measurement bat_power_minus=309.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=309.0,inverter_power=0.0 1687309200
-        my-measurement bat_power_minus=313.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=6.0,house_power=319.0,inverter_power=0.0 1687309500
-        my-measurement bat_power_minus=365.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=365.0,inverter_power=0.0 1687309800
-        my-measurement bat_power_minus=425.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=2.0,house_power=427.0,inverter_power=0.0 1687310100
-        my-measurement bat_power_minus=326.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=1.0,house_power=327.0,inverter_power=0.0 1687310400
-        my-measurement bat_power_minus=344.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=344.0,inverter_power=0.0 1687310700
-        my-measurement bat_power_minus=362.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=362.0,inverter_power=0.0 1687311000
-        my-measurement bat_power_minus=382.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=382.0,inverter_power=0.0 1687311300
-        my-measurement bat_power_minus=398.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=398.0,inverter_power=0.0 1687311600
-        my-measurement bat_power_minus=392.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=392.0,inverter_power=0.0 1687311900
-        my-measurement bat_power_minus=325.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=1.0,house_power=326.0,inverter_power=0.0 1687312200
-        my-measurement bat_power_minus=273.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=3.0,house_power=276.0,inverter_power=0.0 1687312500
-        my-measurement bat_power_minus=320.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=2.0,house_power=322.0,inverter_power=0.0 1687312800
-        my-measurement bat_power_minus=418.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=418.0,inverter_power=0.0 1687313100
-        my-measurement bat_power_minus=322.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=322.0,inverter_power=0.0 1687313400
-        my-measurement bat_power_minus=377.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=377.0,inverter_power=0.0 1687313700
-        my-measurement bat_power_minus=356.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=356.0,inverter_power=0.0 1687314000
-        my-measurement bat_power_minus=324.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=324.0,inverter_power=0.0 1687314300
-        my-measurement bat_power_minus=500.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=500.0,inverter_power=0.0 1687314600
-        my-measurement bat_power_minus=442.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=442.0,inverter_power=0.0 1687314900
-        my-measurement bat_power_minus=452.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=4.0,house_power=456.0,inverter_power=0.0 1687315200
-        my-measurement bat_power_minus=429.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=3.0,house_power=432.0,inverter_power=0.0 1687315500
-        my-measurement bat_power_minus=418.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=3.0,house_power=421.0,inverter_power=0.0 1687315800
-        my-measurement bat_power_minus=404.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=3.0,house_power=407.0,inverter_power=0.0 1687316100
-        my-measurement bat_power_minus=329.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=329.0,inverter_power=0.0 1687316400
-        my-measurement bat_power_minus=297.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=297.0,inverter_power=0.0 1687316700
-        my-measurement bat_power_minus=283.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=2.0,house_power=285.0,inverter_power=0.0 1687317000
-        my-measurement bat_power_minus=267.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=267.0,inverter_power=0.0 1687317300
-        my-measurement bat_power_minus=379.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=3.0,house_power=382.0,inverter_power=0.0 1687317600
-        my-measurement bat_power_minus=356.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=356.0,inverter_power=0.0 1687317900
-        my-measurement bat_power_minus=372.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=372.0,inverter_power=0.0 1687318200
-        my-measurement bat_power_minus=363.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=363.0,inverter_power=0.0 1687318500
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=349.0,house_power=349.0,inverter_power=0.0 1687318800
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=347.0,house_power=347.0,inverter_power=0.0 1687319100
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=314.0,house_power=314.0,inverter_power=0.0 1687319400
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=356.0,house_power=356.0,inverter_power=0.0 1687319700
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=351.0,house_power=351.0,inverter_power=0.0 1687320000
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=276.0,house_power=276.0,inverter_power=0.0 1687320300
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=332.0,house_power=332.0,inverter_power=0.0 1687320600
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=240.0,house_power=240.0,inverter_power=0.0 1687320900
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=258.0,house_power=258.0,inverter_power=0.0 1687321200
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=344.0,house_power=344.0,inverter_power=0.0 1687321500
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=339.0,house_power=339.0,inverter_power=0.0 1687321800
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=378.0,house_power=378.0,inverter_power=0.0 1687322100
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=394.0,house_power=394.0,inverter_power=0.0 1687322400
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=372.0,house_power=372.0,inverter_power=0.0 1687322700
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=414.0,house_power=414.0,inverter_power=0.0 1687323000
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=417.0,house_power=417.0,inverter_power=0.0 1687323300
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=456.0,house_power=456.0,inverter_power=0.0 1687323600
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=398.0,house_power=398.0,inverter_power=0.0 1687323900
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=244.0,house_power=244.0,inverter_power=0.0 1687324200
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=246.0,house_power=246.0,inverter_power=0.0 1687324500
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=285.0,house_power=285.0,inverter_power=0.0 1687324800
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=193.0,house_power=193.0,inverter_power=0.0 1687325100
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=125.0,house_power=125.0,inverter_power=0.0 1687325400
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=190.0,house_power=190.0,inverter_power=0.0 1687325700
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=154.0,house_power=154.0,inverter_power=0.0 1687326000
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=152.0,house_power=152.0,inverter_power=0.0 1687326300
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=240.0,house_power=240.0,inverter_power=0.0 1687326600
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=214.0,house_power=214.0,inverter_power=0.0 1687326900
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=205.0,house_power=205.0,inverter_power=0.0 1687327200
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=185.0,house_power=196.0,inverter_power=11.0 1687327500
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=177.0,house_power=196.0,inverter_power=19.0 1687327800
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=117.0,house_power=152.0,inverter_power=35.0 1687328100
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=111.0,house_power=152.0,inverter_power=41.0 1687328400
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=218.0,house_power=253.0,inverter_power=35.0 1687328700
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=376.0,house_power=416.0,inverter_power=40.0 1687329000
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=357.0,house_power=439.0,inverter_power=82.0 1687329300
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=139.0,house_power=271.0,inverter_power=132.0 1687329600
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=1310.0,house_power=1424.0,inverter_power=114.0 1687329900
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=271.0,house_power=373.0,inverter_power=102.0 1687330200
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=257.0,house_power=323.0,inverter_power=66.0 1687330500
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=255.0,house_power=312.0,inverter_power=57.0 1687330800
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=328.0,house_power=396.0,inverter_power=68.0 1687331100
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=264.0,house_power=350.0,inverter_power=86.0 1687331400
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=1857.0,house_power=1961.0,inverter_power=104.0 1687331700
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=211.0,house_power=280.0,inverter_power=69.0 1687332000
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=686.0,house_power=765.0,inverter_power=79.0 1687332300
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=623.0,house_power=737.0,inverter_power=114.0 1687332600
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=452.0,house_power=585.0,inverter_power=133.0 1687332900
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=866.0,house_power=1025.0,inverter_power=159.0 1687333200
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=948.0,house_power=1130.0,inverter_power=182.0 1687333500
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=824.0,house_power=1018.0,inverter_power=194.0 1687333800
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=780.0,house_power=975.0,inverter_power=195.0 1687334100
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=432.0,house_power=633.0,inverter_power=201.0 1687334400
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=221.0,inverter_power=221.0 1687334700
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=284.0,inverter_power=284.0 1687335000
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=236.0,inverter_power=236.0 1687335300
-        my-measurement bat_power_minus=0.0,bat_power_plus=43.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=385.0,inverter_power=428.0 1687335600
-        my-measurement bat_power_minus=0.0,bat_power_plus=1256.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=342.0,inverter_power=1598.0 1687335900
-        my-measurement bat_power_minus=0.0,bat_power_plus=1529.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=371.0,inverter_power=1900.0 1687336200
-        my-measurement bat_power_minus=0.0,bat_power_plus=252.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=278.0,inverter_power=530.0 1687336500
-        my-measurement bat_power_minus=0.0,bat_power_plus=462.0,grid_power_minus=0.0,grid_power_plus=5.0,house_power=270.0,inverter_power=727.0 1687336800
-        my-measurement bat_power_minus=0.0,bat_power_plus=445.0,grid_power_minus=0.0,grid_power_plus=9.0,house_power=271.0,inverter_power=707.0 1687337100
-        my-measurement bat_power_minus=0.0,bat_power_plus=1607.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=228.0,inverter_power=1835.0 1687337400
-        my-measurement bat_power_minus=0.0,bat_power_plus=1804.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=271.0,inverter_power=2075.0 1687337700
-        my-measurement bat_power_minus=0.0,bat_power_plus=1751.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=265.0,inverter_power=2016.0 1687338000
-        my-measurement bat_power_minus=0.0,bat_power_plus=2079.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=263.0,inverter_power=2342.0 1687338300
-        my-measurement bat_power_minus=0.0,bat_power_plus=288.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=302.0,inverter_power=590.0 1687338600
-        my-measurement bat_power_minus=0.0,bat_power_plus=2104.0,grid_power_minus=0.0,grid_power_plus=50.0,house_power=275.0,inverter_power=2329.0 1687338900
-        my-measurement bat_power_minus=0.0,bat_power_plus=1855.0,grid_power_minus=0.0,grid_power_plus=12.0,house_power=293.0,inverter_power=2136.0 1687339200
-        my-measurement bat_power_minus=0.0,bat_power_plus=2615.0,grid_power_minus=0.0,grid_power_plus=6.0,house_power=304.0,inverter_power=2913.0 1687339500
-        my-measurement bat_power_minus=0.0,bat_power_plus=722.0,grid_power_minus=0.0,grid_power_plus=2.0,house_power=180.0,inverter_power=900.0 1687339800
-        my-measurement bat_power_minus=0.0,bat_power_plus=2137.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=294.0,inverter_power=2431.0 1687340100
-        my-measurement bat_power_minus=0.0,bat_power_plus=954.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=152.0,inverter_power=1106.0 1687340400
-        my-measurement bat_power_minus=0.0,bat_power_plus=819.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=254.0,inverter_power=1073.0 1687340700
-        my-measurement bat_power_minus=0.0,bat_power_plus=2631.0,grid_power_minus=0.0,grid_power_plus=63.0,house_power=353.0,inverter_power=2921.0 1687341000
-        my-measurement bat_power_minus=57.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=163.0,house_power=2354.0,inverter_power=2134.0 1687341300
-        my-measurement bat_power_minus=809.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=2550.0,inverter_power=1741.0 1687341600
-        my-measurement bat_power_minus=2394.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=2394.0,inverter_power=0.0 1687341900
-        my-measurement bat_power_minus=1795.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=25.0,house_power=2356.0,inverter_power=536.0 1687342200
-        my-measurement bat_power_minus=1159.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=1706.0,inverter_power=547.0 1687342500
-        my-measurement bat_power_minus=0.0,bat_power_plus=272.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=435.0,inverter_power=707.0 1687342800
-        my-measurement bat_power_minus=0.0,bat_power_plus=159.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=472.0,inverter_power=631.0 1687343100
-        my-measurement bat_power_minus=0.0,bat_power_plus=465.0,grid_power_minus=0.0,grid_power_plus=8.0,house_power=292.0,inverter_power=749.0 1687343400
-        my-measurement bat_power_minus=0.0,bat_power_plus=581.0,grid_power_minus=0.0,grid_power_plus=8.0,house_power=265.0,inverter_power=838.0 1687343700
-        my-measurement bat_power_minus=0.0,bat_power_plus=2908.0,grid_power_minus=0.0,grid_power_plus=4.0,house_power=250.0,inverter_power=3154.0 1687344000
-        my-measurement bat_power_minus=0.0,bat_power_plus=3192.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=396.0,inverter_power=3588.0 1687344300
-        my-measurement bat_power_minus=0.0,bat_power_plus=4265.0,grid_power_minus=0.0,grid_power_plus=9.0,house_power=261.0,inverter_power=4517.0 1687344600
-        my-measurement bat_power_minus=0.0,bat_power_plus=4436.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=308.0,inverter_power=4744.0 1687344900
-        my-measurement bat_power_minus=0.0,bat_power_plus=3984.0,grid_power_minus=0.0,grid_power_plus=22.0,house_power=289.0,inverter_power=4251.0 1687345200
-        my-measurement bat_power_minus=0.0,bat_power_plus=705.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=192.0,inverter_power=897.0 1687345500
-        my-measurement bat_power_minus=0.0,bat_power_plus=988.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=205.0,inverter_power=1193.0 1687345800
-        my-measurement bat_power_minus=0.0,bat_power_plus=1660.0,grid_power_minus=0.0,grid_power_plus=30.0,house_power=202.0,inverter_power=1832.0 1687346100
-        my-measurement bat_power_minus=0.0,bat_power_plus=1831.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=322.0,inverter_power=2153.0 1687346400
-        my-measurement bat_power_minus=0.0,bat_power_plus=4823.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=232.0,inverter_power=5055.0 1687346700
-        my-measurement bat_power_minus=0.0,bat_power_plus=926.0,grid_power_minus=0.0,grid_power_plus=9.0,house_power=307.0,inverter_power=1224.0 1687347000
-        my-measurement bat_power_minus=0.0,bat_power_plus=509.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=419.0,inverter_power=928.0 1687347300
-        my-measurement bat_power_minus=0.0,bat_power_plus=616.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=427.0,inverter_power=1043.0 1687347600
-        my-measurement bat_power_minus=0.0,bat_power_plus=1107.0,grid_power_minus=0.0,grid_power_plus=3.0,house_power=227.0,inverter_power=1331.0 1687347900
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=1442.0,inverter_power=1442.0 1687348200
-        my-measurement bat_power_minus=0.0,bat_power_plus=388.0,grid_power_minus=0.0,grid_power_plus=3.0,house_power=876.0,inverter_power=1261.0 1687348500
-        my-measurement bat_power_minus=0.0,bat_power_plus=1561.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=891.0,inverter_power=2452.0 1687348800
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687349100
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687349400
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687349700
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687350000
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687350300
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687350600
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687350900
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687351200
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687351500
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687351800
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687352100
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687352400
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687352700
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687353000
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687353300
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687353600
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687353900
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687354200
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687354500
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687354800
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687355100
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687355400
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687355700
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687356000
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687356300
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687356600
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687356900
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687357200
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687357500
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687357800
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687358100
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687358400
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687358700
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687359000
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687359300
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687359600
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687359900
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687360200
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687360500
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687360800
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687361100
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687361400
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687361700
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687362000
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687362300
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687362600
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687362900
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687363200
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687363500
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687363800
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687364100
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687364400
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687364700
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687365000
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687365300
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687365600
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687365900
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687366200
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687366500
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687366800
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687367100
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687367400
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687367700
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687368000
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687368300
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687368600
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687368900
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687369200
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687369500
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687369800
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687370100
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687370400
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687370700
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687371000
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687371300
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687371600
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687371900
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687372200
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687372500
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687372800
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687373100
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687373400
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687373700
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687374000
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687374300
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687374600
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687374900
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687375200
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687375500
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687375800
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687376100
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687376400
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687376700
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687377000
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687377300
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687377600
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687377900
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687378200
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687378500
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687378800
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687379100
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687379400
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687379700
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687380000
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687380300
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687380600
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687380900
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687381200
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687381500
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687381800
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687382100
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687382400
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687382700
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687383000
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687383300
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687383600
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687383900
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687384200
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687384500
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687384800
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687385100
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687385400
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687385700
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687386000
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687386300
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687386600
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687386900
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687387200
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687387500
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687387800
-        my-measurement bat_power_minus=0.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=0.0,inverter_power=0.0 1687388100
+        my-measurement bat_power_minus=402i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=402i,inverter_power=0i 1687298400
+        my-measurement bat_power_minus=402i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=402i,inverter_power=0i 1687298700
+        my-measurement bat_power_minus=403i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=403i,inverter_power=0i 1687299000
+        my-measurement bat_power_minus=396i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=2i,house_power=398i,inverter_power=0i 1687299300
+        my-measurement bat_power_minus=399i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=399i,inverter_power=0i 1687299600
+        my-measurement bat_power_minus=389i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=389i,inverter_power=0i 1687299900
+        my-measurement bat_power_minus=306i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=306i,inverter_power=0i 1687300200
+        my-measurement bat_power_minus=326i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=326i,inverter_power=0i 1687300500
+        my-measurement bat_power_minus=334i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=1i,house_power=335i,inverter_power=0i 1687300800
+        my-measurement bat_power_minus=297i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=2i,house_power=299i,inverter_power=0i 1687301100
+        my-measurement bat_power_minus=445i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=445i,inverter_power=0i 1687301400
+        my-measurement bat_power_minus=344i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=1i,house_power=345i,inverter_power=0i 1687301700
+        my-measurement bat_power_minus=368i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=1i,house_power=369i,inverter_power=0i 1687302000
+        my-measurement bat_power_minus=404i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=404i,inverter_power=0i 1687302300
+        my-measurement bat_power_minus=383i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=3i,house_power=386i,inverter_power=0i 1687302600
+        my-measurement bat_power_minus=403i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=1i,house_power=404i,inverter_power=0i 1687302900
+        my-measurement bat_power_minus=390i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=390i,inverter_power=0i 1687303200
+        my-measurement bat_power_minus=412i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=412i,inverter_power=0i 1687303500
+        my-measurement bat_power_minus=334i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=1i,house_power=335i,inverter_power=0i 1687303800
+        my-measurement bat_power_minus=365i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=365i,inverter_power=0i 1687304100
+        my-measurement bat_power_minus=396i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=396i,inverter_power=0i 1687304400
+        my-measurement bat_power_minus=361i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=361i,inverter_power=0i 1687304700
+        my-measurement bat_power_minus=368i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=368i,inverter_power=0i 1687305000
+        my-measurement bat_power_minus=267i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=1i,house_power=268i,inverter_power=0i 1687305300
+        my-measurement bat_power_minus=309i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=309i,inverter_power=0i 1687305600
+        my-measurement bat_power_minus=313i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=6i,house_power=319i,inverter_power=0i 1687305900
+        my-measurement bat_power_minus=365i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=365i,inverter_power=0i 1687306200
+        my-measurement bat_power_minus=425i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=2i,house_power=427i,inverter_power=0i 1687306500
+        my-measurement bat_power_minus=326i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=1i,house_power=327i,inverter_power=0i 1687306800
+        my-measurement bat_power_minus=344i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=344i,inverter_power=0i 1687307100
+        my-measurement bat_power_minus=362i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=362i,inverter_power=0i 1687307400
+        my-measurement bat_power_minus=382i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=382i,inverter_power=0i 1687307700
+        my-measurement bat_power_minus=398i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=398i,inverter_power=0i 1687308000
+        my-measurement bat_power_minus=392i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=392i,inverter_power=0i 1687308300
+        my-measurement bat_power_minus=325i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=1i,house_power=326i,inverter_power=0i 1687308600
+        my-measurement bat_power_minus=273i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=3i,house_power=276i,inverter_power=0i 1687308900
+        my-measurement bat_power_minus=320i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=2i,house_power=322i,inverter_power=0i 1687309200
+        my-measurement bat_power_minus=418i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=418i,inverter_power=0i 1687309500
+        my-measurement bat_power_minus=322i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=322i,inverter_power=0i 1687309800
+        my-measurement bat_power_minus=377i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=377i,inverter_power=0i 1687310100
+        my-measurement bat_power_minus=356i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=356i,inverter_power=0i 1687310400
+        my-measurement bat_power_minus=324i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=324i,inverter_power=0i 1687310700
+        my-measurement bat_power_minus=500i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=500i,inverter_power=0i 1687311000
+        my-measurement bat_power_minus=442i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=442i,inverter_power=0i 1687311300
+        my-measurement bat_power_minus=452i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=4i,house_power=456i,inverter_power=0i 1687311600
+        my-measurement bat_power_minus=429i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=3i,house_power=432i,inverter_power=0i 1687311900
+        my-measurement bat_power_minus=418i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=3i,house_power=421i,inverter_power=0i 1687312200
+        my-measurement bat_power_minus=404i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=3i,house_power=407i,inverter_power=0i 1687312500
+        my-measurement bat_power_minus=329i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=329i,inverter_power=0i 1687312800
+        my-measurement bat_power_minus=297i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=297i,inverter_power=0i 1687313100
+        my-measurement bat_power_minus=283i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=2i,house_power=285i,inverter_power=0i 1687313400
+        my-measurement bat_power_minus=267i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=267i,inverter_power=0i 1687313700
+        my-measurement bat_power_minus=379i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=3i,house_power=382i,inverter_power=0i 1687314000
+        my-measurement bat_power_minus=356i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=356i,inverter_power=0i 1687314300
+        my-measurement bat_power_minus=372i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=372i,inverter_power=0i 1687314600
+        my-measurement bat_power_minus=363i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=363i,inverter_power=0i 1687314900
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=349i,house_power=349i,inverter_power=0i 1687315200
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=347i,house_power=347i,inverter_power=0i 1687315500
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=314i,house_power=314i,inverter_power=0i 1687315800
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=356i,house_power=356i,inverter_power=0i 1687316100
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=351i,house_power=351i,inverter_power=0i 1687316400
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=276i,house_power=276i,inverter_power=0i 1687316700
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=332i,house_power=332i,inverter_power=0i 1687317000
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=240i,house_power=240i,inverter_power=0i 1687317300
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=258i,house_power=258i,inverter_power=0i 1687317600
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=344i,house_power=344i,inverter_power=0i 1687317900
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=339i,house_power=339i,inverter_power=0i 1687318200
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=378i,house_power=378i,inverter_power=0i 1687318500
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=394i,house_power=394i,inverter_power=0i 1687318800
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=372i,house_power=372i,inverter_power=0i 1687319100
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=414i,house_power=414i,inverter_power=0i 1687319400
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=417i,house_power=417i,inverter_power=0i 1687319700
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=456i,house_power=456i,inverter_power=0i 1687320000
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=398i,house_power=398i,inverter_power=0i 1687320300
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=244i,house_power=244i,inverter_power=0i 1687320600
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=246i,house_power=246i,inverter_power=0i 1687320900
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=285i,house_power=285i,inverter_power=0i 1687321200
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=193i,house_power=193i,inverter_power=0i 1687321500
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=125i,house_power=125i,inverter_power=0i 1687321800
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=190i,house_power=190i,inverter_power=0i 1687322100
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=154i,house_power=154i,inverter_power=0i 1687322400
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=152i,house_power=152i,inverter_power=0i 1687322700
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=240i,house_power=240i,inverter_power=0i 1687323000
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=214i,house_power=214i,inverter_power=0i 1687323300
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=205i,house_power=205i,inverter_power=0i 1687323600
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=185i,house_power=196i,inverter_power=11i 1687323900
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=177i,house_power=196i,inverter_power=19i 1687324200
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=117i,house_power=152i,inverter_power=35i 1687324500
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=111i,house_power=152i,inverter_power=41i 1687324800
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=218i,house_power=253i,inverter_power=35i 1687325100
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=376i,house_power=416i,inverter_power=40i 1687325400
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=357i,house_power=439i,inverter_power=82i 1687325700
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=139i,house_power=271i,inverter_power=132i 1687326000
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=1310i,house_power=1424i,inverter_power=114i 1687326300
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=271i,house_power=373i,inverter_power=102i 1687326600
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=257i,house_power=323i,inverter_power=66i 1687326900
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=255i,house_power=312i,inverter_power=57i 1687327200
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=328i,house_power=396i,inverter_power=68i 1687327500
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=264i,house_power=350i,inverter_power=86i 1687327800
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=1857i,house_power=1961i,inverter_power=104i 1687328100
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=211i,house_power=280i,inverter_power=69i 1687328400
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=686i,house_power=765i,inverter_power=79i 1687328700
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=623i,house_power=737i,inverter_power=114i 1687329000
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=452i,house_power=585i,inverter_power=133i 1687329300
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=866i,house_power=1025i,inverter_power=159i 1687329600
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=948i,house_power=1130i,inverter_power=182i 1687329900
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=824i,house_power=1018i,inverter_power=194i 1687330200
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=780i,house_power=975i,inverter_power=195i 1687330500
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=432i,house_power=633i,inverter_power=201i 1687330800
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=221i,inverter_power=221i 1687331100
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=284i,inverter_power=284i 1687331400
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=236i,inverter_power=236i 1687331700
+        my-measurement bat_power_minus=0i,bat_power_plus=43i,grid_power_minus=0i,grid_power_plus=0i,house_power=385i,inverter_power=428i 1687332000
+        my-measurement bat_power_minus=0i,bat_power_plus=1256i,grid_power_minus=0i,grid_power_plus=0i,house_power=342i,inverter_power=1598i 1687332300
+        my-measurement bat_power_minus=0i,bat_power_plus=1529i,grid_power_minus=0i,grid_power_plus=0i,house_power=371i,inverter_power=1900i 1687332600
+        my-measurement bat_power_minus=0i,bat_power_plus=252i,grid_power_minus=0i,grid_power_plus=0i,house_power=278i,inverter_power=530i 1687332900
+        my-measurement bat_power_minus=0i,bat_power_plus=462i,grid_power_minus=0i,grid_power_plus=5i,house_power=270i,inverter_power=727i 1687333200
+        my-measurement bat_power_minus=0i,bat_power_plus=445i,grid_power_minus=0i,grid_power_plus=9i,house_power=271i,inverter_power=707i 1687333500
+        my-measurement bat_power_minus=0i,bat_power_plus=1607i,grid_power_minus=0i,grid_power_plus=0i,house_power=228i,inverter_power=1835i 1687333800
+        my-measurement bat_power_minus=0i,bat_power_plus=1804i,grid_power_minus=0i,grid_power_plus=0i,house_power=271i,inverter_power=2075i 1687334100
+        my-measurement bat_power_minus=0i,bat_power_plus=1751i,grid_power_minus=0i,grid_power_plus=0i,house_power=265i,inverter_power=2016i 1687334400
+        my-measurement bat_power_minus=0i,bat_power_plus=2079i,grid_power_minus=0i,grid_power_plus=0i,house_power=263i,inverter_power=2342i 1687334700
+        my-measurement bat_power_minus=0i,bat_power_plus=288i,grid_power_minus=0i,grid_power_plus=0i,house_power=302i,inverter_power=590i 1687335000
+        my-measurement bat_power_minus=0i,bat_power_plus=2104i,grid_power_minus=0i,grid_power_plus=50i,house_power=275i,inverter_power=2329i 1687335300
+        my-measurement bat_power_minus=0i,bat_power_plus=1855i,grid_power_minus=0i,grid_power_plus=12i,house_power=293i,inverter_power=2136i 1687335600
+        my-measurement bat_power_minus=0i,bat_power_plus=2615i,grid_power_minus=0i,grid_power_plus=6i,house_power=304i,inverter_power=2913i 1687335900
+        my-measurement bat_power_minus=0i,bat_power_plus=722i,grid_power_minus=0i,grid_power_plus=2i,house_power=180i,inverter_power=900i 1687336200
+        my-measurement bat_power_minus=0i,bat_power_plus=2137i,grid_power_minus=0i,grid_power_plus=0i,house_power=294i,inverter_power=2431i 1687336500
+        my-measurement bat_power_minus=0i,bat_power_plus=954i,grid_power_minus=0i,grid_power_plus=0i,house_power=152i,inverter_power=1106i 1687336800
+        my-measurement bat_power_minus=0i,bat_power_plus=819i,grid_power_minus=0i,grid_power_plus=0i,house_power=254i,inverter_power=1073i 1687337100
+        my-measurement bat_power_minus=0i,bat_power_plus=2631i,grid_power_minus=0i,grid_power_plus=63i,house_power=353i,inverter_power=2921i 1687337400
+        my-measurement bat_power_minus=57i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=163i,house_power=2354i,inverter_power=2134i 1687337700
+        my-measurement bat_power_minus=809i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=2550i,inverter_power=1741i 1687338000
+        my-measurement bat_power_minus=2394i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=2394i,inverter_power=0i 1687338300
+        my-measurement bat_power_minus=1795i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=25i,house_power=2356i,inverter_power=536i 1687338600
+        my-measurement bat_power_minus=1159i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=1706i,inverter_power=547i 1687338900
+        my-measurement bat_power_minus=0i,bat_power_plus=272i,grid_power_minus=0i,grid_power_plus=0i,house_power=435i,inverter_power=707i 1687339200
+        my-measurement bat_power_minus=0i,bat_power_plus=159i,grid_power_minus=0i,grid_power_plus=0i,house_power=472i,inverter_power=631i 1687339500
+        my-measurement bat_power_minus=0i,bat_power_plus=465i,grid_power_minus=0i,grid_power_plus=8i,house_power=292i,inverter_power=749i 1687339800
+        my-measurement bat_power_minus=0i,bat_power_plus=581i,grid_power_minus=0i,grid_power_plus=8i,house_power=265i,inverter_power=838i 1687340100
+        my-measurement bat_power_minus=0i,bat_power_plus=2908i,grid_power_minus=0i,grid_power_plus=4i,house_power=250i,inverter_power=3154i 1687340400
+        my-measurement bat_power_minus=0i,bat_power_plus=3192i,grid_power_minus=0i,grid_power_plus=0i,house_power=396i,inverter_power=3588i 1687340700
+        my-measurement bat_power_minus=0i,bat_power_plus=4265i,grid_power_minus=0i,grid_power_plus=9i,house_power=261i,inverter_power=4517i 1687341000
+        my-measurement bat_power_minus=0i,bat_power_plus=4436i,grid_power_minus=0i,grid_power_plus=0i,house_power=308i,inverter_power=4744i 1687341300
+        my-measurement bat_power_minus=0i,bat_power_plus=3984i,grid_power_minus=0i,grid_power_plus=22i,house_power=289i,inverter_power=4251i 1687341600
+        my-measurement bat_power_minus=0i,bat_power_plus=705i,grid_power_minus=0i,grid_power_plus=0i,house_power=192i,inverter_power=897i 1687341900
+        my-measurement bat_power_minus=0i,bat_power_plus=988i,grid_power_minus=0i,grid_power_plus=0i,house_power=205i,inverter_power=1193i 1687342200
+        my-measurement bat_power_minus=0i,bat_power_plus=1660i,grid_power_minus=0i,grid_power_plus=30i,house_power=202i,inverter_power=1832i 1687342500
+        my-measurement bat_power_minus=0i,bat_power_plus=1831i,grid_power_minus=0i,grid_power_plus=0i,house_power=322i,inverter_power=2153i 1687342800
+        my-measurement bat_power_minus=0i,bat_power_plus=4823i,grid_power_minus=0i,grid_power_plus=0i,house_power=232i,inverter_power=5055i 1687343100
+        my-measurement bat_power_minus=0i,bat_power_plus=926i,grid_power_minus=0i,grid_power_plus=9i,house_power=307i,inverter_power=1224i 1687343400
+        my-measurement bat_power_minus=0i,bat_power_plus=509i,grid_power_minus=0i,grid_power_plus=0i,house_power=419i,inverter_power=928i 1687343700
+        my-measurement bat_power_minus=0i,bat_power_plus=616i,grid_power_minus=0i,grid_power_plus=0i,house_power=427i,inverter_power=1043i 1687344000
+        my-measurement bat_power_minus=0i,bat_power_plus=1107i,grid_power_minus=0i,grid_power_plus=3i,house_power=227i,inverter_power=1331i 1687344300
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=1442i,inverter_power=1442i 1687344600
+        my-measurement bat_power_minus=0i,bat_power_plus=388i,grid_power_minus=0i,grid_power_plus=3i,house_power=876i,inverter_power=1261i 1687344900
+        my-measurement bat_power_minus=0i,bat_power_plus=1561i,grid_power_minus=0i,grid_power_plus=0i,house_power=891i,inverter_power=2452i 1687345200
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687345500
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687345800
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687346100
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687346400
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687346700
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687347000
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687347300
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687347600
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687347900
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687348200
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687348500
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687348800
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687349100
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687349400
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687349700
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687350000
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687350300
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687350600
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687350900
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687351200
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687351500
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687351800
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687352100
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687352400
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687352700
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687353000
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687353300
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687353600
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687353900
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687354200
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687354500
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687354800
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687355100
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687355400
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687355700
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687356000
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687356300
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687356600
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687356900
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687357200
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687357500
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687357800
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687358100
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687358400
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687358700
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687359000
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687359300
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687359600
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687359900
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687360200
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687360500
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687360800
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687361100
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687361400
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687361700
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687362000
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687362300
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687362600
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687362900
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687363200
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687363500
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687363800
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687364100
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687364400
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687364700
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687365000
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687365300
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687365600
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687365900
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687366200
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687366500
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687366800
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687367100
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687367400
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687367700
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687368000
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687368300
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687368600
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687368900
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687369200
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687369500
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687369800
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687370100
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687370400
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687370700
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687371000
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687371300
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687371600
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687371900
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687372200
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687372500
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687372800
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687373100
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687373400
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687373700
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687374000
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687374300
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687374600
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687374900
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687375200
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687375500
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687375800
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687376100
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687376400
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687376700
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687377000
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687377300
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687377600
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687377900
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687378200
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687378500
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687378800
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687379100
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687379400
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687379700
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687380000
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687380300
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687380600
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687380900
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687381200
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687381500
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687381800
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687382100
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687382400
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687382700
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687383000
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687383300
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687383600
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687383900
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687384200
+        my-measurement bat_power_minus=0i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=0i,inverter_power=0i 1687384500
     headers:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - "*/*"
       User-Agent:
-      - influxdb-client-ruby/2.9.0
+      - influxdb-client-ruby/3.0.0
       Authorization:
       - Token <INFLUX_TOKEN_WRITE>
       Content-Type:
@@ -503,36 +503,36 @@ http_interactions:
       X-Influxdb-Build:
       - OSS
       X-Influxdb-Version:
-      - v2.7.1
+      - v2.7.5
       Date:
-      - Mon, 26 Jun 2023 07:34:35 GMT
+      - Thu, 25 Jan 2024 07:45:54 GMT
     body:
       encoding: UTF-8
       string: ''
-  recorded_at: Mon, 26 Jun 2023 07:34:35 GMT
+  recorded_at: Thu, 25 Jan 2024 07:45:54 GMT
 - request:
     method: post
     uri: http://<INFLUX_HOST>:8086/api/v2/write?bucket=<INFLUX_BUCKET>&org=<INFLUX_ORG>&precision=s
     body:
       encoding: UTF-8
       string: |-
-        my-measurement bat_power_minus=402.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=402.0,inverter_power=0.0 1687298400
-        my-measurement bat_power_minus=402.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=402.0,inverter_power=0.0 1687298700
-        my-measurement bat_power_minus=403.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=403.0,inverter_power=0.0 1687299000
-        my-measurement bat_power_minus=396.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=2.0,house_power=398.0,inverter_power=0.0 1687299300
-        my-measurement bat_power_minus=399.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=399.0,inverter_power=0.0 1687299600
-        my-measurement bat_power_minus=389.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=389.0,inverter_power=0.0 1687299900
-        my-measurement bat_power_minus=306.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=306.0,inverter_power=0.0 1687300200
-        my-measurement bat_power_minus=326.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=0.0,house_power=326.0,inverter_power=0.0 1687300500
-        my-measurement bat_power_minus=334.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=1.0,house_power=335.0,inverter_power=0.0 1687300800
-        my-measurement bat_power_minus=297.0,bat_power_plus=0.0,grid_power_minus=0.0,grid_power_plus=2.0,house_power=299.0,inverter_power=0.0 1687301100
+        my-measurement bat_power_minus=402i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=402i,inverter_power=0i 1687298400
+        my-measurement bat_power_minus=402i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=402i,inverter_power=0i 1687298700
+        my-measurement bat_power_minus=403i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=403i,inverter_power=0i 1687299000
+        my-measurement bat_power_minus=396i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=2i,house_power=398i,inverter_power=0i 1687299300
+        my-measurement bat_power_minus=399i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=399i,inverter_power=0i 1687299600
+        my-measurement bat_power_minus=389i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=389i,inverter_power=0i 1687299900
+        my-measurement bat_power_minus=306i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=306i,inverter_power=0i 1687300200
+        my-measurement bat_power_minus=326i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=0i,house_power=326i,inverter_power=0i 1687300500
+        my-measurement bat_power_minus=334i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=1i,house_power=335i,inverter_power=0i 1687300800
+        my-measurement bat_power_minus=297i,bat_power_plus=0i,grid_power_minus=0i,grid_power_plus=2i,house_power=299i,inverter_power=0i 1687301100
     headers:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - "*/*"
       User-Agent:
-      - influxdb-client-ruby/2.9.0
+      - influxdb-client-ruby/3.0.0
       Authorization:
       - Token <INFLUX_TOKEN_WRITE>
       Content-Type:
@@ -545,11 +545,11 @@ http_interactions:
       X-Influxdb-Build:
       - OSS
       X-Influxdb-Version:
-      - v2.7.1
+      - v2.7.5
       Date:
-      - Mon, 26 Jun 2023 08:32:22 GMT
+      - Thu, 25 Jan 2024 07:45:54 GMT
     body:
       encoding: UTF-8
       string: ''
-  recorded_at: Mon, 26 Jun 2023 08:32:22 GMT
-recorded_with: VCR 6.1.0
+  recorded_at: Thu, 25 Jan 2024 07:45:54 GMT
+recorded_with: VCR 6.2.0
