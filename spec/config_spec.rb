@@ -36,11 +36,19 @@ describe Config do
       end
     end
 
-    context 'with invalid options' do
-      subject(:config) { described_class.new(influx_host: 'this is no host') }
+    context 'with missing INFLUX_HOST' do
+      subject(:config) { described_class.new(influx_host: nil) }
 
       it 'fails' do
         expect { config }.to raise_error(URI::InvalidURIError)
+      end
+    end
+
+    context 'with invalid INFLUX_SCHEMA' do
+      subject(:config) { described_class.new(influx_schema: 'foo') }
+
+      it 'fails' do
+        expect { config }.to raise_error(StandardError)
       end
     end
   end
@@ -54,6 +62,6 @@ describe Config do
     it { expect(config.influx_open_timeout).to eq(30) }
     it { expect(config.influx_read_timeout).to eq(30) }
     it { expect(config.influx_write_timeout).to eq(30) }
-    it { expect(config.import_pause).to eq(0) }
+    it { expect(config.import_pause).to eq(1) }
   end
 end

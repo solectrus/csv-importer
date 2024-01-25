@@ -48,12 +48,6 @@ Config =
 
     private
 
-    def validate_interval!(interval)
-      return if interval.is_a?(Integer) && interval.positive?
-
-      throw "Interval is invalid: #{interval}"
-    end
-
     def validate_url!(url)
       uri = URI.parse(url)
       return if uri.is_a?(URI::HTTP) && !uri.host.nil?
