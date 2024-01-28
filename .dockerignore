@@ -3,6 +3,6 @@
 .gitignore
 .env.*
 .env
-test
+spec
 Rakefile
 Dockerfile
