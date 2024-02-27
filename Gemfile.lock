@@ -23,7 +23,7 @@ GEM
       rexml
     diff-lcs (1.5.1)
     docile (1.4.0)
-    dotenv (3.0.2)
+    dotenv (3.0.3)
     drb (2.2.0)
       ruby2_keywords
     hashdiff (1.1.0)
