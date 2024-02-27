@@ -12,8 +12,11 @@ gem 'activesupport'
 # Timezone Data for TZInfo (https://tzinfo.github.io)
 gem 'tzinfo-data'
 
+# CSV Reading and Writing (https://github.com/ruby/csv)
+gem 'csv'
+
 group :development, :test do
-  # rspec-3.12.0 (http://github.com/rspec)
+  # rspec-3.13.0 (http://github.com/rspec)
   gem 'rspec'
 
   # Rake is a Make-like program implemented in Ruby (https://github.com/ruby/rake)
