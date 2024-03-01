@@ -25,8 +25,7 @@ GEM
     diff-lcs (1.5.1)
     docile (1.4.0)
     dotenv (3.1.0)
-    drb (2.2.0)
-      ruby2_keywords
+    drb (2.2.1)
     hashdiff (1.1.0)
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
@@ -84,7 +83,6 @@ GEM
       rubocop-capybara (~> 2.17)
       rubocop-factory_bot (~> 2.22)
     ruby-progressbar (1.13.0)
-    ruby2_keywords (0.0.5)
     simplecov (0.22.0)
       docile (~> 1.1)
       simplecov-html (~> 0.11)
