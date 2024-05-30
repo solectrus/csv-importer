@@ -12,6 +12,7 @@ puts 'CSV importer for SOLECTRUS, ' \
        "built at #{ENV.fetch('BUILDTIME', '<unknown>')}"
 puts 'https://github.com/solectrus/csv-importer'
 puts 'Copyright (c) 2020-2024 Georg Ledermann, released under the MIT License'
+puts 'Modified 2024 by AlpenFlizzer to import Solaredge Data.'
 puts "\n"
 
 config = Config.from_env
