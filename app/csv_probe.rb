@@ -10,7 +10,7 @@ class CsvProbe
   attr_reader :file_path
 
   def record_class
-    first_line = File.open(file_path, &:readline)
+    first_line = File.open(file_path, &:readline).chomp
     puts "probing file. first line is #{first_line}"
     if senec?(first_line)
       puts 'found senec file'
