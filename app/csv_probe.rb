@@ -11,15 +11,11 @@ class CsvProbe
 
   def record_class
     first_line = File.open(file_path, &:readline).chomp
-    puts "probing file. first line is #{first_line}"
     if senec?(first_line)
-      puts 'found senec file'
       SenecRecord
     elsif sungrow?(first_line)
-      puts 'found sungrow file'
       SungrowRecord
     elsif solaredge?(first_line)
-      puts 'found solaredge file'
       SolaredgeRecord
     else
       throw "Unknown data format in #{file_path}, first line is #{first_line}"
@@ -40,5 +36,4 @@ class CsvProbe
   def solaredge?(first_line)
     first_line.include?('Time,Energie (Wh),ZählerBezugs-Zähler E (Wh),ZählerEinspeise-Zähler E (Wh)')
   end
-
 end
