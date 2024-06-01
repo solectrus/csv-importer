@@ -5,6 +5,17 @@ class SolaredgeRecord < BaseRecord
     { headers: true, col_sep: ',' }
   end
 
+  def to_a
+    # Convert Wh to W and split the day into 5 minute intervals
+    0.step(24 * 60, 5).map do |minute|
+      {
+        name: measurement,
+        time: time + (minute * 60),
+        fields: fields.transform_values { |value| value.fdiv(24 * 60 / 5) },
+      }
+    end
+  end
+
   private
 
   def time
