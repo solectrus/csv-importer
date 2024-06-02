@@ -5,6 +5,10 @@ class SolaredgeRecord < BaseRecord
     { headers: true, col_sep: ',' }
   end
 
+  def self.probe?(first_line)
+    first_line.include?('Time,Energie (Wh),ZählerBezugs-Zähler E (Wh),ZählerEinspeise-Zähler E (Wh)')
+  end
+
   def to_a
     # Split the day into 5 minute intervals, starting at 00:00:00.
     # This will create 24 * 60 / 5 = 288 records for each day.

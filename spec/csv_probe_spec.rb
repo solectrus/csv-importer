@@ -20,8 +20,20 @@ describe CsvProbe do
         .each do |file_path|
           let(:file_path) { file_path }
 
-          it 'returns the Sungrow class' do
+          it 'returns the SungrowRecord class' do
             expect(checker.record_class).to eq(SungrowRecord)
+          end
+        end
+    end
+
+    context 'when a SolarEdge file is given' do
+      Dir
+        .glob('spec/data/solaredge/*.csv')
+        .each do |file_path|
+          let(:file_path) { file_path }
+
+          it 'returns the SolaredgeRecord class' do
+            expect(checker.record_class).to eq(SolaredgeRecord)
           end
         end
     end

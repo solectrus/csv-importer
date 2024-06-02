@@ -1,9 +1,6 @@
 require 'csv'
 require_relative 'flux_writer'
 require_relative 'csv_probe'
-require_relative 'senec_record'
-require_relative 'sungrow_record'
-require_relative 'solaredge_record'
 
 class Import
   def self.run(config:)
@@ -33,9 +30,11 @@ class Import
   attr_reader :config
 
   def process(file_path)
-    print "Importing #{file_path}... "
+    print "Importing #{file_path}"
 
     record_class = CsvProbe.new(file_path).record_class
+    print " using #{record_class} adapter..."
+
     count = 0
     records =
       CSV
@@ -48,7 +47,7 @@ class Import
     return unless count.positive?
 
     FluxWriter.push(config:, records:)
-    puts "#{count} points imported"
+    puts " Done, #{count} points imported"
   end
 
   def pause

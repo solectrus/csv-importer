@@ -5,6 +5,11 @@ class SenecRecord < BaseRecord
     { headers: true, col_sep: ';' }
   end
 
+  def self.probe?(first_line)
+    first_line.include?('Uhrzeit;Netzbezug [kW]') ||
+      first_line.include?('Uhrzeit;Netzbezug [kWh]')
+  end
+
   private
 
   def time
