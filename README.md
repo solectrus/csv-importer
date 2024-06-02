@@ -13,6 +13,7 @@ Import CSV with photovoltaic data and push it to InfluxDB for use with SOLECTRUS
 - CSV files in one of the following supported formats:
   - SENEC (downloaded from mein-senec.de)
   - Sungrow (downloaded from portaleu.isolarcloud.com)
+  - SolarEdge (downloaded from monitoring.solaredge.com, see [details in the wiki](https://github.com/solectrus/csv-importer/wiki/SolarEdge))
 
 ## Usage
 
@@ -89,4 +90,6 @@ Copyright (c) 2020-2024 Georg Ledermann, released under the MIT License
 
 Many thanks to these incredible people for improving this project:
 
-- Rainer Drexler (https://github.com/holiday-sunrise)
+- Sascha Böck (https://github.com/AlpenFlizzer) for SolarEdge support
+- Rainer Drexler (https://github.com/holiday-sunrise) for Sungrow support
+- Sebastian Löb (https://github.com/loebse) for bug fixes

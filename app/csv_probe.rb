@@ -1,5 +1,5 @@
-require_relative 'senec_record'
-require_relative 'sungrow_record'
+# Load all adapters
+Dir[File.join(__dir__, 'adapters', '*.rb')].each { |file| require file }
 
 class CsvProbe
   def initialize(file_path)
@@ -9,25 +9,14 @@ class CsvProbe
   attr_reader :file_path
 
   def record_class
-    first_line = File.open(file_path, &:readline)
+    first_line = File.open(file_path, &:readline).chomp
 
-    if senec?(first_line)
-      SenecRecord
-    elsif sungrow?(first_line)
-      SungrowRecord
-    else
-      throw "Unknown data format in #{file_path}, first line is #{first_line}"
+    # Check all existing record classes (descendands of BaseRecord)
+    BaseRecord.descendants.each do |record_class|
+      return record_class if record_class.probe?(first_line)
     end
-  end
 
-  private
-
-  def senec?(first_line)
-    first_line.include?('Uhrzeit;Netzbezug [kW]') ||
-      first_line.include?('Uhrzeit;Netzbezug [kWh]')
-  end
-
-  def sungrow?(first_line)
-    first_line.include?('Zeit,PV-Ertrag(W)')
+    # If no record class was found, throw an error
+    throw "Unknown data format in #{file_path}, first line is #{first_line}"
   end
 end

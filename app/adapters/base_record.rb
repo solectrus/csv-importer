@@ -12,6 +12,10 @@ class BaseRecord
     { name: measurement, time:, fields: }
   end
 
+  def to_a
+    [to_h]
+  end
+
   private
 
   # Time

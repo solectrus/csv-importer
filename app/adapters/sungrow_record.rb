@@ -5,6 +5,10 @@ class SungrowRecord < BaseRecord
     { headers: true, col_sep: ',' }
   end
 
+  def self.probe?(first_line)
+    first_line.include?('Zeit,PV-Ertrag(W)')
+  end
+
   private
 
   def time
