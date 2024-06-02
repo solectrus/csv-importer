@@ -89,4 +89,6 @@ Copyright (c) 2020-2024 Georg Ledermann, released under the MIT License
 
 Many thanks to these incredible people for improving this project:
 
-- Rainer Drexler (https://github.com/holiday-sunrise)
+- Sascha Böck (https://github.com/AlpenFlizzer) for SolarEdge support
+- Rainer Drexler (https://github.com/holiday-sunrise) for Sungrow support
+- Sebastian Löb (https://github.com/loebse) for bug fixes

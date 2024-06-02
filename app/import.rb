@@ -3,6 +3,7 @@ require_relative 'flux_writer'
 require_relative 'csv_probe'
 require_relative 'senec_record'
 require_relative 'sungrow_record'
+require_relative 'solaredge_record'
 
 class Import
   def self.run(config:)
@@ -41,9 +42,8 @@ class Import
         .parse(file_content(file_path), **record_class.csv_options)
         .map do |row|
           count += 1
-
-          record_class.new(row, measurement: config.influx_measurement).to_h
-        end
+          record_class.new(row, measurement: config.influx_measurement).to_a
+        end.flatten
 
     return unless count.positive?
 

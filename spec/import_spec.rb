@@ -4,6 +4,6 @@ describe Import do
   describe '#run', vcr: { cassette_name: 'import' } do
     subject(:run) { described_class.run(config:) }
 
-    it { is_expected.to eq(7) }
+    it { is_expected.to eq(8) }
   end
 end
