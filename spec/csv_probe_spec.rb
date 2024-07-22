@@ -38,6 +38,18 @@ describe CsvProbe do
         end
     end
 
+    context 'when a Mqtt file is given' do
+      Dir
+        .glob('spec/data/mqtt/*.csv')
+        .each do |file_path|
+          let(:file_path) { file_path }
+
+          it 'returns the MqttRecord class' do
+            expect(checker.record_class).to eq(EnergyRecord)
+          end
+        end
+    end
+
     context 'when something different is given' do
       let(:file_path) { 'README.md' }
 
