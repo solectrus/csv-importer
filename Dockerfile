@@ -1,8 +1,7 @@
-FROM ruby:3.3.4-alpine AS Builder
+FROM ruby:3.3.4-alpine AS builder
 RUN apk add --no-cache build-base
 
 WORKDIR /csv-importer
-
 COPY Gemfile* /csv-importer/
 RUN bundle config --local frozen 1 && \
     bundle config --local without 'development test' && \
@@ -13,21 +12,21 @@ FROM ruby:3.3.4-alpine
 LABEL maintainer="georg@ledermann.dev"
 
 # Decrease memory usage
-ENV MALLOC_ARENA_MAX 2
+ENV MALLOC_ARENA_MAX=2
 
 # Move build arguments to environment variables
 ARG BUILDTIME
-ENV BUILDTIME ${BUILDTIME}
+ENV BUILDTIME=${BUILDTIME}
 
 ARG VERSION
-ENV VERSION ${VERSION}
+ENV VERSION=${VERSION}
 
 ARG REVISION
-ENV REVISION ${REVISION}
+ENV REVISION=${REVISION}
 
 WORKDIR /csv-importer
 
-COPY --from=Builder /usr/local/bundle/ /usr/local/bundle/
+COPY --from=builder /usr/local/bundle/ /usr/local/bundle/
 COPY . /csv-importer/
 
-ENTRYPOINT bundle exec app/main.rb
+ENTRYPOINT ["bundle", "exec", "app/main.rb"]
