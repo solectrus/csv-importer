@@ -86,7 +86,7 @@ GEM
       concurrent-ruby (~> 1.0)
     tzinfo-data (1.2024.2)
       tzinfo (>= 1.0.0)
-    unicode-display_width (2.5.0)
+    unicode-display_width (2.6.0)
     vcr (6.3.1)
       base64
     webmock (3.23.1)
