@@ -31,6 +31,8 @@ Config =
     :influx_sensor_battery_charging_power,
     :influx_sensor_battery_discharging_power,
     :influx_sensor_wallbox_power,
+    ### SENEC only: Optionally ignore some fields
+    :senec_ignore,
     ###
     keyword_init: true,
   ) do
@@ -94,6 +96,7 @@ Config =
           'INFLUX_SENSOR_BATTERY_DISCHARGING_POWER', 'SENEC:bat_power_minus',
         ),
         influx_sensor_wallbox_power: ENV.fetch('INFLUX_SENSOR_WALLBOX_POWER', 'SENEC:wallbox_charge_power'),
+        senec_ignore: ENV.fetch('SENEC_IGNORE', '').split(',').map(&:to_sym),
       }
     end
 

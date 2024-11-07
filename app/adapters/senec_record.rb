@@ -19,7 +19,9 @@ class SenecRecord < BaseRecord
       grid_import_power
       grid_export_power
       wallbox_power
-    ].map do |sensor_name|
+    ].filter_map do |sensor_name|
+      next if config.senec_ignore.include?(config.field(sensor_name))
+
       {
         measurement: config.measurement(sensor_name),
         field: config.field(sensor_name),
@@ -74,6 +76,7 @@ class SenecRecord < BaseRecord
       parse_kw(row, 'Netzeinspeisung [kW]', 'Netzeinspeisung [kWh]')
   end
 
+  # Estimate wallbox power based on the other values
   def wallbox_power
     incoming = inverter_power + grid_import_power + battery_discharging_power
     outgoing = grid_export_power + house_power + battery_charging_power
