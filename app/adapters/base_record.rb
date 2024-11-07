@@ -1,19 +1,21 @@
 require_relative 'time_zone'
 
 class BaseRecord
-  def initialize(row, measurement:)
+  def initialize(row, config:)
     @row = row
-    @measurement = measurement
+    @config = config
   end
 
-  attr_reader :row, :measurement
-
-  def to_h
-    { name: measurement, time:, fields: }
-  end
+  attr_reader :row, :config
 
   def to_a
-    [to_h]
+    data.group_by { |d| d[:measurement] }.map do |measurement, items|
+      {
+        time:,
+        name: measurement,
+        fields: items.to_h { |item| [item[:field], item[:value]] },
+      }
+    end
   end
 
   private

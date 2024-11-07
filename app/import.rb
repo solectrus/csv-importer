@@ -41,7 +41,7 @@ class Import
         .parse(file_content(file_path), **record_class.csv_options)
         .map do |row|
           count += 1
-          record_class.new(row, measurement: config.influx_measurement).to_a
+          record_class.new(row, config:).to_a
         end.flatten
 
     return unless count.positive?

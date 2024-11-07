@@ -1,23 +1,30 @@
 describe SolaredgeRecord do
-  subject(:record) { described_class.new(row, measurement: 'SolarEdge') }
+  subject(:record) { described_class.new(row, config:) }
 
   let(:row) { CSV::Row.new headers, fields }
 
   let(:headers) { ['Time', 'Energie (Wh)', 'ZählerBezugs-Zähler E (Wh)', 'ZählerEinspeise-Zähler E (Wh)'] }
   let(:fields) { ['30.05.2024', '48958', '6472', '36029'] }
+  let(:config) do
+    Config.from_env(
+      influx_sensor_inverter_power: 'SolarEdge:inverter_power',
+      influx_sensor_house_power: 'SolarEdge:house_power',
+      influx_sensor_grid_import_power: 'SolarEdge:grid_import_power',
+      influx_sensor_grid_export_power: 'SolarEdge:grid_export_power',
+    )
+  end
 
-  describe '#to_h' do
-    subject(:hash) { record.to_h }
-
-    let(:expected_time) { 1_717_020_000 }
-
-    let(:expected_fields) do
-      { grid_power_minus: 36_029, grid_power_plus: 6472, house_power: 19_401, inverter_power: 48_958 }
-    end
+  describe '#data' do
+    subject(:data) { record.data }
 
     it do
-      expect(hash).to eq(
-        { name: 'SolarEdge', time: expected_time, fields: expected_fields },
+      expect(data).to eq(
+        [
+          { field: :inverter_power, measurement: 'SolarEdge', value: 48_958 },
+          { field: :house_power, measurement: 'SolarEdge', value: 19_401 },
+          { field: :grid_import_power, measurement: 'SolarEdge', value: 6_472 },
+          { field: :grid_export_power, measurement: 'SolarEdge', value: 36_029 },
+        ],
       )
     end
   end
@@ -27,10 +34,10 @@ describe SolaredgeRecord do
 
     let(:expected_fields) do
       {
-        grid_power_minus: 1501.2083333333333,
-        grid_power_plus: 269.6666666666667,
-        house_power: 808.375,
-        inverter_power: 2039.9166666666667,
+        grid_export_power: 1501,
+        grid_import_power: 270,
+        house_power: 808,
+        inverter_power: 2040,
       }
     end
 

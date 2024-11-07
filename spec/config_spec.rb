@@ -9,7 +9,6 @@ describe Config do
       influx_token: 'this.is.just.an.example',
       influx_org: 'solectrus',
       influx_bucket: 'my-bucket',
-      influx_measurement: 'my-measurement',
     }.freeze
   end
 
@@ -25,7 +24,6 @@ describe Config do
       it { expect(config.influx_token).to eq('this.is.just.an.example') }
       it { expect(config.influx_org).to eq('solectrus') }
       it { expect(config.influx_bucket).to eq('my-bucket') }
-      it { expect(config.influx_measurement).to eq('my-measurement') }
     end
 
     context 'with missing options' do
