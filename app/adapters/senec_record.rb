@@ -10,27 +10,29 @@ class SenecRecord < BaseRecord
       first_line.include?('Uhrzeit;Netzbezug [kWh]')
   end
 
-  private
+  def data
+    %i[
+      inverter_power
+      house_power
+      battery_charging_power
+      battery_discharging_power
+      grid_import_power
+      grid_export_power
+      wallbox_power
+    ].map do |sensor_name|
+      {
+        measurement: config.measurement(sensor_name),
+        field: config.field(sensor_name),
+        value: __send__(sensor_name),
+      }
+    end
+  end
 
   def time
     parse_time(row, 'Uhrzeit')
   end
 
-  def fields
-    {
-      inverter_power:,
-      house_power:,
-      bat_power_plus:,
-      bat_power_minus:,
-      bat_fuel_charge: nil,
-      bat_charge_current:,
-      bat_voltage:,
-      grid_power_plus:,
-      grid_power_minus:,
-      # There is no data for the wallbox, but we can estimate it
-      wallbox_charge_power: estimated_wallbox_charge_power,
-    }
-  end
+  private
 
   def inverter_power
     @inverter_power ||=
@@ -42,8 +44,8 @@ class SenecRecord < BaseRecord
       parse_kw(row, 'Stromverbrauch [kW]', 'Stromverbrauch [kWh]')
   end
 
-  def bat_power_plus
-    @bat_power_plus ||=
+  def battery_charging_power
+    @battery_charging_power ||=
       parse_kw(
         row,
         'Akkubeladung [kW]',
@@ -52,9 +54,9 @@ class SenecRecord < BaseRecord
       )
   end
 
-  def bat_power_minus
+  def battery_discharging_power
     # The CSV file format has changed over time, so two different column names are possible
-    @bat_power_minus ||=
+    @battery_discharging_power ||=
       parse_kw(
         row,
         'Akkuentnahme [kW]',
@@ -63,26 +65,18 @@ class SenecRecord < BaseRecord
       )
   end
 
-  def bat_charge_current
-    @bat_charge_current ||= parse_a(row, 'Akku Stromstärke [A]')
+  def grid_import_power
+    @grid_import_power ||= parse_kw(row, 'Netzbezug [kW]', 'Netzbezug [kWh]')
   end
 
-  def bat_voltage
-    @bat_voltage ||= parse_v(row, 'Akku Spannung [V]')
-  end
-
-  def grid_power_plus
-    @grid_power_plus ||= parse_kw(row, 'Netzbezug [kW]', 'Netzbezug [kWh]')
-  end
-
-  def grid_power_minus
-    @grid_power_minus ||=
+  def grid_export_power
+    @grid_export_power ||=
       parse_kw(row, 'Netzeinspeisung [kW]', 'Netzeinspeisung [kWh]')
   end
 
-  def estimated_wallbox_charge_power
-    incoming = inverter_power + grid_power_plus + bat_power_minus
-    outgoing = grid_power_minus + house_power + bat_power_plus
+  def wallbox_power
+    incoming = inverter_power + grid_import_power + battery_discharging_power
+    outgoing = grid_export_power + house_power + battery_charging_power
     diff = incoming - outgoing
 
     diff < 50 ? 0 : diff
@@ -91,15 +85,5 @@ class SenecRecord < BaseRecord
   # KiloWatt
   def parse_kw(row, *)
     (cell(row, *).sub(',', '.').to_f * 1_000).round
-  end
-
-  # Ampere
-  def parse_a(row, *)
-    cell(row, *).sub(',', '.').to_f
-  end
-
-  # Volt
-  def parse_v(row, *)
-    cell(row, *).sub(',', '.').to_f
   end
 end

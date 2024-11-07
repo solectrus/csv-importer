@@ -1,5 +1,5 @@
 describe SenecRecord do
-  subject(:record) { described_class.new(row, measurement: 'SENEC') }
+  subject(:record) { described_class.new(row, config:) }
 
   before do
     ENV['TZ'] = time_zone
@@ -8,6 +8,7 @@ describe SenecRecord do
 
   let(:time_zone) { 'Europe/Berlin' }
 
+  let(:config) { Config.from_env }
   let(:row) { CSV::Row.new headers, fields }
 
   let(:headers) do
@@ -25,7 +26,7 @@ describe SenecRecord do
   end
 
   describe 'Time parsing' do
-    subject(:time) { record.to_h[:time] }
+    subject(:time) { record.time }
 
     let(:fields) { ['22.09.2023 16:00:00', '', '', '', '', '', '', '', ''] }
 
@@ -46,8 +47,8 @@ describe SenecRecord do
     end
   end
 
-  describe '#to_h' do
-    subject(:hash) { record.to_h }
+  describe '#to_a' do
+    subject(:to_a) { record.to_a }
 
     context 'without wallbox calculation' do
       let(:fields) do
@@ -64,17 +65,12 @@ describe SenecRecord do
         ]
       end
 
-      let(:expected_time) { 1_647_213_193 }
-
       let(:expected_fields) do
         {
           inverter_power: 0,
           house_power: 199,
           bat_power_plus: 0,
           bat_power_minus: 0,
-          bat_fuel_charge: nil,
-          bat_charge_current: 0.0,
-          bat_voltage: 0.0,
           grid_power_plus: 198,
           grid_power_minus: 0,
           wallbox_charge_power: 0,
@@ -82,9 +78,11 @@ describe SenecRecord do
       end
 
       it do
-        expect(hash).to eq(
-          { name: 'SENEC', time: expected_time, fields: expected_fields },
-        )
+        expect(to_a).to eq([
+                             time: 1_647_213_193,
+                             name: 'SENEC',
+                             fields: expected_fields,
+                           ])
       end
     end
 
@@ -103,28 +101,25 @@ describe SenecRecord do
         ]
       end
 
-      let(:expected_time) { 1_647_864_046 }
-
       let(:expected_fields) do
         {
-          bat_charge_current: 0.0,
-          bat_fuel_charge: nil,
-          bat_power_minus: 0,
-          bat_power_plus: 0,
-          bat_voltage: 0.0,
-          grid_power_minus: 841,
-          grid_power_plus: 1,
-          house_power: 228,
           inverter_power: 7312,
+          house_power: 228,
+          bat_power_plus: 0,
+          bat_power_minus: 0,
+          grid_power_plus: 1,
+          grid_power_minus: 841,
           wallbox_charge_power: 6244,
         }
       end
 
-      it do
-        expect(hash).to eq(
-          { name: 'SENEC', time: expected_time, fields: expected_fields },
-        )
-      end
+      it {
+        expect(to_a).to eq([
+                             time: 1_647_864_046,
+                             name: 'SENEC',
+                             fields: expected_fields,
+                           ])
+      }
     end
   end
 end

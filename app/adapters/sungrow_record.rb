@@ -9,23 +9,28 @@ class SungrowRecord < BaseRecord
     first_line.include?('Zeit,PV-Ertrag(W)')
   end
 
-  private
+  def data
+    %i[
+      inverter_power
+      house_power
+      battery_charging_power
+      battery_discharging_power
+      grid_import_power
+      grid_export_power
+    ].map do |sensor_name|
+      {
+        measurement: config.measurement(sensor_name),
+        field: config.field(sensor_name),
+        value: __send__(sensor_name),
+      }
+    end
+  end
 
   def time
     parse_time(row, 'Zeit')
   end
 
-  def fields
-    {
-      inverter_power:,
-      house_power:,
-      bat_power_plus:,
-      bat_power_minus:,
-      bat_fuel_charge: nil,
-      grid_power_plus:,
-      grid_power_minus:,
-    }
-  end
+  private
 
   def inverter_power
     @inverter_power ||= parse_kw(row, 'PV-Ertrag(W)')
@@ -35,24 +40,24 @@ class SungrowRecord < BaseRecord
     @house_power ||= parse_kw(row, 'Gesamtverbrauch(W)')
   end
 
-  def bat_power_plus
-    @bat_power_plus ||= bat_power.negative? ? -bat_power : 0
+  def battery_charging_power
+    @battery_charging_power ||= bat_power.negative? ? -bat_power : 0
   end
 
-  def bat_power_minus
-    @bat_power_minus ||= bat_power.positive? ? bat_power : 0
+  def battery_discharging_power
+    @battery_discharging_power ||= bat_power.positive? ? bat_power : 0
   end
 
   def bat_power
     @bat_power ||= parse_kw(row, 'Batterie(W)')
   end
 
-  def grid_power_plus
-    @grid_power_plus ||= grid_power.positive? ? grid_power : 0
+  def grid_import_power
+    @grid_import_power ||= grid_power.positive? ? grid_power : 0
   end
 
-  def grid_power_minus
-    @grid_power_minus ||= grid_power.negative? ? -grid_power : 0
+  def grid_export_power
+    @grid_export_power ||= grid_power.negative? ? -grid_power : 0
   end
 
   def grid_power
