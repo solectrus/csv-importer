@@ -19,7 +19,7 @@ class SolaredgeRecord < BaseRecord
           name: measurement,
 
           # Calculate average power (Wh / 24 = W)
-          fields: items.to_h { |item| [item[:field], item[:value].fdiv(24)] },
+          fields: items.to_h { |item| [item[:field], item[:value].fdiv(24).round] },
         }
       end
     end.flatten

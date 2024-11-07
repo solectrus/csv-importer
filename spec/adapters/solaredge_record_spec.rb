@@ -34,10 +34,10 @@ describe SolaredgeRecord do
 
     let(:expected_fields) do
       {
-        grid_export_power: 1501.2083333333333,
-        grid_import_power: 269.6666666666667,
-        house_power: 808.375,
-        inverter_power: 2039.9166666666667,
+        grid_export_power: 1501,
+        grid_import_power: 270,
+        house_power: 808,
+        inverter_power: 2040,
       }
     end
 
