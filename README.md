@@ -86,6 +86,7 @@ The following environment variables can be used to configure the importer:
 | `INFLUX_SENSOR_BATTERY_CHARGE_POWER`    | Measurement/field for battery charge power      | `SENEC:bat_power_plus`       |
 | `INFLUX_SENSOR_BATTERY_DISCHARGE_POWER` | Measurement/field for battery discharge power   | `SENEC:bat_power_minus`      |
 | `INFLUX_SENSOR_WALLBOX_POWER`           | Measurement/field for wallbox power             | `SENEC:wallbox_charge_power` |
+| `SENEC_IGNORE`                          | Optionally ignore some fields (comma-separated) |                              |
 | `IMPORT_FOLDER`                         | Folder where CSV files are located              | `/data`                      |
 | `IMPORT_PAUSE`                          | Pause after each imported file (in seconds)     | `0`                          |
 | `TZ`                                    | Time zone to use when parsing times             | `Europe/Berlin`              |
