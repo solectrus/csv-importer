@@ -50,76 +50,37 @@ describe SenecRecord do
   describe '#to_a' do
     subject(:to_a) { record.to_a }
 
-    context 'without wallbox calculation' do
-      let(:fields) do
-        [
-          '14.03.2022 00:13:13',
-          '0,197754',
-          '0',
-          '0,199219',
-          '0',
-          '0',
-          '0',
-          '0',
-          '0',
-        ]
-      end
-
-      let(:expected_fields) do
-        {
-          inverter_power: 0,
-          house_power: 199,
-          bat_power_plus: 0,
-          bat_power_minus: 0,
-          grid_power_plus: 198,
-          grid_power_minus: 0,
-          wallbox_charge_power: 0,
-        }
-      end
-
-      it do
-        expect(to_a).to eq([
-                             time: 1_647_213_193,
-                             name: 'SENEC',
-                             fields: expected_fields,
-                           ])
-      end
+    let(:fields) do
+      [
+        '14.03.2022 00:13:13',
+        '0,197754',
+        '0',
+        '0,199219',
+        '0',
+        '0',
+        '0',
+        '0',
+        '0',
+      ]
     end
 
-    context 'with wallbox calculation' do
-      let(:fields) do
-        [
-          '21.03.2022 13:00:46',
-          '0,00146',
-          '0,840947',
-          '0,227756',
-          '0',
-          '0',
-          '7,311566',
-          '0',
-          '0',
-        ]
-      end
-
-      let(:expected_fields) do
-        {
-          inverter_power: 7312,
-          house_power: 228,
-          bat_power_plus: 0,
-          bat_power_minus: 0,
-          grid_power_plus: 1,
-          grid_power_minus: 841,
-          wallbox_charge_power: 6244,
-        }
-      end
-
-      it {
-        expect(to_a).to eq([
-                             time: 1_647_864_046,
-                             name: 'SENEC',
-                             fields: expected_fields,
-                           ])
+    let(:expected_fields) do
+      {
+        inverter_power: 0,
+        house_power: 199,
+        bat_power_plus: 0,
+        bat_power_minus: 0,
+        grid_power_plus: 198,
+        grid_power_minus: 0,
       }
+    end
+
+    it do
+      expect(to_a).to eq([
+                           time: 1_647_213_193,
+                           name: 'SENEC',
+                           fields: expected_fields,
+                         ])
     end
   end
 end
