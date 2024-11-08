@@ -47,49 +47,31 @@ docker exec -it solectrus-redis-1 redis-cli FLUSHALL
 
 Check the `.env` variable `INSTALLATION_DATE`. This must be set to the day your PV system was installed.
 
-### SENEC: Dealing with missing wallbox measurements
-
-The CSV data from mein-senec.de is not complete, there are no measurements for the wallbox. To get around this, wallbox charges are **estimated** using the following formula:
-
-```
-wallbox_charge_power =   inverter_power (Stromerzeugung)
-                       + grid_power_plus (Netzbezug)
-                       + bat_power_minus (Akkuentnahme)
-                       - grid_power_minus (Netzeinspeisung)
-                       - house_power (Stromverbrauch)
-                       - bat_power_plus (Akkubeladung)
-```
-
-Please note that this method appears to be ineffective for processing CSV files that were created from July 2022 onwards. This is because wallbox charges are now being included in the overall house consumption since that time. Therefore, it seems that there is currently no way to import wallbox measurements.
-
-The [senec-collector](https://github.com/solectrus/senec-collector) does not have this problem, as it obtains the wallbox measurements directly.
-
 ### Configuration
 
 The following environment variables can be used to configure the importer:
 
-| Variable                                | Description                                     | Default                      |
-| --------------------------------------- | ----------------------------------------------- | ---------------------------- |
-| `INFLUX_HOST`                           | Hostname of InfluxDB                            |                              |
-| `INFLUX_SCHEMA`                         | Schema (http/https) of InfluxDB                 | `http`                       |
-| `INFLUX_PORT`                           | Port of InfluxDB                                | `8086`                       |
-| `INFLUX_TOKEN_WRITE` or `INFLUX_TOKEN`  | Token for InfluxDB (requires write permissions) |                              |
-| `INFLUX_ORG`                            | Organization for InfluxDB                       |                              |
-| `INFLUX_BUCKET`                         | Bucket for InfluxDB                             |                              |
-| `INFLUX_OPEN_TIMEOUT`                   | Timeout for InfluxDB connection (in seconds)    | `30`                         |
-| `INFLUX_READ_TIMEOUT`                   | Timeout for InfluxDB read (in seconds)          | `30`                         |
-| `INFLUX_WRITE_TIMEOUT`                  | Timeout for InfluxDB write (in seconds)         | `30`                         |
-| `INFLUX_SENSOR_INVERTER_POWER`          | Measurement/field for inverter power            | `SENEC:inverter_power`       |
-| `INFLUX_SENSOR_HOUSE_POWER`             | Measurement/field for house power               | `SENEC:house_power`          |
-| `INFLUX_SENSOR_GRID_IMPORT_POWER`       | Measurement/field for grid import power         | `SENEC:grid_power_plus`      |
-| `INFLUX_SENSOR_GRID_EXPORT_POWER`       | Measurement/field for grid export power         | `SENEC:grid_power_minus`     |
-| `INFLUX_SENSOR_BATTERY_CHARGE_POWER`    | Measurement/field for battery charge power      | `SENEC:bat_power_plus`       |
-| `INFLUX_SENSOR_BATTERY_DISCHARGE_POWER` | Measurement/field for battery discharge power   | `SENEC:bat_power_minus`      |
-| `INFLUX_SENSOR_WALLBOX_POWER`           | Measurement/field for wallbox power             | `SENEC:wallbox_charge_power` |
-| `SENEC_IGNORE`                          | Optionally ignore some fields (comma-separated) |                              |
-| `IMPORT_FOLDER`                         | Folder where CSV files are located              | `/data`                      |
-| `IMPORT_PAUSE`                          | Pause after each imported file (in seconds)     | `0`                          |
-| `TZ`                                    | Time zone to use when parsing times             | `Europe/Berlin`              |
+| Variable                                | Description                                     | Default                  |
+| --------------------------------------- | ----------------------------------------------- | ------------------------ |
+| `INFLUX_HOST`                           | Hostname of InfluxDB                            |                          |
+| `INFLUX_SCHEMA`                         | Schema (http/https) of InfluxDB                 | `http`                   |
+| `INFLUX_PORT`                           | Port of InfluxDB                                | `8086`                   |
+| `INFLUX_TOKEN_WRITE` or `INFLUX_TOKEN`  | Token for InfluxDB (requires write permissions) |                          |
+| `INFLUX_ORG`                            | Organization for InfluxDB                       |                          |
+| `INFLUX_BUCKET`                         | Bucket for InfluxDB                             |                          |
+| `INFLUX_OPEN_TIMEOUT`                   | Timeout for InfluxDB connection (in seconds)    | `30`                     |
+| `INFLUX_READ_TIMEOUT`                   | Timeout for InfluxDB read (in seconds)          | `30`                     |
+| `INFLUX_WRITE_TIMEOUT`                  | Timeout for InfluxDB write (in seconds)         | `30`                     |
+| `INFLUX_SENSOR_INVERTER_POWER`          | Measurement/field for inverter power            | `SENEC:inverter_power`   |
+| `INFLUX_SENSOR_HOUSE_POWER`             | Measurement/field for house power               | `SENEC:house_power`      |
+| `INFLUX_SENSOR_GRID_IMPORT_POWER`       | Measurement/field for grid import power         | `SENEC:grid_power_plus`  |
+| `INFLUX_SENSOR_GRID_EXPORT_POWER`       | Measurement/field for grid export power         | `SENEC:grid_power_minus` |
+| `INFLUX_SENSOR_BATTERY_CHARGE_POWER`    | Measurement/field for battery charge power      | `SENEC:bat_power_plus`   |
+| `INFLUX_SENSOR_BATTERY_DISCHARGE_POWER` | Measurement/field for battery discharge power   | `SENEC:bat_power_minus`  |
+| `SENEC_IGNORE`                          | Optionally ignore some fields (comma-separated) |                          |
+| `IMPORT_FOLDER`                         | Folder where CSV files are located              | `/data`                  |
+| `IMPORT_PAUSE`                          | Pause after each imported file (in seconds)     | `0`                      |
+| `TZ`                                    | Time zone to use when parsing times             | `Europe/Berlin`          |
 
 ## License
 
