@@ -33,7 +33,8 @@ GEM
     hashdiff (1.1.2)
     i18n (1.14.6)
       concurrent-ruby (~> 1.0)
-    influxdb-client (3.1.0)
+    influxdb-client (3.2.0)
+      csv
     json (2.8.2)
     language_server-protocol (3.17.0.3)
     logger (1.6.1)
