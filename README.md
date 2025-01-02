@@ -75,7 +75,7 @@ The following environment variables can be used to configure the importer:
 
 ## License
 
-Copyright (c) 2020-2024 Georg Ledermann, released under the MIT License
+Copyright (c) 2020-2025 Georg Ledermann, released under the MIT License
 
 Many thanks to these incredible people for improving this project:
 
