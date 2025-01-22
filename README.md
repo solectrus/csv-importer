@@ -47,6 +47,8 @@ docker exec -it solectrus-redis-1 redis-cli FLUSHALL
 
 Check the `.env` variable `INSTALLATION_DATE`. This must be set to the day your PV system was installed.
 
+**Important note:** Since SOLECTRUS v0.18, a second step is required: You need to reset the "Daily summaries" (via settings).
+
 ### Configuration
 
 The following environment variables can be used to configure the importer:
