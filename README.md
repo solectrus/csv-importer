@@ -1,7 +1,7 @@
 [![Continuous integration](https://github.com/solectrus/csv-importer/actions/workflows/push.yml/badge.svg)](https://github.com/solectrus/csv-importer/actions/workflows/push.yml)
-[![Maintainability](https://api.codeclimate.com/v1/badges/22651f8e68e4c3123a39/maintainability)](https://codeclimate.com/github/solectrus/csv-importer/maintainability)
+[![Maintainability](https://qlty.sh/gh/solectrus/projects/csv-importer/maintainability.svg)](https://qlty.sh/gh/solectrus/projects/csv-importer)
 [![wakatime](https://wakatime.com/badge/user/697af4f5-617a-446d-ba58-407e7f3e0243/project/ccfef5d1-6717-4411-9895-69dc32ad5c91.svg)](https://wakatime.com/badge/user/697af4f5-617a-446d-ba58-407e7f3e0243/project/ccfef5d1-6717-4411-9895-69dc32ad5c91)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/22651f8e68e4c3123a39/test_coverage)](https://codeclimate.com/github/solectrus/csv-importer/test_coverage)
+[![Code Coverage](https://qlty.sh/gh/solectrus/projects/csv-importer/coverage.svg)](https://qlty.sh/gh/solectrus/projects/csv-importer)
 
 # CSV importer
 
