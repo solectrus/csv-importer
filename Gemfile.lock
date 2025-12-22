@@ -30,7 +30,7 @@ GEM
     dotenv (3.2.0)
     drb (2.2.3)
     hashdiff (1.2.1)
-    i18n (1.14.7)
+    i18n (1.14.8)
       concurrent-ruby (~> 1.0)
     influxdb-client (3.2.0)
       csv
