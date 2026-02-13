@@ -33,12 +33,10 @@ describe SungrowRecord do
       }
     end
 
-    it {
-      expect(to_a).to eq([
-                           name: 'Sungrow',
-                           time: expected_time,
-                           fields: expected_fields,
-                         ])
-    }
+    it do
+      expect(to_a).to eq(
+        [{ name: 'Sungrow', time: expected_time, fields: expected_fields }],
+      )
+    end
   end
 end

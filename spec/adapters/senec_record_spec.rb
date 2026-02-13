@@ -76,11 +76,9 @@ describe SenecRecord do
     end
 
     it do
-      expect(to_a).to eq([
-                           time: 1_647_213_193,
-                           name: 'SENEC',
-                           fields: expected_fields,
-                         ])
+      expect(to_a).to eq(
+        [{ time: 1_647_213_193, name: 'SENEC', fields: expected_fields }],
+      )
     end
   end
 end
