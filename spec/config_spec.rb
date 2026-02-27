@@ -14,7 +14,7 @@ describe Config do
 
   describe '#new' do
     context 'with valid options' do
-      subject(:config) { described_class.new(valid_options) }
+      subject(:config) { described_class.new(**valid_options) }
 
       it { is_expected.to be_truthy }
 
@@ -27,7 +27,7 @@ describe Config do
     end
 
     context 'with missing options' do
-      subject(:config) { described_class.new({}) }
+      subject(:config) { described_class.new }
 
       it 'fails' do
         expect { config }.to raise_error(URI::InvalidURIError)
