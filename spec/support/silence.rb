@@ -4,8 +4,8 @@ RSpec.configure do |config|
 
   config.before :all do
     # Redirect stderr and stdout
-    $stderr = File.open(File::NULL, 'w')
-    $stdout = File.open(File::NULL, 'w')
+    $stderr = File.new(File::NULL, 'w')
+    $stdout = File.new(File::NULL, 'w')
   end
 
   config.after :all do
