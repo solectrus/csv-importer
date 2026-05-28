@@ -24,9 +24,14 @@ ENV VERSION=${VERSION}
 ARG REVISION
 ENV REVISION=${REVISION}
 
+# Create a non-root user to run the app
+RUN addgroup -S app && adduser -S app -G app
+
 WORKDIR /csv-importer
 
 COPY --from=builder /usr/local/bundle/ /usr/local/bundle/
-COPY . /csv-importer/
+COPY --chown=app:app . /csv-importer/
+
+USER app
 
 ENTRYPOINT ["bundle", "exec", "app/main.rb"]
