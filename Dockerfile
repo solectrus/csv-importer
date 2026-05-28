@@ -1,12 +1,14 @@
 FROM ruby:4.0.5-alpine AS builder
 RUN apk add --no-cache build-base
 
+ENV BUNDLE_FROZEN=1 \
+    BUNDLE_WITHOUT=development:test \
+    BUNDLE_JOBS=4 \
+    BUNDLE_RETRY=3
+
 WORKDIR /csv-importer
 COPY Gemfile* /csv-importer/
-RUN bundle config --local frozen 1 && \
-    bundle config --local without 'development test' && \
-    bundle install -j4 --retry 3 && \
-    bundle clean --force
+RUN bundle install && bundle clean --force
 
 FROM ruby:4.0.5-alpine
 LABEL maintainer="georg@ledermann.dev"
