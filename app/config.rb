@@ -7,6 +7,7 @@ SENSOR_NAMES = %i[
   grid_export_power
   battery_charging_power
   battery_discharging_power
+  battery_soc
 ].freeze
 
 Config =
@@ -29,6 +30,7 @@ Config =
     :influx_sensor_grid_export_power,
     :influx_sensor_battery_charging_power,
     :influx_sensor_battery_discharging_power,
+    :influx_sensor_battery_soc,
     ### SENEC only: Optionally ignore some fields
     :senec_ignore,
     ###
@@ -92,6 +94,7 @@ Config =
         influx_sensor_battery_discharging_power: ENV.fetch(
           'INFLUX_SENSOR_BATTERY_DISCHARGING_POWER', 'SENEC:bat_power_minus',
         ),
+        influx_sensor_battery_soc: ENV.fetch('INFLUX_SENSOR_BATTERY_SOC', 'SENEC:bat_fuel_charge'),
         senec_ignore: ENV.fetch('SENEC_IGNORE', '').split(',').map(&:to_sym),
       }
     end

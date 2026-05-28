@@ -10,15 +10,21 @@ class SenecRecord < BaseRecord
       first_line.include?('Uhrzeit;Netzbezug [kWh]')
   end
 
+  BASE_SENSORS = %i[
+    inverter_power
+    house_power
+    battery_charging_power
+    battery_discharging_power
+    grid_import_power
+    grid_export_power
+  ].freeze
+
+  SENSORS_WITH_SOC = (BASE_SENSORS + %i[battery_soc]).freeze
+
+  SOC_COLUMNS = ['Akku Füllstand [%]', 'Akku-Füllstand [%]'].freeze
+
   def data
-    %i[
-      inverter_power
-      house_power
-      battery_charging_power
-      battery_discharging_power
-      grid_import_power
-      grid_export_power
-    ].filter_map do |sensor_name|
+    sensor_names.filter_map do |sensor_name|
       next if config.senec_ignore.include?(config.field(sensor_name))
 
       {
@@ -34,6 +40,11 @@ class SenecRecord < BaseRecord
   end
 
   private
+
+  def sensor_names
+    @sensor_names ||=
+      SOC_COLUMNS.any? { |col| row.headers.include?(col) } ? SENSORS_WITH_SOC : BASE_SENSORS
+  end
 
   def inverter_power
     @inverter_power ||=
@@ -73,6 +84,15 @@ class SenecRecord < BaseRecord
   def grid_export_power
     @grid_export_power ||=
       parse_kw(row, 'Netzeinspeisung [kW]', 'Netzeinspeisung [kWh]')
+  end
+
+  # Battery state of charge (percentage). Optional — older CSV exports
+  # don't include this column.
+  def battery_soc
+    return @battery_soc if defined?(@battery_soc)
+
+    raw = SOC_COLUMNS.filter_map { |col| row[col] }.first
+    @battery_soc = raw.nil? || raw.empty? ? nil : raw.sub(',', '.').to_f.round(2)
   end
 
   # KiloWatt

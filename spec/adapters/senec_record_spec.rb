@@ -80,5 +80,41 @@ describe SenecRecord do
         [{ time: 1_647_213_193, name: 'SENEC', fields: expected_fields }],
       )
     end
+
+    context 'when the CSV contains the battery fill level column' do
+      let(:headers) do
+        [
+          'Uhrzeit',
+          'Netzbezug [kW]',
+          'Netzeinspeisung [kW]',
+          'Stromverbrauch [kW]',
+          'Akkubeladung [kW]',
+          'Akkuentnahme [kW]',
+          'Stromerzeugung [kW]',
+          'Akku Spannung [V]',
+          'Akku Stromstärke [A]',
+          'Akku Füllstand [%]',
+        ]
+      end
+
+      let(:fields) do
+        [
+          '26.09.2022 13:13:09',
+          '0,005859',
+          '0,011719',
+          '0,433594',
+          '0,908203',
+          '0',
+          '1,359375',
+          '56,040001',
+          '15,26',
+          '84,84848',
+        ]
+      end
+
+      it 'includes the battery state of charge' do
+        expect(to_a.first[:fields]).to include(bat_fuel_charge: 84.85)
+      end
+    end
   end
 end

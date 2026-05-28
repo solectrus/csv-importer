@@ -70,6 +70,7 @@ The following environment variables can be used to configure the importer:
 | `INFLUX_SENSOR_GRID_EXPORT_POWER`       | Measurement/field for grid export power         | `SENEC:grid_power_minus` |
 | `INFLUX_SENSOR_BATTERY_CHARGE_POWER`    | Measurement/field for battery charge power      | `SENEC:bat_power_plus`   |
 | `INFLUX_SENSOR_BATTERY_DISCHARGE_POWER` | Measurement/field for battery discharge power   | `SENEC:bat_power_minus`  |
+| `INFLUX_SENSOR_BATTERY_SOC`             | Measurement/field for battery state of charge   | `SENEC:bat_fuel_charge`  |
 | `SENEC_IGNORE`                          | Optionally ignore some fields (comma-separated) |                          |
 | `IMPORT_FOLDER`                         | Folder where CSV files are located              | `/data`                  |
 | `IMPORT_PAUSE`                          | Pause after each imported file (in seconds)     | `0`                      |
