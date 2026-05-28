@@ -1,3 +1,5 @@
+# syntax=docker/dockerfile:1
+
 FROM ruby:4.0.5-alpine AS builder
 RUN apk add --no-cache build-base
 
@@ -8,7 +10,8 @@ ENV BUNDLE_FROZEN=1 \
 
 WORKDIR /csv-importer
 COPY Gemfile* /csv-importer/
-RUN bundle install && bundle clean --force
+RUN --mount=type=cache,target=/usr/local/bundle/cache,sharing=locked \
+    bundle install && bundle clean --force
 
 FROM ruby:4.0.5-alpine
 LABEL maintainer="georg@ledermann.dev"
