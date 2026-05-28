@@ -14,14 +14,34 @@ class FluxWriter
   def push(records)
     return unless records
 
-    write_api.write(
-      data: records.map { |record| point(record) },
-      bucket: config.influx_bucket,
-      org: config.influx_org,
-    )
+    records.each_slice(500) { |chunk| write_chunk(chunk) }
   end
 
   private
+
+  def write_chunk(chunk)
+    data = chunk.map { |record| point(record) }
+    delays = [1, 2, 4]
+
+    begin
+      write_api.write(data:, bucket: config.influx_bucket, org: config.influx_org)
+    rescue InfluxDB2::InfluxError => e
+      raise unless transient?(e) && (delay = delays.shift)
+
+      sleep(delay)
+      retry
+    end
+  end
+
+  # Wrapped network errors (Net::ReadTimeout, ECONNRESET, ...) reach us as
+  # InfluxError with a blank `code`; treat those plus 408/429 and any 5xx as
+  # transient. Permanent 4xx errors are re-raised immediately.
+  def transient?(error)
+    return true if error.code.to_s.empty?
+
+    code = error.code.to_i
+    code == 408 || code == 429 || (500..599).cover?(code)
+  end
 
   def point(record)
     InfluxDB2::Point.new(**record)

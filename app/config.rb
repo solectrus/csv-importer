@@ -76,7 +76,7 @@ Config =
         influx_org: ENV.fetch('INFLUX_ORG', nil),
         influx_bucket: ENV.fetch('INFLUX_BUCKET', nil),
         influx_open_timeout: ENV.fetch('INFLUX_OPEN_TIMEOUT', 30).to_i,
-        influx_read_timeout: ENV.fetch('INFLUX_READ_TIMEOUT', 30).to_i,
+        influx_read_timeout: ENV.fetch('INFLUX_READ_TIMEOUT', 60).to_i,
         influx_write_timeout: ENV.fetch('INFLUX_WRITE_TIMEOUT', 30).to_i,
         import_pause: ENV.fetch('IMPORT_PAUSE', 0).to_i,
         import_folder: ENV.fetch('IMPORT_FOLDER', '/data'),

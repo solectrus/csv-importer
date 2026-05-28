@@ -58,7 +58,7 @@ describe Config do
 
     it { expect(config.influx_port).to eq('8086') }
     it { expect(config.influx_open_timeout).to eq(30) }
-    it { expect(config.influx_read_timeout).to eq(30) }
+    it { expect(config.influx_read_timeout).to eq(60) }
     it { expect(config.influx_write_timeout).to eq(30) }
     it { expect(config.import_pause).to eq(1) }
   end

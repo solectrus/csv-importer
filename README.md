@@ -62,7 +62,7 @@ The following environment variables can be used to configure the importer:
 | `INFLUX_ORG`                            | Organization for InfluxDB                       |                          |
 | `INFLUX_BUCKET`                         | Bucket for InfluxDB                             |                          |
 | `INFLUX_OPEN_TIMEOUT`                   | Timeout for InfluxDB connection (in seconds)    | `30`                     |
-| `INFLUX_READ_TIMEOUT`                   | Timeout for InfluxDB read (in seconds)          | `30`                     |
+| `INFLUX_READ_TIMEOUT`                   | Timeout for InfluxDB read (in seconds)          | `60`                     |
 | `INFLUX_WRITE_TIMEOUT`                  | Timeout for InfluxDB write (in seconds)         | `30`                     |
 | `INFLUX_SENSOR_INVERTER_POWER`          | Measurement/field for inverter power            | `SENEC:inverter_power`   |
 | `INFLUX_SENSOR_HOUSE_POWER`             | Measurement/field for house power               | `SENEC:house_power`      |
