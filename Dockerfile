@@ -8,8 +8,8 @@ ENV BUNDLE_FROZEN=1 \
     BUNDLE_JOBS=4 \
     BUNDLE_RETRY=3
 
-WORKDIR /csv-importer
-COPY Gemfile* /csv-importer/
+WORKDIR /app
+COPY Gemfile* /app/
 RUN --mount=type=cache,target=/usr/local/bundle/cache,sharing=locked \
     bundle install && bundle clean --force
 
@@ -31,10 +31,10 @@ LABEL org.opencontainers.image.authors="georg@ledermann.dev"
 # Create a non-root user to run the app
 RUN addgroup -S app && adduser -S app -G app
 
-WORKDIR /csv-importer
+WORKDIR /app
 
 COPY --from=builder /usr/local/bundle/ /usr/local/bundle/
-COPY --chown=app:app . /csv-importer/
+COPY --chown=app:app . /app/
 
 USER app
 
