@@ -2,7 +2,10 @@
 
 require 'dotenv/load'
 require_relative 'config'
+require_relative 'adapters/time_zone'
 require_relative 'import'
+
+setup_time_zone
 
 # Flush output immediately
 $stdout.sync = true

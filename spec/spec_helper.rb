@@ -10,8 +10,11 @@ end
 require 'dotenv'
 Dotenv.load('.env.test')
 
+require_relative '../app/adapters/time_zone'
 require_relative '../app/import'
 require_relative '../app/config'
+
+setup_time_zone
 
 require 'support/vcr_setup'
 require 'support/silence'

@@ -1,8 +1,5 @@
 require 'active_support/all'
 
 def setup_time_zone
-  time_zone = ENV.fetch('TZ', 'Europe/Berlin')
-  Time.zone = time_zone
+  Time.zone = ENV.fetch('TZ', 'Europe/Berlin')
 end
-
-setup_time_zone
