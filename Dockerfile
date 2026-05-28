@@ -26,9 +26,6 @@ ENV BUILDTIME=${BUILDTIME}
 ARG VERSION
 ENV VERSION=${VERSION}
 
-ARG REVISION
-ENV REVISION=${REVISION}
-
 LABEL org.opencontainers.image.authors="georg@ledermann.dev"
 
 # Create a non-root user to run the app
