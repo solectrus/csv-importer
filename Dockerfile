@@ -14,12 +14,12 @@ RUN --mount=type=cache,target=/usr/local/bundle/cache,sharing=locked \
     bundle install && bundle clean --force
 
 FROM ruby:4.0.5-alpine
-LABEL maintainer="georg@ledermann.dev"
 
 # Decrease memory usage
 ENV MALLOC_ARENA_MAX=2
 
-# Move build arguments to environment variables
+# Build arguments — exposed as env vars, consumed by app/main.rb.
+# OCI image labels are set by the CI workflow via docker/metadata-action.
 ARG BUILDTIME
 ENV BUILDTIME=${BUILDTIME}
 
@@ -28,6 +28,8 @@ ENV VERSION=${VERSION}
 
 ARG REVISION
 ENV REVISION=${REVISION}
+
+LABEL org.opencontainers.image.authors="georg@ledermann.dev"
 
 # Create a non-root user to run the app
 RUN addgroup -S app && adduser -S app -G app

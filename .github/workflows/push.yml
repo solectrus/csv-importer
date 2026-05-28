@@ -68,6 +68,8 @@ jobs:
             type=semver,pattern={{major}}.{{minor}}
             type=semver,pattern={{major}}
             type=raw,value=latest,enable=${{ github.ref == format('refs/heads/{0}', 'main') }}
+          labels: |
+            org.opencontainers.image.title=SOLECTRUS CSV importer
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v4
