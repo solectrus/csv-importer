@@ -11,7 +11,7 @@ SENSOR_NAMES = %i[
 ].freeze
 
 Config =
-  Struct.new(
+  Data.define(
     :influx_schema,
     :influx_host,
     :influx_port,
@@ -35,8 +35,13 @@ Config =
     :senec_ignore,
     ###
   ) do
-    def initialize(**)
-      super
+    def initialize(**args)
+      # Pre-super ivars survive the auto-freeze that Data applies after super.
+      @measurement = {}
+      @field = {}
+
+      defaults = self.class.members.to_h { |m| [m, nil] }
+      super(**defaults.merge(args))
 
       validate_url!(influx_url)
     end
@@ -46,42 +51,37 @@ Config =
     end
 
     def measurement(sensor_name)
-      @measurement ||= {}
       @measurement[sensor_name] ||= splitted_sensor_name(sensor_name)&.first
     end
 
     def field(sensor_name)
-      @field ||= {}
       @field[sensor_name] ||= splitted_sensor_name(sensor_name)&.last&.to_sym
     end
 
     def splitted_sensor_name(sensor_name)
-      public_send(sensor_name.downcase)&.split(':')
+      public_send(:"influx_sensor_#{sensor_name}")&.split(':')
     end
 
-    SENSOR_NAMES.each do |sensor_name|
-      define_method(sensor_name) do
-        public_send("influx_sensor_#{sensor_name}")
-      end
+    def self.from_env(**)
+      new(**from_env_defaults, **)
     end
 
-    def self.from_env(options = {})
-      new(
-        influx_host: ENV.fetch('INFLUX_HOST'),
+    def self.from_env_defaults
+      {
+        influx_host: ENV.fetch('INFLUX_HOST', nil),
         influx_schema: ENV.fetch('INFLUX_SCHEMA', 'http'),
         influx_port: ENV.fetch('INFLUX_PORT', '8086'),
         influx_token:
-          ENV.fetch('INFLUX_TOKEN_WRITE', nil) || ENV.fetch('INFLUX_TOKEN'),
-        influx_org: ENV.fetch('INFLUX_ORG'),
-        influx_bucket: ENV.fetch('INFLUX_BUCKET'),
+          ENV.fetch('INFLUX_TOKEN_WRITE', nil) || ENV.fetch('INFLUX_TOKEN', nil),
+        influx_org: ENV.fetch('INFLUX_ORG', nil),
+        influx_bucket: ENV.fetch('INFLUX_BUCKET', nil),
         influx_open_timeout: ENV.fetch('INFLUX_OPEN_TIMEOUT', 30).to_i,
         influx_read_timeout: ENV.fetch('INFLUX_READ_TIMEOUT', 30).to_i,
         influx_write_timeout: ENV.fetch('INFLUX_WRITE_TIMEOUT', 30).to_i,
         import_pause: ENV.fetch('IMPORT_PAUSE', 0).to_i,
         import_folder: ENV.fetch('IMPORT_FOLDER', '/data'),
         **sensors_from_env,
-        **options,
-      )
+      }
     end
 
     def self.sensors_from_env
