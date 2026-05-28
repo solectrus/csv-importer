@@ -18,6 +18,12 @@ FROM ruby:4.0.5-alpine
 # Decrease memory usage
 ENV MALLOC_ARENA_MAX=2
 
+# Bundler must see the same `without` groups at runtime as at build time,
+# otherwise `bundle exec` tries to materialize dev/test gems that were
+# never installed into the image.
+ENV BUNDLE_FROZEN=1 \
+    BUNDLE_WITHOUT=development:test
+
 # Build arguments — exposed as env vars, consumed by app/main.rb.
 # OCI image labels are set by the CI workflow via docker/metadata-action.
 ARG BUILDTIME
