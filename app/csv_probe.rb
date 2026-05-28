@@ -11,12 +11,11 @@ class CsvProbe
   def record_class
     first_line = File.open(file_path, &:readline).chomp
 
-    # Check all existing record classes (descendands of BaseRecord)
+    # Check all existing record classes (descendants of BaseRecord)
     BaseRecord.descendants.each do |record_class|
       return record_class if record_class.probe?(first_line)
     end
 
-    # If no record class was found, throw an error
-    throw "Unknown data format in #{file_path}, first line is #{first_line}"
+    raise "Unknown data format in #{file_path}, first line is #{first_line}"
   end
 end

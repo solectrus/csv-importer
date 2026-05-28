@@ -105,6 +105,6 @@ Config =
       uri = URI.parse(url)
       return if uri.is_a?(URI::HTTP) && !uri.host.nil?
 
-      throw "URL is invalid: #{url}"
+      raise ArgumentError, "URL is invalid: #{url}"
     end
   end

@@ -29,6 +29,6 @@ class BaseRecord
     # Find column by name (can have different names due to CSV format changes)
     column = columns.find { |col| row[col] }
 
-    row[column] || throw("Column #{columns.join(' or ')} not found")
+    row[column] || raise(KeyError, "Column #{columns.join(' or ')} not found")
   end
 end
