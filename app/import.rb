@@ -1,4 +1,5 @@
 require 'csv'
+require_relative 'app_logger'
 require_relative 'flux_writer'
 require_relative 'csv_probe'
 
@@ -6,7 +7,7 @@ class Import
   def self.run(config:)
     import = new(config:)
 
-    puts "Importing data from #{config.import_folder} ..."
+    AppLogger.instance.info "Importing data from #{config.import_folder} ..."
 
     count = 0
     Dir
@@ -18,7 +19,7 @@ class Import
         import.pause
       end
 
-    puts "Imported #{count} files\n\n"
+    AppLogger.instance.info "Imported #{count} files"
 
     count
   end
@@ -30,10 +31,7 @@ class Import
   attr_reader :config
 
   def process(file_path)
-    print "Importing #{file_path}"
-
     record_class = CsvProbe.new(file_path).record_class
-    print " using #{record_class} adapter..."
 
     count = 0
     records =
@@ -47,13 +45,13 @@ class Import
     return unless count.positive?
 
     FluxWriter.push(config:, records:)
-    puts " Done, #{count} points imported"
+    AppLogger.instance.info "Imported #{file_path} (#{record_class}, #{count} points)"
   end
 
   def pause
     return unless config.import_pause.positive?
 
-    puts "Pausing for #{config.import_pause} seconds..."
+    AppLogger.instance.info "Pausing for #{config.import_pause} seconds..."
     sleep(config.import_pause)
   end
 
