@@ -1,3 +1,4 @@
+require 'active_support/core_ext/class/subclasses'
 require_relative 'time_zone'
 
 class BaseRecord

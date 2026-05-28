@@ -10,6 +10,12 @@ end
 require 'dotenv'
 Dotenv.load('.env.test')
 
+# Test-only ActiveSupport extensions (production code requires its own minimal set).
+require 'active_support/core_ext/numeric/time'
+require 'active_support/core_ext/string/conversions'
+require 'active_support/core_ext/array/access'
+require 'active_support/core_ext/enumerable'
+
 require_relative '../app/adapters/time_zone'
 require_relative '../app/import'
 require_relative '../app/config'
