@@ -43,7 +43,7 @@ class SenecRecord < BaseRecord
 
   def sensor_names
     @sensor_names ||=
-      SOC_COLUMNS.any? { |col| row.headers.include?(col) } ? SENSORS_WITH_SOC : BASE_SENSORS
+      SOC_COLUMNS.intersect?(row.headers) ? SENSORS_WITH_SOC : BASE_SENSORS
   end
 
   def inverter_power
