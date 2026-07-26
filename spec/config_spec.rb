@@ -42,6 +42,30 @@ describe Config do
       end
     end
 
+    context 'with missing INFLUX_HOST, but schema and port present' do
+      subject(:config) do
+        described_class.new(**valid_options, influx_host: nil)
+      end
+
+      it 'fails' do
+        expect { config }.to raise_error(
+          ArgumentError,
+          'URL is invalid: https://:443',
+        )
+      end
+    end
+
+    context 'with blank INFLUX_HOST' do
+      subject(:config) { described_class.new(**valid_options, influx_host: '') }
+
+      it 'fails' do
+        expect { config }.to raise_error(
+          ArgumentError,
+          'URL is invalid: https://:443',
+        )
+      end
+    end
+
     context 'with invalid INFLUX_SCHEMA' do
       subject(:config) { described_class.new(influx_schema: 'foo') }
 

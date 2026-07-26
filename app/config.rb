@@ -103,7 +103,7 @@ Config =
 
     def validate_url!(url)
       uri = URI.parse(url)
-      return if uri.is_a?(URI::HTTP) && !uri.host.nil?
+      return if uri.is_a?(URI::HTTP) && !uri.host.to_s.empty?
 
       raise ArgumentError, "URL is invalid: #{url}"
     end
