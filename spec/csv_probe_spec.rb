@@ -1,15 +1,15 @@
 describe CsvProbe do
   let(:checker) { described_class.new(file_path) }
 
-  describe '#record_class' do
+  describe '#adapter_class' do
     context 'when a Senec file is given' do
       Dir
         .glob('spec/data/senec/*.csv')
         .each do |file_path|
           let(:file_path) { file_path }
 
-          it 'returns the SenecRecord class' do
-            expect(checker.record_class).to eq(SenecRecord)
+          it 'returns the SenecAdapter class' do
+            expect(checker.adapter_class).to eq(SenecAdapter)
           end
         end
     end
@@ -20,8 +20,8 @@ describe CsvProbe do
         .each do |file_path|
           let(:file_path) { file_path }
 
-          it 'returns the SungrowRecord class' do
-            expect(checker.record_class).to eq(SungrowRecord)
+          it 'returns the SungrowAdapter class' do
+            expect(checker.adapter_class).to eq(SungrowAdapter)
           end
         end
     end
@@ -32,8 +32,8 @@ describe CsvProbe do
         .each do |file_path|
           let(:file_path) { file_path }
 
-          it 'returns the SolaredgeRecord class' do
-            expect(checker.record_class).to eq(SolaredgeRecord)
+          it 'returns the SolaredgeAdapter class' do
+            expect(checker.adapter_class).to eq(SolaredgeAdapter)
           end
         end
     end
@@ -42,7 +42,7 @@ describe CsvProbe do
       let(:file_path) { 'README.md' }
 
       it 'fails' do
-        expect { checker.record_class }.to raise_error(
+        expect { checker.adapter_class }.to raise_error(
           StandardError,
           /Unknown data format in README.md/,
         )

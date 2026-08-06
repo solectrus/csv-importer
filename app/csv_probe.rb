@@ -8,12 +8,12 @@ class CsvProbe
 
   attr_reader :file_path
 
-  def record_class
+  def adapter_class
     first_line = File.open(file_path, &:readline).chomp
 
-    # Check all existing record classes (descendants of BaseRecord)
-    BaseRecord.descendants.each do |record_class|
-      return record_class if record_class.probe?(first_line)
+    # Check all existing adapters (subclasses of BaseAdapter)
+    BaseAdapter.subclasses.each do |adapter_class|
+      return adapter_class if adapter_class.probe?(first_line)
     end
 
     raise "Unknown data format in #{file_path}, first line is #{first_line}"

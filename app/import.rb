@@ -31,21 +31,18 @@ class Import
   attr_reader :config
 
   def process(file_path)
-    record_class = CsvProbe.new(file_path).record_class
+    adapter_class = CsvProbe.new(file_path).adapter_class
 
-    count = 0
-    records =
-      CSV
-        .parse(file_content(file_path), **record_class.csv_options)
-        .map do |row|
-          count += 1
-          record_class.new(row, config:).to_a
-        end.flatten
+    rows = CSV.parse(file_content(file_path), **adapter_class.csv_options)
+    headers = rows.shift
+    return if rows.empty?
 
-    return unless count.positive?
+    adapter = adapter_class.new(headers, config:)
+    records = rows.flat_map { |row| adapter.points(row) }
 
     FluxWriter.push(config:, records:)
-    AppLogger.instance.info "Imported #{file_path} (#{record_class}, #{count} points)"
+    AppLogger.instance.info "Imported #{file_path} " \
+                              "(#{adapter_class}, #{rows.size} rows)"
   end
 
   def pause
