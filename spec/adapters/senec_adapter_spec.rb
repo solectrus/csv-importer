@@ -44,6 +44,14 @@ describe SenecAdapter do
         expect(time).to eq(1_695_412_800)
       end
     end
+
+    context 'when the timestamp has an unknown shape' do
+      let(:row) { ['2023-09-22T16:00:00', '', '', '', '', '', '', '', ''] }
+
+      it 'fails' do
+        expect { time }.to raise_error(ArgumentError, /Not a SENEC timestamp/)
+      end
+    end
   end
 
   describe '#points' do

@@ -18,6 +18,9 @@ class SungrowAdapter < BaseAdapter
     grid_export_power
   ].freeze
 
+  # 2023-06-21 00:00:00
+  TIMESTAMP = /\A(\d{4})-(\d{2})-(\d{2}) (\d{2}):(\d{2}):(\d{2})\z/
+
   def initialize(headers, config:)
     super
 
@@ -29,7 +32,19 @@ class SungrowAdapter < BaseAdapter
   end
 
   def time(row)
-    Time.zone.parse(row[@time_column]).to_i
+    stamp = row[@time_column]
+    match =
+      TIMESTAMP.match(stamp) ||
+      raise(ArgumentError, "Not a Sungrow timestamp: #{stamp.inspect}")
+
+    LocalTime.zone.epoch(
+      match[1].to_i,
+      match[2].to_i,
+      match[3].to_i,
+      match[4].to_i,
+      match[5].to_i,
+      match[6].to_i,
+    )
   end
 
   # The battery and the grid report one signed number each, which the two

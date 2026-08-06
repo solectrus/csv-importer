@@ -10,7 +10,7 @@ require 'active_support/core_ext/string/conversions'
 require 'active_support/core_ext/array/access'
 require 'active_support/core_ext/enumerable'
 
-require_relative '../app/adapters/time_zone'
+require_relative '../app/time_zone'
 require_relative '../app/import'
 require_relative '../app/config'
 

@@ -67,6 +67,17 @@ describe SolaredgeAdapter do
       expect(points.last[:time]).to eq(1_717_106_100)
     end
 
+    context 'when the timestamp has an unknown shape' do
+      let(:row) { %w[2024-05-30 48958 6472 36029] }
+
+      it 'fails' do
+        expect { points }.to raise_error(
+          ArgumentError,
+          /Not a SolarEdge timestamp/,
+        )
+      end
+    end
+
     context 'when a row is too short to reach a column' do
       let(:row) { ['30.05.2024', '48958'] }
 

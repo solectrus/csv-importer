@@ -3,7 +3,7 @@
 require 'dotenv/load'
 require_relative 'config'
 require_relative 'app_logger'
-require_relative 'adapters/time_zone'
+require_relative 'time_zone'
 require_relative 'import'
 
 setup_time_zone
@@ -18,8 +18,8 @@ logger.info 'Copyright (c) 2020-2026 Georg Ledermann and contributors, released 
 
 config = Config.from_env
 
-logger.info "Using Ruby #{RUBY_VERSION} on platform #{RUBY_PLATFORM}"
+logger.info "Using #{RUBY_DESCRIPTION}"
 logger.info "Pushing to InfluxDB at #{config.influx_url}, bucket #{config.influx_bucket}"
-logger.info "Using time zone #{Time.zone.name}"
+logger.info "Using time zone #{LocalTime.zone.name}"
 
 Import.run(config:)

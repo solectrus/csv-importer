@@ -37,6 +37,10 @@ Metrics/MethodLength:
 Metrics/AbcSize:
   Max: 25
 
+Metrics/ParameterLists:
+  # Six of them name one moment: year, month, day, hour, minute, second.
+  Max: 6
+
 RSpec/MultipleMemoizedHelpers:
   Enabled: false
 

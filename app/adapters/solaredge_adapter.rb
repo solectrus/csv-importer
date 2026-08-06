@@ -23,6 +23,9 @@ class SolaredgeAdapter < BaseAdapter
   INTERVAL = 5 * 60
   OFFSETS = (0...(24 * 60 / 5)).map { |step| step * INTERVAL }.freeze
 
+  # 10.10.2021
+  TIMESTAMP = /\A(\d{2})\.(\d{2})\.(\d{4})\z/
+
   def initialize(headers, config:)
     super
 
@@ -48,7 +51,12 @@ class SolaredgeAdapter < BaseAdapter
   end
 
   def time(row)
-    Time.zone.parse(row[@time_column]).to_i
+    stamp = row[@time_column]
+    match =
+      TIMESTAMP.match(stamp) ||
+      raise(ArgumentError, "Not a SolarEdge timestamp: #{stamp.inspect}")
+
+    LocalTime.zone.epoch(match[3].to_i, match[2].to_i, match[1].to_i, 0, 0, 0)
   end
 
   # The energy of a whole day, read as the average power over it (Wh / 24 = W).

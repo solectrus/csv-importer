@@ -52,6 +52,17 @@ describe SungrowAdapter do
       end
     end
 
+    context 'when the timestamp has an unknown shape' do
+      let(:row) { ['21.06.2023 10:50:00', '2921', '63', '-2631', '353'] }
+
+      it 'fails' do
+        expect { points }.to raise_error(
+          ArgumentError,
+          /Not a Sungrow timestamp/,
+        )
+      end
+    end
+
     context 'when a row is too short to reach a column' do
       let(:row) { ['2023-06-21 10:50:00', '2921'] }
 

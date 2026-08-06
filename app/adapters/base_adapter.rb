@@ -1,3 +1,5 @@
+require_relative '../local_time'
+
 # One adapter per CSV file, built from its header row.
 #
 # Which column a sensor sits in, which measurement it belongs to and which
