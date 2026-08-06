@@ -75,6 +75,28 @@ describe Config do
     end
   end
 
+  describe '#measurement and #field' do
+    context 'with a sensor configured' do
+      subject(:config) do
+        described_class.new(
+          **valid_options,
+          influx_sensor_battery_soc: 'SENEC:bat_fuel_charge',
+        )
+      end
+
+      it { expect(config.measurement(:battery_soc)).to eq('SENEC') }
+      it { expect(config.field(:battery_soc)).to eq(:bat_fuel_charge) }
+    end
+
+    # `Config.new` leaves every member it is not given as nil
+    context 'without a sensor configured' do
+      subject(:config) { described_class.new(**valid_options) }
+
+      it { expect(config.measurement(:battery_soc)).to be_nil }
+      it { expect(config.field(:battery_soc)).to be_nil }
+    end
+  end
+
   describe '.from_env' do
     subject(:config) { described_class.from_env }
 

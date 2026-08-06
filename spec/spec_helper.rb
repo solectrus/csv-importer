@@ -1,5 +1,19 @@
 require 'simplecov'
-SimpleCov.start
+SimpleCov.start do
+  # A line that runs is not a line that was tried both ways, and the gaps that
+  # matter here are the ones where a branch was never taken.
+  enable_coverage :branch
+
+  # Every run stands alone. The suite runs in one process, so merging buys
+  # nothing - but a complete run started within ten minutes of a single-file
+  # run picks up the result of that one and fails a gate it should pass.
+  merging false
+
+  # A run of a single spec file covers a fraction of the code, so the gate
+  # belongs to the complete suite - which is what CI always runs, and what an
+  # `rspec` without arguments is locally.
+  minimum_coverage line: 100, branch: 100 if ENV['CI'] || ARGV.grep_v(/\A-/).empty?
+end
 
 require 'dotenv'
 Dotenv.load('.env.test')
