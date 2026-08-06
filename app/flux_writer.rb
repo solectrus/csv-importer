@@ -1,8 +1,13 @@
 require 'influxdb-client'
+require_relative 'line_protocol'
 
 class FluxWriter
+  # Points per request
+  BATCH_SIZE = 500
+
   def initialize(config:)
     @config = config
+    @line_protocol = LineProtocol.new
   end
 
   attr_reader :config
@@ -14,13 +19,15 @@ class FluxWriter
   def push(records)
     return unless records
 
-    records.each_slice(500) { |chunk| write_chunk(chunk) }
+    records.each_slice(BATCH_SIZE) { |chunk| write_chunk(chunk) }
   end
 
   private
 
   def write_chunk(chunk)
-    data = chunk.map { |record| point(record) }
+    data = chunk.filter_map { |record| @line_protocol.call(record) }.join("\n")
+    return if data.empty?
+
     delays = [1, 2, 4]
 
     begin
@@ -41,10 +48,6 @@ class FluxWriter
 
     code = error.code.to_i
     code == 408 || code == 429 || (500..599).cover?(code)
-  end
-
-  def point(record)
-    InfluxDB2::Point.new(**record)
   end
 
   def influx_client

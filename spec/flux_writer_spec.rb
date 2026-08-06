@@ -49,23 +49,44 @@ describe FluxWriter do
         writer.push(records)
         expect(write_api).to have_received(:write).once
       end
+
+      it 'writes them as line protocol' do
+        payload = nil
+        allow(write_api).to receive(:write) { |data:, **| payload = data }
+
+        writer.push(records)
+
+        expect(payload.lines.first).to eq("SENEC house_power=0i 0\n")
+      end
     end
 
     context 'with more records than the batch size' do
-      let(:records) { Array.new(1200) { |i| make_record(i) } }
+      let(:size) { described_class::BATCH_SIZE }
+      let(:records) { Array.new((size * 2) + 200) { |i| make_record(i) } }
 
       it 'splits records into three chunks' do
         writer.push(records)
         expect(write_api).to have_received(:write).exactly(3).times
       end
 
-      it 'preserves chunk sizes (500, 500, 200)' do
+      it 'preserves chunk sizes' do
         chunk_sizes = []
-        allow(write_api).to receive(:write) { |data:, **| chunk_sizes << data.size }
+        allow(write_api).to receive(:write) do |data:, **|
+          chunk_sizes << data.lines.size
+        end
 
         writer.push(records)
 
-        expect(chunk_sizes).to eq([500, 500, 200])
+        expect(chunk_sizes).to eq([size, size, 200])
+      end
+    end
+
+    context 'with records that carry no field' do
+      let(:records) { [{ time: 1, name: 'SENEC', fields: { house_power: nil } }] }
+
+      it 'does not call the write API' do
+        writer.push(records)
+        expect(write_api).not_to have_received(:write)
       end
     end
   end

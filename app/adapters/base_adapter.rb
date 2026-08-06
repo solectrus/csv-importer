@@ -37,12 +37,16 @@ class BaseAdapter
   end
 
   # measurement => the fields it carries, and the sensor each of them reads.
+  #
+  # Sorted by field name, which is the order InfluxDB has been receiving them
+  # in all along - it used to be sorted again for every point written.
   def groups
     @groups ||=
       sensors
         .group_by { |sensor| config.measurement(sensor) }
         .map do |measurement, names|
-          [measurement, names.map { |name| [config.field(name), name] }]
+          fields = names.map { |name| [config.field(name), name] }
+          [measurement, fields.sort_by { |field, _sensor| field.to_s }]
         end
   end
 
