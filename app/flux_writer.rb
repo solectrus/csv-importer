@@ -2,8 +2,10 @@ require 'influxdb-client'
 require_relative 'line_protocol'
 
 class FluxWriter
-  # Points per request
-  BATCH_SIZE = 500
+  # Points per request. Each write opens its own connection, so a year of
+  # SENEC data used to be 420 of them; at this size it is 42, and the body
+  # stays under a megabyte.
+  BATCH_SIZE = 5_000
 
   def initialize(config:)
     @config = config
