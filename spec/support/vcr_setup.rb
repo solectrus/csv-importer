@@ -20,5 +20,9 @@ VCR.configure do |config|
   config.default_cassette_options = {
     record: record_mode,
     allow_playback_repeats: true,
+
+    # The body is the point: every request goes to the same URI, so method and
+    # URI alone accept any payload at all.
+    match_requests_on: %i[method uri body],
   }
 end
