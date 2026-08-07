@@ -1,15 +1,5 @@
 require 'uri'
 
-SENSOR_NAMES = %i[
-  inverter_power
-  house_power
-  grid_import_power
-  grid_export_power
-  battery_charging_power
-  battery_discharging_power
-  battery_soc
-].freeze
-
 Config =
   Data.define(
     :influx_schema,
