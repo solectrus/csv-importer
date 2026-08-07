@@ -137,13 +137,15 @@ jobs:
         uses: docker/metadata-action@v6
         with:
           images: ${{ env.REGISTRY_IMAGE }}
+          # `latest` needs no entry here. The default flavor is `latest=auto`,
+          # which moves the tag on a push of a semver tag without a prerelease
+          # part. A tag such as v1.0.0-rc.1 keeps `latest` where it is.
           tags: |
             type=ref,event=branch
             type=ref,event=pr
             type=semver,pattern={{version}}
             type=semver,pattern={{major}}.{{minor}}
             type=semver,pattern={{major}}
-            type=raw,value=latest,enable=${{ github.ref == format('refs/heads/{0}', 'main') }}
           labels: |
             org.opencontainers.image.title=SOLECTRUS CSV importer
 
