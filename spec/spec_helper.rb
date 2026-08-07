@@ -4,10 +4,10 @@ SimpleCov.start do
   # matter here are the ones where a branch was never taken.
   enable_coverage :branch
 
-  # Every run stands alone. The suite runs in one process, so merging buys
-  # nothing - but a complete run started within ten minutes of a single-file
-  # run picks up the result of that one and fails a gate it should pass.
-  merging false
+  # Merging stays on, although the suite runs in one process and has nothing
+  # to merge: only a merging run writes `coverage/.resultset.json`, and that
+  # is the file CI uploads to qlty. Every run stores the same command name, so
+  # a run overwrites the result of the run before it instead of adding to it.
 
   # A run of a single spec file covers a fraction of the code, so the gate
   # belongs to the complete suite - which is what CI always runs, and what an
