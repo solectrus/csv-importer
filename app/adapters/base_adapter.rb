@@ -18,15 +18,16 @@ class BaseAdapter
 
   # The points a row holds - one per measurement it writes to.
   def points(row)
-    time = time(row)
-    values = values(row)
+    points_at(time(row), values(row))
+  end
 
+  private
+
+  def points_at(time, values, groups = self.groups)
     groups.map do |measurement, fields|
       { time:, name: measurement, fields: fields_of(fields, values) }
     end
   end
-
-  private
 
   # Written into a hash rather than collected as pairs first: `to_h` with a
   # block builds an array per field, and throws all of them away again.
@@ -41,13 +42,16 @@ class BaseAdapter
   # Sorted by field name, which is the order InfluxDB has been receiving them
   # in all along - it used to be sorted again for every point written.
   def groups
-    @groups ||=
-      sensors
-        .group_by { |sensor| config.measurement(sensor) }
-        .map do |measurement, names|
-          fields = names.map { |name| [config.field(name), name] }
-          [measurement, fields.sort_by { |field, _sensor| field.to_s }]
-        end
+    @groups ||= group(sensors)
+  end
+
+  def group(sensors)
+    sensors
+      .group_by { |sensor| config.measurement(sensor) }
+      .map do |measurement, names|
+        fields = names.map { |name| [config.field(name), name] }
+        [measurement, fields.sort_by { |field, _sensor| field.to_s }]
+      end
   end
 
   # The column one of these names sits in. A file without any of them cannot
