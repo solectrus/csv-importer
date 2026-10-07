@@ -35,14 +35,10 @@ class Import
   # year of readings in one file is a file somebody has.
   def process(file_path)
     adapter_class = CsvProbe.new(file_path).adapter_class
-    adapter = nil
     buffer = []
     rows = 0
 
-    CSV.parse(file_content(file_path), **adapter_class.csv_options) do |row|
-      # The first row names the columns, and is what the adapter is built from.
-      next adapter = adapter_class.new(row, config:) if adapter.nil?
-
+    each_row(file_path, adapter_class) do |adapter, row|
       rows += 1
       buffer.concat(adapter.points(row))
       next if buffer.size < FluxWriter::BATCH_SIZE
@@ -55,6 +51,18 @@ class Import
     writer.push(buffer)
     AppLogger.instance.info "Imported #{file_path} " \
                               "(#{adapter_class}, #{rows} rows)"
+  end
+
+  # Each row of a file, with the adapter of the file
+  def each_row(file_path, adapter_class)
+    adapter = nil
+
+    CSV.parse(file_content(file_path), **adapter_class.csv_options) do |row|
+      # The first row names the columns, and is what the adapter is built from.
+      next adapter = adapter_class.new(row, config:) if adapter.nil?
+
+      yield adapter, row
+    end
   end
 
   def pause
