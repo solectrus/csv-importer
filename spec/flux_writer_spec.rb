@@ -91,6 +91,67 @@ describe FluxWriter do
     end
   end
 
+  describe 'type conflicts' do
+    let(:records) do
+      [{ time: 1, name: 'car', fields: { soc: 51.4, connected: true } }]
+    end
+
+    def conflict(field, type)
+      InfluxDB2::InfluxError.new(
+        message: 'failure writing points to database: partial write: ' \
+                 "field type conflict: input field \"#{field}\" on measurement " \
+                 "\"car\" is type float, already exists as type #{type} dropped=1",
+        code: '422',
+        reference: 'unprocessable entity',
+        retry_after: '',
+      )
+    end
+
+    def payloads(*errors)
+      payloads = []
+      allow(write_api).to receive(:write) do |data:, **|
+        payloads << data
+        error = errors.shift
+        raise error if error
+      end
+      payloads
+    end
+
+    it 'writes each field again as the type InfluxDB holds it as' do
+      payloads = payloads(conflict('soc', 'integer'), conflict('connected', 'integer'))
+
+      writer.push(records)
+
+      expect(payloads).to eq(
+        [
+          'car soc=51.4,connected=true 1',
+          'car soc=51i,connected=true 1',
+          'car soc=51i,connected=1i 1',
+        ],
+      )
+    end
+
+    it 'does not wait before it writes again' do
+      payloads(conflict('soc', 'integer'))
+
+      writer.push(records)
+
+      expect(writer).not_to have_received(:sleep)
+    end
+
+    it 'gives up on a field that conflicts a second time' do
+      payloads(conflict('soc', 'integer'), conflict('soc', 'float'))
+
+      expect { writer.push(records) }.to raise_error(InfluxDB2::InfluxError, /already exists as type float/)
+    end
+
+    it 'gives up on a type it cannot write' do
+      payloads(conflict('soc', 'string'))
+
+      expect { writer.push(records) }.to raise_error(InfluxDB2::InfluxError, /already exists as type string/)
+    end
+  end
+
   describe 'retry behavior' do
     let(:records) { Array.new(10) { |i| make_record(i) } }
 

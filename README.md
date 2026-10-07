@@ -109,6 +109,8 @@ The following environment variables can be used to configure the importer. Varia
 
 The sensor variables follow the SOLECTRUS convention `MEASUREMENT:field`. Use the same values your dashboard reads, otherwise the imported points land somewhere it does not look.
 
+InfluxDB keeps one type for each field, for example integer or float. If a field already holds values of another type, InfluxDB rejects the import. The importer then writes the field as the type that InfluxDB holds, and logs the change. A boolean becomes 1 or 0, and a float is rounded to an integer. If InfluxDB holds the field as boolean or string, the import stops with the error of InfluxDB.
+
 `SENEC_IGNORE` lists field names, the part after the colon. For example, `SENEC_IGNORE=bat_fuel_charge,bat_power_plus` skips the battery state of charge and the battery charge power of SENEC files.
 
 ## Development

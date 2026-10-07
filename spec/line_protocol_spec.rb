@@ -21,6 +21,14 @@ describe LineProtocol do
     expect(line).to eq('SENEC bat_fuel_charge=84.85 1647213193')
   end
 
+  it 'writes a boolean as it is' do
+    record[:fields] = { plugged: true, charging: false }
+
+    expect(line).to eq(
+      'SENEC plugged=true,charging=false 1647213193',
+    )
+  end
+
   it 'keeps the fields in the order they arrive' do
     record[:fields] = { house_power: 1, bat_power_plus: 2 }
 
@@ -55,6 +63,78 @@ describe LineProtocol do
     record[:fields] = { house_power: '199' }
 
     expect { line }.to raise_error(TypeError, /Cannot write String/)
+  end
+
+  describe '#write_as' do
+    subject(:line) { protocol.call(record) }
+
+    let(:protocol) { described_class.new }
+    let(:record) do
+      { time: 1, name: 'car', fields: { soc: 51.5, connected: true } }
+    end
+
+    it 'turns a float into an integer' do
+      protocol.write_as('car', 'soc', 'integer')
+
+      expect(line).to eq('car soc=52i,connected=true 1')
+    end
+
+    it 'turns a boolean into an integer' do
+      protocol.write_as('car', 'connected', 'integer')
+      record[:fields][:connected] = false
+
+      expect(line).to eq('car soc=51.5,connected=0i 1')
+    end
+
+    it 'turns an integer into a float' do
+      protocol.write_as('car', 'soc', 'float')
+      record[:fields][:soc] = 51
+
+      expect(line).to eq('car soc=51.0,connected=true 1')
+    end
+
+    it 'turns a boolean into a float' do
+      protocol.write_as('car', 'connected', 'float')
+
+      expect(line).to eq('car soc=51.5,connected=1.0 1')
+    end
+
+    it 'leaves a field without a value out' do
+      protocol.write_as('car', 'soc', 'integer')
+      record[:fields][:soc] = nil
+
+      expect(line).to eq('car connected=true 1')
+    end
+
+    it 'leaves the same field of another measurement alone' do
+      protocol.write_as('other', 'soc', 'integer')
+
+      expect(line).to eq('car soc=51.5,connected=true 1')
+    end
+
+    it 'adopts a type' do
+      expect(protocol.write_as('car', 'soc', 'integer')).to be_truthy
+    end
+
+    it 'adopts no type it cannot turn a value into' do
+      expect(protocol.write_as('car', 'soc', 'string')).to be_nil
+    end
+
+    it 'adopts no boolean, which a number never turns into' do
+      expect(protocol.write_as('car', 'soc', 'boolean')).to be_nil
+    end
+
+    it 'leaves the other fields alone when it adopts no type' do
+      protocol.write_as('car', 'soc', 'boolean')
+
+      expect(line).to eq('car soc=51.5,connected=true 1')
+    end
+
+    it 'adopts no second type for a field' do
+      protocol.write_as('car', 'soc', 'integer')
+
+      expect(protocol.write_as('car', 'soc', 'float')).to be_nil
+    end
   end
 
   describe 'escaping' do
