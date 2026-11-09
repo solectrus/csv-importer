@@ -23,6 +23,15 @@ updates:
     labels:
       - 'dependencies'
       - 'ruby'
+    groups:
+      rubocop:
+        patterns:
+          - 'rubocop'
+          - 'rubocop-*'
+      rspec:
+        patterns:
+          - 'rspec'
+          - 'rspec-*'
 
   - package-ecosystem: 'github-actions'
     directory: '/'
